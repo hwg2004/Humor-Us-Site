@@ -6,8 +6,16 @@ type Person = {
 
 const people: Person[] = [
   // drop real names here:
-  { name: "Harry Gallen", role: "Treasurer", year: "2027", major: "Computer Science", hometown: "NY, NY", headshot: "/images/people/harry.jpg" },
-  // { name: "Izzy Falchuk", role: "President", headshot: "/images/people/izzy.jpg" },
+  { name: "Izzy Falchuk", role: "President", year: "2026", major: "Performing and Media Arts", hometown: "Los Angeles, CA", headshot: "/images/people/izzy_headshot.jpg" },
+  { name: "Amanda Falchuk", role: "Vice President", year: "2027", major: "Human Development", hometown: "Great Neck, NY", headshot: "/images/people/amanda_headshot.jpg" },
+  { name: "Harry Gallen", role: "Treasurer", year: "2027", major: "Computer Science", hometown: "New York, NY", headshot: "/images/people/harry_headshot.jpg" },
+  { name: "Jared Miller", role: "Secretary", year: "2028", major: "Communications", hometown: "Brooklyn, NY", headshot: "/images/people/jared_headshot.jpg" },
+  { name: "Raquel Sweet", role: "Social Chair", year: "2027", major: "Mechanical Engineering", hometown: "San Francisco, CA", headshot: "/images/people/raquel_headshot.jpg" },
+  { name: "James Mars", role: "Social Chair", year: "2026", major: "Economics and Sociology", hometown: "Ignacio, CO", headshot: "/images/people/james_headshot.jpg" },
+  { name: "Conner \"Big Dawg\" Whalen", role: "Social Media Chair", year: "2028", major: "Information Science", hometown: "Nyack, NY", headshot: "/images/people/conner_headshot.jpg" },
+  { name: "Jordan Vogel", role: "Social Media Chair", year: "2027", major: "Mechanical Engineering", hometown: "Franklin Square, NY", headshot: "/images/people/jordan_headshot.jpg" },
+  { name: "Rene Cabrera", role: "Diversity, Equity, and Inclusion Chair", year: "2027", major: "Industrial and Labor Relations", hometown: "Topeka, KS", headshot: "/images/people/rene_headshot.jpg" },
+  { name: "Eli Feldman", role: "Alumni Relations Chair", year: "2026", major: "Applied Economics and Management", hometown: "Lower Merion, PA", headshot: "/images/people/eli_headshot.jpg" }
 ];
 
 export default function PeoplePage() {
