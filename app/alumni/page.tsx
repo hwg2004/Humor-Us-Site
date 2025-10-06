@@ -14,19 +14,19 @@ type Alumni = {
 // Add real alumni here - this is sample data
 const featuredAlumni: Alumni[] = [
   {
-    name: "Jane Doe",
-    year: "2018",
-    currentRole: "Comedy Writer",
-    company: "Late Night TV Show",
-    bio: "After HumorUs!, Jane went on to write for several comedy shows and perform stand-up across NYC.",
+    name: "Praise Makinde",
+    year: "2025",
+    currentRole: "NBC Page",
+    company: "NBC",
+    bio: "After HumorUs!, Praise went on to write for several comedy shows and perform stand-up across NYC.",
     headshot: "/images/alumni/jane.jpg",
     linkedin: "https://linkedin.com/in/janedoe"
   },
   {
-    name: "John Smith",
-    year: "2015",
-    currentRole: "Creative Director",
-    company: "Comedy Central",
+    name: "Noah Diamond",
+    year: "2025",
+    currentRole: "NBC Page",
+    company: "NBC",
     bio: "John credits HumorUs! with teaching him how to pitch ideas and work collaboratively in comedy.",
     headshot: "/images/alumni/john.jpg"
   },
@@ -34,11 +34,11 @@ const featuredAlumni: Alumni[] = [
 
 // List of all alumni by year
 const allAlumni = {
-  "2024": ["Sarah Johnson", "Mike Chen", "Emily Rodriguez"],
-  "2023": ["David Kim", "Jessica Liu", "Ryan Patel"],
-  "2022": ["Amanda White", "Chris Brown", "Taylor Green"],
-  "2021": ["Alex Martinez", "Sam Wilson", "Jordan Lee"],
-  "2020": ["Morgan Davis", "Jamie Taylor", "Casey Anderson"],
+  "2025": ["Praise Makinde", "Noah Diamond", "Melissa Chu", "Marc Scocca"],
+  "2024": ["Noah Leety", "Jessica Liu", "Ryan Patel"],
+  "2023": ["Amanda White", "Chris Brown", "Taylor Green"],
+  "2022": ["Alex Martinez", "Sam Wilson", "Jordan Lee"],
+  "2021": ["Morgan Davis", "Jamie Taylor", "Casey Anderson"],
   // Add more years and names as needed
 };
 

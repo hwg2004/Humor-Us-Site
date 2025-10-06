@@ -5,16 +5,14 @@ import "./globals.css";
 
 export const metadata: Metadata = {
   title: "HumorUs! Sketch Comedy at Cornell",
-  description: "Cornell's premier sketch comedy troupe — new shows every semester. Making campus laugh since 2006!",
+  description: "Cornell's premier sketch comedy group — new shows every semester. Making Cornell laugh since 2006",
   keywords: ["comedy", "sketch", "Cornell", "university", "humor", "performance", "theatre"],
   openGraph: {
     title: "HumorUs! Sketch Comedy at Cornell",
-    description: "Cornell's premier sketch comedy troupe",
+    description: "Cornell's premier sketch comedy group",
     images: ["/images/og-image.jpg"],
   },
 };
-
-
 
 export default function RootLayout({
   children,
@@ -22,11 +20,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   const navLinks = [
-    { href: "/shows", label: "Past Shows", emoji: "🎬" },
-    { href: "/people", label: "Meet the Cast!", emoji: "👥" },
-    { href: "/about", label: "About", emoji: "📖" },
-    { href: "/alumni", label: "Alumni", emoji: "🎓" },
-    { href: "/join", label: "Join Us!", emoji: "✨" },
+    { href: "/shows", label: "Past Shows" },
+    { href: "/people", label: "Meet the Cast!"},
+    { href: "/about", label: "About"},
+    { href: "/alumni", label: "Alumni"},
+    { href: "/join", label: "Join Us!"},
   ];
 
   return (
@@ -57,7 +55,6 @@ export default function RootLayout({
                 rel="noopener noreferrer"
                 className="hidden lg:flex items-center gap-2 px-4 py-2 bg-[var(--color-highlight)] text-black rounded-full font-semibold hover:shadow-lg hover:scale-105 transition-all"
               >
-                <span>🎟️</span>
                 <span>Get Tickets</span>
               </a>
             </div>
@@ -137,9 +134,6 @@ export default function RootLayout({
             <div className="mt-8 pt-8 border-t border-black/10 dark:border-white/10 text-center">
               <p className="text-sm text-black/60 dark:text-white/60">
                 © {new Date().getFullYear()} HumorUs! Sketch Comedy at Cornell
-              </p>
-              <p className="text-xs text-black/50 dark:text-white/50 mt-2">
-                Making bad jokes and good memories since 2006 • Located in Ithaca, NY where the prelims are made up and the grades don&apos;t matter
               </p>
             </div>
           </div>

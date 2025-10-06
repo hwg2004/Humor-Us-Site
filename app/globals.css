@@ -1,12 +1,51 @@
 @import "tailwindcss";
+/*
+Stage Lights:
+:root {
+  --color-bg: #FAFAFA;
+  --color-text: #2D3436;
+  --color-accent: #E63946;
+  --color-accent-dark: #B91C2A;
+  --color-accent-light: #457B9D;
+  --color-highlight: #F1FAEE;
+}
+-----------------------
+Cosmic Purple Vibe
+:root {
+  --color-bg: #F8F9FF;
+  --color-text: #1E1E3F;
+  --color-accent: #5E60CE;
+  --color-accent-dark: #4C4FB5;
+  --color-accent-light: #C77DFF;
+  --color-highlight: #7EE8FA;
+}
+-----------------------
+Electric Boogie Vibe
+:root {
+  --color-bg: #FAFAFF;
+  --color-text: #1A1A2E;
+  --color-accent: #FF006E;
+  --color-accent-dark: #CC0056;
+  --color-accent-light: #8338EC;
+  --color-highlight: #FFBE0B;
+}
 
 :root {
-  --color-bg: #F8F8FB;
-  --color-text: #1E1E1E;
-  --color-accent: #6C3BF5;
-  --color-accent-dark: #3A0CA3;
-  --color-accent-light: #CDB4FF;
-  --color-highlight: #FFD447;
+  --color-bg: #F8FFFD;
+  --color-text: #1A3A37;
+  --color-accent: #00B4A6;
+  --color-accent-dark: #008F84;
+  --color-accent-light: #7C3AED;
+  --color-highlight: #FFE66D;
+}
+*/
+:root {
+  --color-bg: #F8F9FF;        /* very soft indigo-tinted background */
+  --color-text: #1E1E3F;      /* deep indigo text */
+  --color-accent: #5E60CE;    /* main purple */
+  --color-accent-dark: #4C4FB5;
+  --color-accent-light: #C77DFF; /* lilac highlight */
+  --color-highlight: #7EE8FA; /* fun cyan spark */
 }
 
 body {

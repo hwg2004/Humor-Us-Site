@@ -1,14 +1,14 @@
 "use client";
 import Link from "next/link";
 import { useState, useEffect } from "react";
+import Image from "next/image";
+import Gallery from "./components/Gallery";
+
 
 export default function Home() {
   const [currentTagline, setCurrentTagline] = useState(0);
   const taglines = [
-    "Cornell's Premier Sketch Comedy Troupe",
-    "Making Campus Laugh Since 2006",
-    "Where Prelims Meet Punchlines",
-    "Seriously Funny, Seriously Fun"
+    "Cornell's Premier Sketch Comedy Group Since '06",
   ];
 
   useEffect(() => {
@@ -42,27 +42,46 @@ export default function Home() {
             href="https://venmo.com/u/humorus" 
             target="_blank"
             rel="noopener noreferrer"
-            className="px-8 py-3 bg-gradient-to-r from-[var(--color-accent)] to-[var(--color-accent-light)] text-white rounded-full font-semibold hover:shadow-lg transform hover:scale-105 transition-all"
+            className="px-8 py-3 border-2 border-[var(--color-accent)] rounded-full font-semibold hover:bg-[var(--color-accent)]/10 transform hover:scale-105 transition-all"
+            /*className="px-8 py-3 bg-gradient-to-r from-[var(--color-accent)] to-[var(--color-accent-light)] text-white rounded-full font-semibold hover:shadow-lg transform hover:scale-105 transition-all"*/
           >
-            Get Tickets 🎟️
+            Get Tickets
           </a>
           <Link 
             href="/join" 
             className="px-8 py-3 border-2 border-[var(--color-accent)] rounded-full font-semibold hover:bg-[var(--color-accent)]/10 transform hover:scale-105 transition-all"
           >
-            Join the Troupe
+            Join Us!
           </Link>
         </div>
         
         <div className="mt-12 flex gap-6">
           <a href="https://www.instagram.com/humorussketchcomedy/" target="_blank" rel="noopener noreferrer" className="text-3xl hover:text-[var(--color-accent)] transition-colors">
-            📱
+             <Image 
+              src="/logos/instagram.svg" 
+              alt="Instagram" 
+              width={32} 
+              height={32} 
+              className="hover:opacity-80 transition-opacity" 
+            />
           </a>
           <a href="mailto:humoruscomedy@gmail.com" className="text-3xl hover:text-[var(--color-accent)] transition-colors">
-            ✉️
+            <Image 
+              src="/logos/gmail.svg" 
+              alt="Gmail" 
+              width={32} 
+              height={32} 
+              className="hover:opacity-80 transition-opacity" 
+            />
           </a>
           <a href="https://venmo.com/u/humorus" target="_blank" rel="noopener noreferrer" className="text-3xl hover:text-[var(--color-accent)] transition-colors">
-            💸
+            <Image 
+              src="/logos/venmo-icon.svg" 
+              alt="Venmo" 
+              width={32} 
+              height={32} 
+              className="hover:opacity-80 transition-opacity" 
+            />
           </a>
         </div>
       </section>
@@ -80,28 +99,27 @@ export default function Home() {
           
           <div className="grid md:grid-cols-2 gap-6">
             <div>
-              <h3 className="text-3xl font-bold mb-2">Fall Frenzy 2025</h3>
+              <h3 className="text-3xl font-bold mb-2">For All the Hogs</h3>
               <p className="text-lg mb-4 text-black/70 dark:text-white/70">
-                Get ready for our biggest show yet! Featuring brand new sketches about dining hall disasters, 
-                prelim panic, and why Cornell WiFi is actually sentient (and evil).
+                Get ready for our biggest show yet! We're REALLY gonna push the envelope this time. Get ready to hate us.
               </p>
               <div className="space-y-2 text-lg">
-                <p>📅 <strong>November 15, 2025</strong></p>
-                <p>📍 <strong>Schwartz Center Black Box</strong></p>
-                <p>🕐 <strong>8:00 PM & 10:00 PM</strong></p>
-                <p>💵 <strong>$5</strong> (Venmo: @humorus)</p>
+                <p>📅 <strong>November 14, 2025</strong></p>
+                <p>📍 <strong>Rockefeller Hall</strong></p>
+                <p>🕐 <strong>7:00 PM & 9:00 PM</strong></p>
+                <p>💵 <strong>$8</strong> (Venmo: @humorus)</p>
               </div>
             </div>
             
             <div className="flex flex-col justify-center items-center">
               <div className="w-full h-48 bg-gradient-to-br from-[var(--color-accent)] to-[var(--color-accent-light)] rounded-lg flex items-center justify-center text-white">
                 <div className="text-center">
-                  <p className="text-6xl mb-2">🎭</p>
+                  <p className="text-6xl mb-2">🐷</p>
                   <p className="font-bold">Show Poster Coming Soon!</p>
                 </div>
               </div>
               <div className="mt-4 flex gap-3">
-                <a href="https://venmo.com/u/humorus" target="_blank" className="px-6 py-2 bg-[var(--color-accent)] text-white rounded-md font-semibold hover:bg-[var(--color-accent-dark)] transition-colors">
+                <a href="https://venmo.com/u/humorus" target="_blank" className="px-6 py-2 border-2 border-[var(--color-accent)] rounded-md font-semibold hover:bg-[var(--color-accent)]/10 transition-colors">
                   Buy Tickets Now
                 </a>
                 <Link href="/shows" className="px-6 py-2 border-2 border-[var(--color-accent)] rounded-md font-semibold hover:bg-[var(--color-accent)]/10 transition-colors">
@@ -116,90 +134,46 @@ export default function Home() {
       {/* Quick Stats */}
       <section className="grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
         <div className="rounded-lg border-2 border-[var(--color-accent-light)] p-4">
-          <div className="text-3xl font-bold text-[var(--color-accent)]">18+</div>
-          <p className="text-sm text-black/70 dark:text-white/70">Years of Laughs</p>
-        </div>
-        <div className="rounded-lg border-2 border-[var(--color-accent-light)] p-4">
-          <div className="text-3xl font-bold text-[var(--color-accent)]">50+</div>
+          <div className="text-3xl font-bold text-[var(--color-accent)]">5,000+</div>
           <p className="text-sm text-black/70 dark:text-white/70">Original Shows</p>
         </div>
         <div className="rounded-lg border-2 border-[var(--color-accent-light)] p-4">
-          <div className="text-3xl font-bold text-[var(--color-accent)]">500+</div>
+          <div className="text-3xl font-bold text-[var(--color-accent)]">100,000+</div>
           <p className="text-sm text-black/70 dark:text-white/70">Sketches Written</p>
         </div>
         <div className="rounded-lg border-2 border-[var(--color-accent-light)] p-4">
-          <div className="text-3xl font-bold text-[var(--color-accent)]">∞</div>
-          <p className="text-sm text-black/70 dark:text-white/70">Bad Puns</p>
+          <div className="text-3xl font-bold text-[var(--color-accent)]">$8,000,000</div>
+          <p className="text-sm text-black/70 dark:text-white/70">Made from Ticket Sales</p>
+        </div>
+         <div className="rounded-lg border-2 border-[var(--color-accent-light)] p-4">
+          <div className="text-3xl font-bold text-[var(--color-accent)]">18</div>
+          <p className="text-sm text-black/70 dark:text-white/70">Years Since the Incident.</p>
         </div>
       </section>
 
-      {/* Navigation Grid */}
-      <section className="space-y-6">
-        <h2 className="text-3xl font-bold text-center">Explore HumorUs!</h2>
-        <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-          <Link href="/people" className="group relative rounded-xl border-2 p-6 hover:border-[var(--color-accent)] hover:shadow-xl transition-all overflow-hidden">
-            <div className="absolute inset-0 bg-gradient-to-br from-[var(--color-accent)]/0 to-[var(--color-accent)]/10 opacity-0 group-hover:opacity-100 transition-opacity" />
-            <div className="relative">
-              <div className="text-3xl mb-3">👥</div>
-              <h3 className="font-bold text-lg mb-2">Meet the Cast</h3>
-              <p className="text-sm text-black/70 dark:text-white/70">Get to know the funny folks who make it all happen</p>
-            </div>
-          </Link>
-          
-          <Link href="/about" className="group relative rounded-xl border-2 p-6 hover:border-[var(--color-accent)] hover:shadow-xl transition-all overflow-hidden">
-            <div className="absolute inset-0 bg-gradient-to-br from-[var(--color-accent)]/0 to-[var(--color-accent)]/10 opacity-0 group-hover:opacity-100 transition-opacity" />
-            <div className="relative">
-              <div className="text-3xl mb-3">📖</div>
-              <h3 className="font-bold text-lg mb-2">Our Story</h3>
-              <p className="text-sm text-black/70 dark:text-white/70">Learn about our history, process, and what makes us tick</p>
-            </div>
-          </Link>
-          
-          <Link href="/shows" className="group relative rounded-xl border-2 p-6 hover:border-[var(--color-accent)] hover:shadow-xl transition-all overflow-hidden">
-            <div className="absolute inset-0 bg-gradient-to-br from-[var(--color-accent)]/0 to-[var(--color-accent)]/10 opacity-0 group-hover:opacity-100 transition-opacity" />
-            <div className="relative">
-              <div className="text-3xl mb-3">🎬</div>
-              <h3 className="font-bold text-lg mb-2">Past Shows</h3>
-              <p className="text-sm text-black/70 dark:text-white/70">Browse our archive of comedy gold from previous semesters</p>
-            </div>
-          </Link>
-          
-          <Link href="/alumni" className="group relative rounded-xl border-2 p-6 hover:border-[var(--color-accent)] hover:shadow-xl transition-all overflow-hidden">
-            <div className="absolute inset-0 bg-gradient-to-br from-[var(--color-accent)]/0 to-[var(--color-accent)]/10 opacity-0 group-hover:opacity-100 transition-opacity" />
-            <div className="relative">
-              <div className="text-3xl mb-3">🎓</div>
-              <h3 className="font-bold text-lg mb-2">Alumni Network</h3>
-              <p className="text-sm text-black/70 dark:text-white/70">See where our comedy journey has taken past members</p>
-            </div>
-          </Link>
-          
-          <Link href="/join" className="group relative rounded-xl border-2 p-6 hover:border-[var(--color-accent)] hover:shadow-xl transition-all overflow-hidden">
-            <div className="absolute inset-0 bg-gradient-to-br from-[var(--color-accent)]/0 to-[var(--color-accent)]/10 opacity-0 group-hover:opacity-100 transition-opacity" />
-            <div className="relative">
-              <div className="text-3xl mb-3">✨</div>
-              <h3 className="font-bold text-lg mb-2">Join Us</h3>
-              <p className="text-sm text-black/70 dark:text-white/70">Ready to write, perform, and make Cornell laugh?</p>
-            </div>
-          </Link>
-          
-          <a href="https://www.instagram.com/humorussketchcomedy/" target="_blank" rel="noopener noreferrer" className="group relative rounded-xl border-2 p-6 hover:border-[var(--color-accent)] hover:shadow-xl transition-all overflow-hidden">
-            <div className="absolute inset-0 bg-gradient-to-br from-[var(--color-accent)]/0 to-[var(--color-accent)]/10 opacity-0 group-hover:opacity-100 transition-opacity" />
-            <div className="relative">
-              <div className="text-3xl mb-3">📱</div>
-              <h3 className="font-bold text-lg mb-2">Follow Us</h3>
-              <p className="text-sm text-black/70 dark:text-white/70">@humorussketchcomedy for clips, updates, and memes</p>
-            </div>
-          </a>
-        </div>
+      {/* Recent Photos / Gallery */}
+      <section className="space-y-4">
+        <h2 className="text-3xl font-bold text-center">Recent Photos</h2>
+        <Gallery
+          ratio="3/2"
+          images={[
+            { src: "/images/gallery/DSC_0125.jpg", alt: "Group photo" },
+            { src: "/images/gallery/DSC_0131.jpg", alt: "Group photo, bunz out" },
+            { src: "/images/gallery/DSC_0138.jpg", alt: "The fellas" },
+            { src: "/images/gallery/Referee_Sketch.jpg", alt: "Referee Sketch" },
+            { src: "/images/gallery/DSC_0117.jpg", alt: "Fall 2024 Newbies" },
+            { src: "/images/gallery/Charli_XCX_Sketch.jpg", alt: "Charli XCX Sketch" },
+          ]}
+        />
       </section>
-
+    
       {/* Testimonial */}
       <section className="rounded-2xl bg-gradient-to-r from-[var(--color-accent)] to-[var(--color-accent-light)] text-white p-8 text-center">
         <p className="text-2xl font-medium mb-4 italic">
           "HumorUs has been the highlight of my Cornell experience. It's where I found my best friends, 
           discovered I could make people laugh, and learned that bombing on stage isn't the end of the world."
         </p>
-        <p className="text-lg">– Every HumorUs Member Ever</p>
+        <p className="text-lg">- Every HumorUs Member Ever</p>
       </section>
     </div>
   );

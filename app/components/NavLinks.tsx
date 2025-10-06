@@ -6,11 +6,11 @@ export function NavLinks() {
   const pathname = usePathname();
   
   const navLinks = [
-    { href: "/shows", label: "Past Shows", emoji: "🎬" },
-    { href: "/people", label: "Meet the Cast!", emoji: "👥" },
-    { href: "/about", label: "About", emoji: "📖" },
-    { href: "/alumni", label: "Alumni", emoji: "🎓" },
-    { href: "/join", label: "Join Us!", emoji: "✨" },
+    { href: "/shows", label: "Past Shows"},
+    { href: "/people", label: "Meet the Cast!"},
+    { href: "/about", label: "About"},
+    { href: "/alumni", label: "Alumni"},
+    { href: "/join", label: "Join Us!"},
   ];
 
   return (

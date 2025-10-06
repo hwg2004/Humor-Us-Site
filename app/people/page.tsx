@@ -34,11 +34,10 @@ export default function PeoplePage() {
               />
             )}
             <h3 className="mt-3 font-semibold">{p.name}</h3>
-            {p.role && <p className="text-sm">{p.role}</p>}
-            <p className="text-sm text-black/70 dark:text-white/70">
-              {[p.year && `Year: ${p.year}`, p.major && `Major: ${p.major}`, p.hometown && `Hometown: ${p.hometown}`]
-                .filter(Boolean).join(" • ")}
-            </p>
+            {p.role && <p className="text-sm font-semibold">{p.role}</p>}
+            {p.year && <p className="text-sm font-semibold">{p.year}</p>}
+            {p.major && <p className="text-sm font-semibold">{p.major}</p>}
+            {p.hometown && <p className="text-sm font-semibold">{p.hometown}</p>}
           </article>
         ))}
       </div>
