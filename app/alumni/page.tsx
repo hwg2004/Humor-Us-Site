@@ -50,8 +50,7 @@ export default function AlumniPage() {
           HumorUs! Alumni
         </h1>
         <p className="text-lg mt-4 text-black/70 dark:text-white/70">
-          Our alumni have gone on to amazing things – from writers' rooms to boardrooms, 
-          they're making the world laugh one joke at a time.
+          {"Our alumni have gone on to amazing things - from writers' rooms to boardrooms, they're making the world laugh one joke at a time."}
         </p>
       </div>
 

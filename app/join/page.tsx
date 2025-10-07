@@ -72,7 +72,7 @@ export default function JoinPage() {
             <p><strong>Auditions:</strong> September 17, 18</p>
             <p><strong>Callbacks:</strong> September 20</p>
             <p className="text-sm text-black/70 dark:text-white/70 mt-3">
-              Can't make auditions? Email us at humoruscomedy@gmail.com - we can work something out!
+              {"Can't make auditions? Email us at humoruscomedy@gmail.com - we can work something out!"}
             </p>
           </div>
         </div>
@@ -110,7 +110,7 @@ export default function JoinPage() {
 
       {/* Other Ways to Get Involved */}
       <div className="space-y-4">
-        <h2 className="text-2xl font-bold">Can't Commit to Membership?</h2>
+        <h2 className="text-2xl font-bold">{"Can't Commit to Membership?"}</h2>
         <p>No worries! There are other ways to support HumorUs:</p>
         <div className="grid gap-4 sm:grid-cols-2 md:grid-cols-3">
           <div className="rounded-lg border p-4">
@@ -138,7 +138,7 @@ export default function JoinPage() {
       <div className="rounded-lg bg-gradient-to-r from-[var(--color-accent)] to-[var(--color-accent-light)] text-white p-8 text-center">
         <h2 className="text-3xl font-bold mb-4">Ready to Make Cornell Laugh?</h2>
         <p className="text-lg mb-6">
-          Don't overthink it – if you've read this far, you should audition!
+          {"Don't overthink it - if you've read this far, you should audition!"}
         </p>
         <div className="flex flex-wrap gap-4 justify-center">
           <a 

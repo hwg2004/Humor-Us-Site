@@ -106,7 +106,7 @@ export default function Home() {
             <div>
               <h3 className="text-3xl font-bold mb-2">For All the Hogs</h3>
               <p className="text-lg mb-4 text-black/70 dark:text-white/70">
-                Get ready for our biggest show yet! We're REALLY gonna push the envelope this time. Get ready to hate us.
+                {"Get ready for our biggest show yet! We're REALLY gonna push the envelope this time. Get ready to hate us."}
               </p>
               <div className="space-y-2 text-lg">
                 <p>📅 <strong>November 14, 2025</strong></p>
@@ -175,8 +175,7 @@ export default function Home() {
       {/* Testimonial */}
       <section className="rounded-2xl bg-gradient-to-r from-[var(--color-accent)] to-[var(--color-accent-light)] text-white p-8 text-center">
         <p className="text-2xl font-medium mb-4 italic">
-          "HumorUs has been the highlight of my Cornell experience. It's where I found my best friends, 
-          discovered I could make people laugh, and learned that bombing on stage isn't the end of the world."
+          {'"HumorUs has been the highlight of my Cornell experience. It\'s where I found my best friends, discovered I could make people laugh, and learned that bombing on stage isn\'t the end of the world."'}
         </p>
         <p className="text-lg">- Every HumorUs Member Ever</p>
       </section>

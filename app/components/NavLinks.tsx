@@ -28,7 +28,6 @@ export function NavLinks() {
             }
           `}
         >
-          <span className="hidden sm:inline mr-1">{link.emoji}</span>
           {link.label}
         </Link>
       ))}
