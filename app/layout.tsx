@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { NavLinks } from "./components/NavLinks";
 import "./globals.css";
+import Image from "next/image";
 
 export const metadata: Metadata = {
   title: "HumorUs! Sketch Comedy at Cornell",
@@ -39,10 +40,15 @@ export default function RootLayout({
                 href="/" 
                 className="group flex items-center gap-2 transition-transform hover:scale-105"
               >
-                <span className="text-3xl group-hover:rotate-12 transition-transform">🎭</span>
-                <span className="font-bold text-2xl bg-gradient-to-r from-[var(--color-accent)] to-[var(--color-accent-light)] bg-clip-text text-transparent">
-                  HumorUs!
-                </span>
+               <Image
+                  src="/logos/HumorUs_Logo.svg"
+                  alt="HumorUs Logo"
+                  width={240}
+                  height={90}
+                  priority
+                  className="transition-transform group-hover:scale-105"
+                  style={{ maxHeight: "96px" }}
+                />
               </Link>
 
               {/* Navigation Links */}
@@ -105,7 +111,13 @@ export default function RootLayout({
                     href="mailto:humoruscomedy@gmail.com" 
                     className="flex items-center gap-2 text-sm text-black/70 dark:text-white/70 hover:text-[var(--color-accent)] transition-colors"
                   >
-                    <span>✉️</span>
+                     <Image 
+                        src="/logos/instagram.svg" 
+                        alt="Instagram" 
+                        width={20} 
+                        height={20} 
+                        className="hover:opacity-80 transition-opacity" 
+                      />
                     <span>humoruscomedy@gmail.com</span>
                   </a>
                   <a 
@@ -114,7 +126,13 @@ export default function RootLayout({
                     rel="noopener noreferrer"
                     className="flex items-center gap-2 text-sm text-black/70 dark:text-white/70 hover:text-[var(--color-accent)] transition-colors"
                   >
-                    <span>📱</span>
+                   <Image 
+                      src="/logos/gmail.svg" 
+                      alt="Gmail" 
+                      width={20} 
+                      height={20} 
+                      className="hover:opacity-80 transition-opacity" 
+                    />
                     <span>@humorussketchcomedy</span>
                   </a>
                   <a 
@@ -123,7 +141,13 @@ export default function RootLayout({
                     rel="noopener noreferrer"
                     className="flex items-center gap-2 text-sm text-black/70 dark:text-white/70 hover:text-[var(--color-accent)] transition-colors"
                   >
-                    <span>💸</span>
+                   <Image 
+                      src="/logos/venmo-icon.svg" 
+                      alt="Venmo" 
+                      width={20} 
+                      height={20} 
+                      className="hover:opacity-80 transition-opacity" 
+                    />
                     <span>Venmo: @humorus</span>
                   </a>
                 </div>
@@ -141,7 +165,17 @@ export default function RootLayout({
 
         {/* Fun Easter Egg - Floating Comedy Masks (optional, remove if too much) */}
         <div className="fixed bottom-4 right-4 opacity-10 pointer-events-none z-0">
-          <div className="text-6xl animate-pulse">🎭</div>
+          <div className="text-6xl animate-pulse">
+            <Image
+              src="/logos/HumorUs_Logo.svg"
+              alt="HumorUs Logo"
+              width={160}
+              height={60}
+              priority
+              className="transition-transform group-hover:scale-105"
+              style={{ maxHeight: "48px" }}
+            />  
+          </div>
         </div>
       </body>
     </html>

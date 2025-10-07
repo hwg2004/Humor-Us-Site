@@ -38,7 +38,7 @@ export default function JoinPage() {
       <div className="space-y-6">
         <h2 className="text-2xl font-bold">Auditions</h2>
         
-        <div className="grid gap-4 md:grid-cols-3">
+        {/* <div className="grid gap-4 md:grid-cols-3">
           <div className="rounded-lg border-2 border-[var(--color-highlight)] p-4">
             <div className="text-3xl font-bold text-[var(--color-accent)] mb-2">Step 1</div>
             <h3 className="font-semibold mb-2">Come to Our Show!</h3>
@@ -62,7 +62,7 @@ export default function JoinPage() {
               Prepare 2-3 minutes of comedy content and come ready to play some improv games!
             </p>
           </div>
-        </div>
+        </div> */}
 
         <div className="rounded-lg bg-[var(--color-highlight)]/20 border-2 border-[var(--color-highlight)] p-6">
           <h3 className="font-bold text-lg mb-3">📅 Important Dates</h3>

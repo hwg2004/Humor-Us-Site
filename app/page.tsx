@@ -21,17 +21,22 @@ export default function Home() {
   return (
     <div className="space-y-12">
       {/* Hero Section with Animation */}
-      <section className="relative min-h-[60vh] flex flex-col justify-center items-center text-center px-6 py-12">
+      <section className="relative min-h-[70vh] flex flex-col justify-center items-center text-center px-6 py-20">
         <div className="absolute inset-0 -z-10 overflow-hidden">
           <div className="absolute -top-1/2 -left-1/2 w-full h-full bg-gradient-to-br from-[var(--color-accent)]/20 via-transparent to-transparent rounded-full blur-3xl animate-pulse" />
           <div className="absolute -bottom-1/2 -right-1/2 w-full h-full bg-gradient-to-tl from-[var(--color-highlight)]/20 via-transparent to-transparent rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1s' }} />
         </div>
         
-        <h1 className="text-6xl sm:text-7xl md:text-8xl font-bold mb-6">
-          <span className="bg-gradient-to-r from-[var(--color-accent)] via-[var(--color-accent-light)] to-[var(--color-highlight)] bg-clip-text text-transparent animate-gradient bg-300">
-            HumorUs!
-          </span>
-        </h1>
+       <div className="mb-6">
+          <Image
+            src="/logos/HumorUs_Logo.svg"
+            alt="HumorUs Sketch Comedy Logo"
+            width={750}
+            height={250}
+            priority
+            className="mx-auto drop-shadow-md transition-transform duration-500 hover:scale-105"
+          />
+        </div>
         
         <p className="text-xl sm:text-2xl text-black/70 dark:text-white/70 mb-8 h-8 transition-all duration-500">
           {taglines[currentTagline]}

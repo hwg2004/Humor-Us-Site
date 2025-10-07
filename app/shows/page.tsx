@@ -37,16 +37,18 @@ const pastShows: Show[] = [
     date: "2024-05-04",
     venue: "Klarman Auditorium",
     poster: "/images/shows/SP24Poster.jpg",
+    favorite: true,
     videoUrl: "https://www.youtube.com/watch?v=grYWzfQGIGQ&list=PLQHtzx1MTEo_CSRvvXKIbXHZErhqrjZNk"
   },
-  {
-    slug: "2023-11-14-fall",
-    title: "Humor Us Presents: Welcome to the Afterlife",
-    date: "2023-11-14",
-    venue: "Klarman Auditorium",
-    poster: "/images/shows/FA23Poster.jpg",
-    videoUrl: "https://www.youtube.com/watch?v=VXdHLJ1tMBU&list=PLQHtzx1MTEo9PUWfL_-zV-zcaSqZjcny6"
-  }
+  // {
+  //   slug: "2023-11-14-fall",
+  //   title: "Humor Us Presents: Welcome to the Afterlife",
+  //   date: "2023-11-14",
+  //   venue: "Klarman Auditorium",
+  //   poster: "/images/shows/FA23Poster.jpg",
+  //   favorite: true,
+  //   videoUrl: "https://www.youtube.com/watch?v=VXdHLJ1tMBU&list=PLQHtzx1MTEo9PUWfL_-zV-zcaSqZjcny6"
+  // }
 
   // Add more shows as needed
 ];
@@ -68,8 +70,7 @@ export default function PastShowsPage() {
           Past Shows Archive
         </h1>
         <p className="text-lg mt-4 text-black/70 dark:text-white/70">
-          Relive the laughs! Browse through our collection of past shows, featuring original sketches 
-          about everything from dining hall disasters to prelim panic.
+          Relive the laughs! See below for a list of our past shows, complete with posters, dates, venues, and links to videos where available.
         </p>
       </div>
 
@@ -77,7 +78,7 @@ export default function PastShowsPage() {
       {favoriteShows.length > 0 && (
         <div className="space-y-4">
           <h2 className="text-2xl font-bold flex items-center gap-2">
-            <span>⭐</span> Fan Favorites
+            Recent Shows
           </h2>
           <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
             {favoriteShows.map(show => (
@@ -94,14 +95,10 @@ export default function PastShowsPage() {
                       fill
                       className="object-cover"
                     />
-                    <div className="absolute top-2 right-2 bg-[var(--color-highlight)] text-black px-2 py-1 rounded-full text-sm font-bold">
-                      ⭐ Favorite
-                    </div>
                   </div>
                 ) : (
                   <div className="aspect-[3/4] bg-gradient-to-br from-[var(--color-accent)] to-[var(--color-accent-light)] flex items-center justify-center">
                     <div className="text-center text-white p-4">
-                      <span className="text-6xl">🎭</span>
                       <p className="mt-2 font-bold">Poster Coming Soon</p>
                     </div>
                   </div>
@@ -171,7 +168,7 @@ export default function PastShowsPage() {
           ))}
       </div>
 
-      {/* Fun Stats */}
+      {/* Fun Stats
       <div className="rounded-xl bg-gradient-to-r from-[var(--color-accent)] to-[var(--color-accent-light)] text-white p-8">
         <h3 className="text-2xl font-bold mb-6 text-center">By The Numbers</h3>
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
@@ -194,7 +191,7 @@ export default function PastShowsPage() {
             <div className="text-sm opacity-90">Laughs Generated</div>
           </div>
         </div>
-      </div>
+      </div> */}
 
       {/* Call to Action */}
       <div className="text-center py-8 space-y-4">
