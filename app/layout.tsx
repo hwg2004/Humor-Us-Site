@@ -25,6 +25,10 @@ export const metadata: Metadata = {
     description: "Cornell's premier sketch comedy troupe.",
     images: ["/images/og-image.jpg"],
   },
+  robots: {
+    index: true,
+    follow: true,
+  }
 };
 
 export default function RootLayout({
