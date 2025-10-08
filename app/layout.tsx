@@ -5,12 +5,24 @@ import "./globals.css";
 import Image from "next/image";
 
 export const metadata: Metadata = {
+  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || "https://humorussketchcomedy.com"),
   title: "HumorUs! Sketch Comedy at Cornell",
   description: "Cornell's premier sketch comedy group — new shows every semester. Making Cornell laugh since 2006",
-  keywords: ["comedy", "sketch", "Cornell", "university", "humor", "performance", "theatre"],
+  alternates: {
+    canonical: "/", // means the canonical URL is https://humoruscomedy.com/
+  },
   openGraph: {
     title: "HumorUs! Sketch Comedy at Cornell",
-    description: "Cornell's premier sketch comedy group",
+    description: "Cornell's premier sketch comedy troupe.",
+    url: "/",
+    siteName: "HumorUs!",
+    images: ["/images/og-image.jpg"],
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "HumorUs! Sketch Comedy at Cornell",
+    description: "Cornell's premier sketch comedy troupe.",
     images: ["/images/og-image.jpg"],
   },
 };
