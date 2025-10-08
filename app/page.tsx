@@ -20,74 +20,75 @@ export default function Home() {
 
   return (
     <div className="space-y-12">
-      {/* Hero Section with Animation */}
-      <section className="relative min-h-[70vh] flex flex-col justify-center items-center text-center px-6 py-20">
-        <div className="absolute inset-0 -z-10 overflow-hidden">
-          <div className="absolute -top-1/2 -left-1/2 w-full h-full bg-gradient-to-br from-[var(--color-accent)]/20 via-transparent to-transparent rounded-full blur-3xl animate-pulse" />
-          <div className="absolute -bottom-1/2 -right-1/2 w-full h-full bg-gradient-to-tl from-[var(--color-highlight)]/20 via-transparent to-transparent rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1s' }} />
-        </div>
-        
-       <div className="mb-6">
+      {/* Hero Section */}
+      <section className="relative h-[70vh] min-h-[480px] w-full">
+        {/* Background photo */}
+        <Image
+          src="/images/hero.jpg"
+          alt="HumorUs cast on stage kicking in sync"
+          fill
+          priority
+          sizes="100vw"
+          className="object-cover object-[50%_35%]" // shift focal point up a bit
+        />
+
+        {/* Dark scrim for text readability */}
+        <div className="absolute inset-0 bg-black/35 md:bg-black/30" />
+
+        {/* Centered content */}
+        <div className="relative z-10 h-full flex flex-col items-center justify-center text-center px-6">
+          {/* Big text or logo – pick ONE of these blocks */}
+
+          {/* A) Text */}
+          <h1 className="text-white text-5xl sm:text-6xl md:text-7xl font-extrabold tracking-tight drop-shadow">
+            HumorUs!
+          </h1>
+
+          {/* B) Or the logo (comment the <h1> above out if you use this) */}
+          {/*
           <Image
             src="/logos/HumorUs_Logo.svg"
             alt="HumorUs Sketch Comedy Logo"
-            width={750}
-            height={250}
+            width={760}
+            height={240}
             priority
-            className="mx-auto drop-shadow-md transition-transform duration-500 hover:scale-105"
+            className="drop-shadow-[0_6px_24px_rgba(0,0,0,0.45)]"
           />
-        </div>
-        
-        <p className="text-xl sm:text-2xl text-black/70 dark:text-white/70 mb-8 h-8 transition-all duration-500">
-          {taglines[currentTagline]}
-        </p>
-        
-        <div className="flex flex-wrap gap-4 justify-center">
-          <a 
-            href="https://venmo.com/u/humorus" 
-            target="_blank"
-            rel="noopener noreferrer"
-            className="px-8 py-3 border-2 border-[var(--color-accent)] rounded-full font-semibold hover:bg-[var(--color-accent)]/10 transform hover:scale-105 transition-all"
-            /*className="px-8 py-3 bg-gradient-to-r from-[var(--color-accent)] to-[var(--color-accent-light)] text-white rounded-full font-semibold hover:shadow-lg transform hover:scale-105 transition-all"*/
-          >
-            Get Tickets
-          </a>
-          <Link 
-            href="/join" 
-            className="px-8 py-3 border-2 border-[var(--color-accent)] rounded-full font-semibold hover:bg-[var(--color-accent)]/10 transform hover:scale-105 transition-all"
-          >
-            Join Us!
-          </Link>
-        </div>
-        
-        <div className="mt-12 flex gap-6">
-          <a href="https://www.instagram.com/humorussketchcomedy/" target="_blank" rel="noopener noreferrer" className="text-3xl hover:text-[var(--color-accent)] transition-colors">
-             <Image 
-              src="/logos/instagram.svg" 
-              alt="Instagram" 
-              width={32} 
-              height={32} 
-              className="hover:opacity-80 transition-opacity" 
-            />
-          </a>
-          <a href="mailto:humoruscomedy@gmail.com" className="text-3xl hover:text-[var(--color-accent)] transition-colors">
-            <Image 
-              src="/logos/gmail.svg" 
-              alt="Gmail" 
-              width={32} 
-              height={32} 
-              className="hover:opacity-80 transition-opacity" 
-            />
-          </a>
-          <a href="https://venmo.com/u/humorus" target="_blank" rel="noopener noreferrer" className="text-3xl hover:text-[var(--color-accent)] transition-colors">
-            <Image 
-              src="/logos/venmo-icon.svg" 
-              alt="Venmo" 
-              width={32} 
-              height={32} 
-              className="hover:opacity-80 transition-opacity" 
-            />
-          </a>
+          */}
+
+          <p className="mt-4 text-lg sm:text-xl text-white/90">
+            Cornell's Premier Sketch Comedy Group Since ’06
+          </p>
+
+          <div className="mt-8 flex flex-wrap gap-4 justify-center">
+            <a
+              href="https://venmo.com/u/humorus"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="px-8 py-3 bg-white/90 text-black rounded-full font-semibold hover:bg-white transition-all"
+            >
+              Get Tickets
+            </a>
+            <Link
+              href="/join"
+              className="px-8 py-3 border-2 border-white text-white rounded-full font-semibold hover:bg-white/10 transition-all"
+            >
+              Join Us!
+            </Link>
+          </div>
+
+          {/* Socials */}
+          <div className="mt-8 flex gap-6">
+            <a href="https://www.instagram.com/humorussketchcomedy/" target="_blank" rel="noopener noreferrer">
+              <Image src="/logos/instagram.svg" alt="Instagram" width={32} height={32} className="opacity-90 hover:opacity-100" />
+            </a>
+            <a href="mailto:humoruscomedy@gmail.com">
+              <Image src="/logos/gmail.svg" alt="Gmail" width={32} height={32} className="opacity-90 hover:opacity-100" />
+            </a>
+            <a href="https://venmo.com/u/humorus" target="_blank" rel="noopener noreferrer">
+              <Image src="/logos/venmo-icon.svg" alt="Venmo" width={32} height={32} className="opacity-90 hover:opacity-100" />
+            </a>
+          </div>
         </div>
       </section>
 
