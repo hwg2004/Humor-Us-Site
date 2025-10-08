@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://humorussketchcomedy.com
+
+# Sitemaps
+Sitemap: https://humorussketchcomedy.com/sitemap.xml
