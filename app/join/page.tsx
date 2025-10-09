@@ -41,7 +41,7 @@ export default function JoinPage() {
         {/* <div className="grid gap-4 md:grid-cols-3">
           <div className="rounded-lg border-2 border-[var(--color-highlight)] p-4">
             <div className="text-3xl font-bold text-[var(--color-accent)] mb-2">Step 1</div>
-            <h3 className="font-semibold mb-2">Come to Our Show!</h3>
+            <h3 className="font-semibold mb-2">Come to Our O-Week Show!</h3>
             <p className="text-sm text-black/70 dark:text-white/70">
               Get a feel for what we do. Shows are announced on our Instagram and are usually free or $5.
             </p>

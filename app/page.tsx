@@ -4,11 +4,10 @@ import { useState, useEffect } from "react";
 import Image from "next/image";
 import Gallery from "./components/Gallery";
 
-
 export default function Home() {
   const [currentTagline, setCurrentTagline] = useState(0);
   const taglines = [
-    "Cornell's Premier Sketch Comedy Group Since '06",
+    "Cornell's Premier Sketch Comedy Group Since '06"
   ];
 
   useEffect(() => {
@@ -16,7 +15,7 @@ export default function Home() {
       setCurrentTagline((prev) => (prev + 1) % taglines.length);
     }, 3000);
     return () => clearInterval(interval);
-  }, []);
+  }, []); // Empty dependency array since taglines is constant
 
   return (
     <div className="space-y-12">
@@ -29,72 +28,75 @@ export default function Home() {
           fill
           priority
           sizes="100vw"
-          className="object-cover object-[50%_35%]" // shift focal point up a bit
+          className="object-cover object-[50%_35%]"
         />
 
         {/* Dark scrim for text readability */}
-        <div className="absolute inset-0 bg-black/35 md:bg-black/30" />
+        <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/50 to-black/60" />
 
-        {/* Centered content */}
-        <div className="relative z-10 h-full flex flex-col items-center justify-center text-center px-6">
-          {/* Big text or logo – pick ONE of these blocks */}
+        {/* Centered content with backdrop container */}
+        <div className="relative z-10 h-full flex items-center justify-center px-6">
+          <div className="bg-black/30 backdrop-blur-sm rounded-3xl p-8 md:p-12 max-w-2xl mx-auto text-center border border-white/10">
+            <h1 className="text-white text-5xl sm:text-6xl md:text-7xl font-extrabold tracking-tight drop-shadow-2xl">
+              HumorUs!
+            </h1>
 
-          {/* A) Text */}
-          <h1 className="text-white text-5xl sm:text-6xl md:text-7xl font-extrabold tracking-tight drop-shadow">
-            HumorUs!
-          </h1>
+            <p className="mt-4 text-lg sm:text-xl text-white font-medium transition-opacity duration-500 drop-shadow-lg">
+              {taglines[currentTagline]}
+            </p>
 
-          {/* B) Or the logo (comment the <h1> above out if you use this) */}
-          {/*
-          <Image
-            src="/logos/HumorUs_Logo.svg"
-            alt="HumorUs Sketch Comedy Logo"
-            width={760}
-            height={240}
-            priority
-            className="drop-shadow-[0_6px_24px_rgba(0,0,0,0.45)]"
-          />
-          */}
+            <div className="mt-8 flex flex-wrap gap-4 justify-center">
+              <a
+                href="https://venmo.com/u/humorus"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="px-8 py-3 bg-white/95 backdrop-blur-sm text-black rounded-full font-semibold hover:bg-yellow-300 hover:scale-105 transition-all shadow-xl"
+              >
+                Get Tickets
+              </a>
+              <Link
+                href="/join"
+                className="px-8 py-3 bg-white/10 backdrop-blur-sm border-2 border-white text-white rounded-full font-semibold hover:bg-white hover:text-black transition-all shadow-xl"
+              >
+                Join Us!
+              </Link>
+            </div>
 
-          <p className="mt-4 text-lg sm:text-xl text-white/90">
-            Cornell's Premier Sketch Comedy Group Since ’06
-          </p>
-
-          <div className="mt-8 flex flex-wrap gap-4 justify-center">
-            <a
-              href="https://venmo.com/u/humorus"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="px-8 py-3 bg-white/90 text-black rounded-full font-semibold hover:bg-white transition-all"
-            >
-              Get Tickets
-            </a>
-            <Link
-              href="/join"
-              className="px-8 py-3 border-2 border-white text-white rounded-full font-semibold hover:bg-white/10 transition-all"
-            >
-              Join Us!
-            </Link>
-          </div>
-
-          {/* Socials */}
-          <div className="mt-8 flex gap-6">
-            <a href="https://www.instagram.com/humorussketchcomedy/" target="_blank" rel="noopener noreferrer">
-              <Image src="/logos/instagram.svg" alt="Instagram" width={32} height={32} className="opacity-90 hover:opacity-100" />
-            </a>
-            <a href="mailto:humoruscomedy@gmail.com">
-              <Image src="/logos/gmail.svg" alt="Gmail" width={32} height={32} className="opacity-90 hover:opacity-100" />
-            </a>
-            <a href="https://venmo.com/u/humorus" target="_blank" rel="noopener noreferrer">
-              <Image src="/logos/venmo-icon.svg" alt="Venmo" width={32} height={32} className="opacity-90 hover:opacity-100" />
-            </a>
+            {/* Socials */}
+            <div className="mt-8 flex gap-4 justify-center">
+              <a 
+                href="https://www.instagram.com/humorussketchcomedy/" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="p-2.5 bg-white/20 backdrop-blur-sm rounded-full transform hover:scale-110 hover:bg-white/30 transition-all border border-white/20"
+                aria-label="Instagram"
+              >
+                <Image src="/logos/instagram.svg" alt="Instagram" width={24} height={24} className="brightness-0 invert" />
+              </a>
+              <a 
+                href="mailto:humorussketchcomedy@cornell.edu"
+                className="p-2.5 bg-white/20 backdrop-blur-sm rounded-full transform hover:scale-110 hover:bg-white/30 transition-all border border-white/20"
+                aria-label="Email"
+              >
+                <Image src="/logos/gmail.svg" alt="Gmail" width={24} height={24} className="brightness-0 invert" />
+              </a>
+              <a 
+                href="https://venmo.com/u/humorus" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="p-2.5 bg-white/20 backdrop-blur-sm rounded-full transform hover:scale-110 hover:bg-white/30 transition-all border border-white/20"
+                aria-label="Venmo"
+              >
+                <Image src="/logos/venmo-icon.svg" alt="Venmo" width={24} height={24} className="brightness-0 invert" />
+              </a>
+            </div>
           </div>
         </div>
       </section>
 
       {/* Next Show Card - Featured */}
       <section className="relative">
-        <div className="rounded-2xl border-4 border-[var(--color-highlight)] bg-gradient-to-br from-[var(--color-highlight)]/10 to-transparent p-8">
+        <div className="rounded-2xl border-4 border-yellow-400 bg-gradient-to-br from-yellow-400/20 to-transparent p-8 shadow-xl hover:shadow-2xl transition-shadow">
           <div className="flex items-center gap-3 mb-4">
             <span className="relative flex h-3 w-3">
               <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-red-400 opacity-75"></span>
@@ -107,28 +109,41 @@ export default function Home() {
             <div>
               <h3 className="text-3xl font-bold mb-2">For All the Hogs</h3>
               <p className="text-lg mb-4 text-black/70 dark:text-white/70">
-                {"Get ready for our biggest show yet! We're REALLY gonna push the envelope this time. Get ready to hate us."}
+                Get ready for our biggest show yet! Fresh sketches, terrible ideas, and at least one joke about prelims.
               </p>
               <div className="space-y-2 text-lg">
-                <p>📅 <strong>November 14, 2025</strong></p>
+                <p>📅 <strong>February 14, 2025</strong></p>
                 <p>📍 <strong>Rockefeller Hall</strong></p>
                 <p>🕐 <strong>7:00 PM & 9:00 PM</strong></p>
-                <p>💵 <strong>$8</strong> (Venmo: @humorus)</p>
+                <p>💵 <strong>$5</strong> (Venmo: @humorus)</p>
+              </div>
+              <div className="mt-4">
+                <p className="text-sm text-black/60 dark:text-white/60">
+                  ⚠️ Warning: May contain Cornell-specific humor that your visiting parents won't understand
+                </p>
               </div>
             </div>
             
             <div className="flex flex-col justify-center items-center">
-              <div className="w-full h-48 bg-gradient-to-br from-[var(--color-accent)] to-[var(--color-accent-light)] rounded-lg flex items-center justify-center text-white">
+              <div className="w-full h-48 bg-gradient-to-br from-purple-500 to-pink-500 rounded-lg flex items-center justify-center text-white shadow-lg">
                 <div className="text-center">
                   <p className="text-6xl mb-2">🐷</p>
                   <p className="font-bold">Show Poster Coming Soon!</p>
                 </div>
               </div>
               <div className="mt-4 flex gap-3">
-                <a href="https://venmo.com/u/humorus" target="_blank" className="px-6 py-2 border-2 border-[var(--color-accent)] rounded-md font-semibold hover:bg-[var(--color-accent)]/10 transition-colors">
+                <a 
+                  href="https://venmo.com/u/humorus" 
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="px-6 py-2 bg-purple-500 text-white rounded-md font-semibold hover:bg-purple-600 transition-colors"
+                >
                   Buy Tickets Now
                 </a>
-                <Link href="/shows" className="px-6 py-2 border-2 border-[var(--color-accent)] rounded-md font-semibold hover:bg-[var(--color-accent)]/10 transition-colors">
+                <Link 
+                  href="/shows" 
+                  className="px-6 py-2 border-2 border-purple-500 text-purple-500 rounded-md font-semibold hover:bg-purple-500 hover:text-white transition-colors"
+                >
                   See Past Shows
                 </Link>
               </div>
@@ -139,21 +154,21 @@ export default function Home() {
 
       {/* Quick Stats */}
       <section className="grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
-        <div className="rounded-lg border-2 border-[var(--color-accent-light)] p-4">
-          <div className="text-3xl font-bold text-[var(--color-accent)]">5,000+</div>
-          <p className="text-sm text-black/70 dark:text-white/70">Original Shows</p>
+        <div className="rounded-lg border-2 border-purple-300 p-4 hover:bg-purple-50 dark:hover:bg-purple-900/20 transition-colors">
+          <div className="text-3xl font-bold text-purple-600 dark:text-purple-400">50+</div>
+          <p className="text-sm text-black/70 dark:text-white/70">Shows Performed</p>
         </div>
-        <div className="rounded-lg border-2 border-[var(--color-accent-light)] p-4">
-          <div className="text-3xl font-bold text-[var(--color-accent)]">100,000+</div>
+        <div className="rounded-lg border-2 border-purple-300 p-4 hover:bg-purple-50 dark:hover:bg-purple-900/20 transition-colors">
+          <div className="text-3xl font-bold text-purple-600 dark:text-purple-400">1000+</div>
           <p className="text-sm text-black/70 dark:text-white/70">Sketches Written</p>
         </div>
-        <div className="rounded-lg border-2 border-[var(--color-accent-light)] p-4">
-          <div className="text-3xl font-bold text-[var(--color-accent)]">$8,000,000</div>
-          <p className="text-sm text-black/70 dark:text-white/70">Made from Ticket Sales</p>
+        <div className="rounded-lg border-2 border-purple-300 p-4 hover:bg-purple-50 dark:hover:bg-purple-900/20 transition-colors">
+          <div className="text-3xl font-bold text-purple-600 dark:text-purple-400">∞</div>
+          <p className="text-sm text-black/70 dark:text-white/70">Bad Puns Made</p>
         </div>
-         <div className="rounded-lg border-2 border-[var(--color-accent-light)] p-4">
-          <div className="text-3xl font-bold text-[var(--color-accent)]">18</div>
-          <p className="text-sm text-black/70 dark:text-white/70">Years Since the Incident.</p>
+        <div className="rounded-lg border-2 border-purple-300 p-4 hover:bg-purple-50 dark:hover:bg-purple-900/20 transition-colors">
+          <div className="text-3xl font-bold text-purple-600 dark:text-purple-400">18</div>
+          <p className="text-sm text-black/70 dark:text-white/70">Years of Comedy</p>
         </div>
       </section>
 
@@ -174,11 +189,35 @@ export default function Home() {
       </section>
     
       {/* Testimonial */}
-      <section className="rounded-2xl bg-gradient-to-r from-[var(--color-accent)] to-[var(--color-accent-light)] text-white p-8 text-center">
+      <section className="rounded-2xl bg-gradient-to-r from-purple-500 to-pink-500 text-white p-8 text-center shadow-xl">
         <p className="text-2xl font-medium mb-4 italic">
-          {'"HumorUs has been the highlight of my Cornell experience. It\'s where I found my best friends, discovered I could make people laugh, and learned that bombing on stage isn\'t the end of the world."'}
+          "HumorUs has been the highlight of my Cornell experience. It's where I found my best friends, discovered I could make people laugh, and learned that bombing on stage isn't the end of the world."
         </p>
         <p className="text-lg">- Every HumorUs Member Ever</p>
+      </section>
+
+      {/* Call to Action */}
+      <section className="text-center py-8">
+        <h2 className="text-3xl font-bold mb-4">Ready to Laugh?</h2>
+        <p className="text-lg mb-6 text-black/70 dark:text-white/70">
+          Join us for a night of original sketch comedy you won't forget (mostly because we'll make fun of things you see every day at Cornell)
+        </p>
+        <div className="flex gap-4 justify-center">
+          <a 
+            href="https://venmo.com/u/humorus"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="px-8 py-3 bg-gradient-to-r from-purple-500 to-pink-500 text-white rounded-full font-semibold hover:scale-105 transition-transform shadow-lg"
+          >
+            Get Your Tickets
+          </a>
+          <Link
+            href="/about"
+            className="px-8 py-3 border-2 border-purple-500 text-purple-500 rounded-full font-semibold hover:bg-purple-500 hover:text-white transition-all"
+          >
+            Learn More About Us
+          </Link>
+        </div>
       </section>
     </div>
   );
