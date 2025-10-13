@@ -15,7 +15,7 @@ export default function Home() {
       setCurrentTagline((prev) => (prev + 1) % taglines.length);
     }, 3000);
     return () => clearInterval(interval);
-  }, []); // Empty dependency array since taglines is constant
+  }, [taglines.length]);
 
   return (
     <div className="space-y-12">
