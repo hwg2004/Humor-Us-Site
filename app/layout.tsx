@@ -8,6 +8,11 @@ export const metadata: Metadata = {
   metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || "https://humorussketchcomedy.com"),
   title: "HumorUs! Sketch Comedy at Cornell",
   description: "Cornell's premier sketch comedy group — new shows every semester. Making Cornell laugh since 2006",
+  icons: {
+    icon: "/favicon.ico",
+    apple: "/apple-icon.png",
+  },
+  manifest: "/manifest.json",
   alternates: {
     canonical: "/", // means the canonical URL is https://humoruscomedy.com/
   },
