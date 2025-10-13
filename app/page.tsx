@@ -117,11 +117,6 @@ export default function Home() {
                 <p>🕐 <strong>7:00 PM & 9:00 PM</strong></p>
                 <p>💵 <strong>$5</strong> (Venmo: @humorus)</p>
               </div>
-              <div className="mt-4">
-                <p className="text-sm text-black/60 dark:text-white/60">
-                  ⚠️ Warning: May contain Cornell-specific humor that your visiting parents won't understand
-                </p>
-              </div>
             </div>
             
             <div className="flex flex-col justify-center items-center">
@@ -200,7 +195,7 @@ export default function Home() {
       <section className="text-center py-8">
         <h2 className="text-3xl font-bold mb-4">Ready to Laugh?</h2>
         <p className="text-lg mb-6 text-black/70 dark:text-white/70">
-          Join us for a night of original sketch comedy you won't forget (mostly because we'll make fun of things you see every day at Cornell)
+          {"Join us for a night of sketch comedy you won't forget!"}
         </p>
         <div className="flex gap-4 justify-center">
           <a 
