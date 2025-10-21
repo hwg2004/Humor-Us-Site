@@ -56,7 +56,7 @@ export default function Home() {
               </a>
               <Link
                 href="/join"
-                className="px-8 py-3 bg-white/10 backdrop-blur-sm border-2 border-white text-white rounded-full font-semibold hover:bg-white hover:text-black transition-all shadow-xl"
+                className="px-8 py-3 bg-white/95 backdrop-blur-sm text-black rounded-full font-semibold hover:bg-yellow-300 hover:scale-105 transition-all shadow-xl"
               >
                 Join Us!
               </Link>
@@ -147,10 +147,11 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Quick Stats */}
+      {/*
+      Quick Stats
       <section className="grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
         <div className="rounded-lg border-2 border-purple-300 p-4 hover:bg-purple-50 dark:hover:bg-purple-900/20 transition-colors">
-          <div className="text-3xl font-bold text-purple-600 dark:text-purple-400">50+</div>
+          <div className="text-3xl font-bold text-purple-600 dark:text-purple-400">35+</div>
           <p className="text-sm text-black/70 dark:text-white/70">Shows Performed</p>
         </div>
         <div className="rounded-lg border-2 border-purple-300 p-4 hover:bg-purple-50 dark:hover:bg-purple-900/20 transition-colors">
@@ -166,6 +167,7 @@ export default function Home() {
           <p className="text-sm text-black/70 dark:text-white/70">Years of Comedy</p>
         </div>
       </section>
+      */}
 
       {/* Recent Photos / Gallery */}
       <section className="space-y-4">
