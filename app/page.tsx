@@ -186,7 +186,7 @@ export default function Home() {
       {/* Testimonial */}
       <section className="rounded-2xl bg-gradient-to-r from-purple-500 to-pink-500 text-white p-8 text-center shadow-xl">
         <p className="text-2xl font-medium mb-4 italic">
-          "HumorUs rules."
+          HumorUs rules.
         </p>
         <p className="text-lg">- Every HumorUs Member Ever</p>
       </section>
