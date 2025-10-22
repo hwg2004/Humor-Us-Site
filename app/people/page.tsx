@@ -11,7 +11,7 @@ type Person = {
 
 const people: Person[] = [
   { name: "Izzy Falchuk", role: "President", year: "2026", major: "Performing and Media Arts", hometown: "Los Angeles, CA", headshot: "/images/people/izzy_headshot.jpg" },
-  { name: "Amanda Falchuk", role: "Vice President", year: "2027", major: "Human Development", hometown: "Great Neck, NY", headshot: "/images/people/amanda_headshot.jpg" },
+  { name: "Amanda Roth", role: "Vice President", year: "2027", major: "Human Development", hometown: "Great Neck, NY", headshot: "/images/people/amanda_headshot.jpg" },
   { name: "Harry Gallen", role: "Treasurer", year: "2027", major: "Computer Science", hometown: "New York, NY", headshot: "/images/people/harry_headshot.jpg" },
   { name: "Jared Miller", role: "Secretary", year: "2028", major: "Communications", hometown: "Brooklyn, NY", headshot: "/images/people/jared_headshot.jpg" },
   { name: "Raquel Sweet", role: "Social Chair", year: "2027", major: "Mechanical Engineering", hometown: "San Francisco, CA", headshot: "/images/people/raquel_headshot.jpg" },

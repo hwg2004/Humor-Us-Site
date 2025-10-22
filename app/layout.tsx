@@ -18,7 +18,7 @@ export const metadata: Metadata = {
   },
   openGraph: {
     title: "HumorUs! Sketch Comedy at Cornell",
-    description: "Cornell's premier sketch comedy troupe.",
+    description: "Cornell's premier sketch comedy group.",
     url: "/",
     siteName: "HumorUs!",
     images: ["/images/og-image.jpg"],
@@ -27,7 +27,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "HumorUs! Sketch Comedy at Cornell",
-    description: "Cornell's premier sketch comedy troupe.",
+    description: "Cornell's premier sketch comedy group.",
     images: ["/images/og-image.jpg"],
   },
   robots: {
@@ -77,7 +77,7 @@ export default function RootLayout({
 
               {/* Quick Action Button */}
               <a 
-                href="https://venmo.com/u/humorus" 
+                href="https://venmo.com/u/harrygallen" 
                 target="_blank"
                 rel="noopener noreferrer"
                 className="hidden lg:flex items-center gap-2 px-4 py-2 bg-[var(--color-highlight)] text-black rounded-full font-semibold hover:shadow-lg hover:scale-105 transition-all"
@@ -103,8 +103,7 @@ export default function RootLayout({
               <div>
                 <h3 className="font-bold text-lg mb-3 text-[var(--color-accent)]">HumorUs!</h3>
                 <p className="text-sm text-black/70 dark:text-white/70">
-                  Cornell&apos;s premier sketch comedy troupe. Making campus laugh since 2006 with original 
-                  sketches, memorable characters, and questionable life choices.
+                  Cornell&apos;s premier sketch comedy troupe. Making Cornell laugh since '06.
                 </p>
               </div>
 
@@ -157,7 +156,7 @@ export default function RootLayout({
                     <span>@humorussketchcomedy</span>
                   </a>
                   <a 
-                    href="https://venmo.com/u/humorus" 
+                    href="https://venmo.com/u/harrygallen" 
                     target="_blank"
                     rel="noopener noreferrer"
                     className="flex items-center gap-2 text-sm text-black/70 dark:text-white/70 hover:text-[var(--color-accent)] transition-colors"
@@ -169,7 +168,7 @@ export default function RootLayout({
                       height={20} 
                       className="hover:opacity-80 transition-opacity" 
                     />
-                    <span>Venmo: @humorus</span>
+                    <span>Venmo: @harrygallen</span>
                   </a>
                 </div>
               </div>

@@ -40,15 +40,53 @@ const pastShows: Show[] = [
     favorite: true,
     videoUrl: "https://www.youtube.com/watch?v=grYWzfQGIGQ&list=PLQHtzx1MTEo_CSRvvXKIbXHZErhqrjZNk"
   },
-  // {
-  //   slug: "2023-11-14-fall",
-  //   title: "Humor Us Presents: Welcome to the Afterlife",
-  //   date: "2023-11-14",
-  //   venue: "Klarman Auditorium",
-  //   poster: "/images/shows/FA23Poster.jpg",
-  //   favorite: true,
-  //   videoUrl: "https://www.youtube.com/watch?v=VXdHLJ1tMBU&list=PLQHtzx1MTEo9PUWfL_-zV-zcaSqZjcny6"
-  // }
+  {
+    slug: "2023-11-14-fall",
+    title: "Humor Us Presents: Welcome to the Afterlife",
+    date: "2023-11-14",
+    venue: "Klarman Auditorium",
+    poster: "/images/shows/FA23Poster.jpg",
+  },
+  
+  {
+    slug: "2023-4-21-spring",
+    title: "Humor Us Presents: A Reason to Pregame'",
+    date: "2023-4-21",
+    venue: "Klarman Auditorium",
+    poster: "/images/shows/SP23Poster.jpg",
+  },
+  
+  {
+    slug: "2022-11-5-fall",
+    title: "Humor Us Presents: We Started a Podcast",
+    date: "2022-11-5",
+    venue: "Klarman Auditorium",
+    poster: "/images/shows/FA22Poster.jpg",
+  },
+  
+  {
+    slug: "2022-4-22-spring",
+    title: "Humor Us Presents: Jeffin' on my Bezos",
+    date: "2022-4-22",
+    venue: "Klarman Auditorium",
+    poster: "/images/shows/SP22Poster.jpg",
+  },
+  
+  {
+    slug: "2021-11-19-fall",
+    title: "Humor Us Presents: HumorUs The Musical: The Musical: The Series",
+    date: "2021-11-19",
+    venue: "Klarman Auditorium",
+    poster: "/images/shows/FA21Poster.jpg",
+  },
+  
+  {
+    slug: "2021-5-7-spring",
+    title: "Humor Us Presents: We've Got Ant Bodies'",
+    date: "2021-5-7",
+    venue: "Klarman Auditorium",
+    poster: "/images/shows/FA23Poster.jpg",
+  }
 
   // Add more shows as needed
 ];

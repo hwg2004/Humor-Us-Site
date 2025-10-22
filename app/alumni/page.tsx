@@ -100,7 +100,7 @@ export default function AlumniPage() {
         </div>
       </div>
 
-      {/* Where Are They Now Section */}
+      {/* Where Are They Now Section 
       <div className="rounded-lg bg-[var(--color-accent-light)]/10 border-2 border-[var(--color-accent-light)] p-6">
         <h2 className="text-2xl font-bold mb-4">Where Are They Now?</h2>
         <p className="mb-4">Our alumni have landed in some pretty amazing places:</p>
@@ -137,6 +137,7 @@ export default function AlumniPage() {
           </div>
         </div>
       </div>
+      */}
 
       {/* Complete Alumni List */}
       <div className="space-y-4">

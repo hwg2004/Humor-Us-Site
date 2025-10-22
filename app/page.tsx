@@ -47,7 +47,7 @@ export default function Home() {
 
             <div className="mt-8 flex flex-wrap gap-4 justify-center">
               <a
-                href="https://venmo.com/u/humorus"
+                href="https://venmo.com/u/harrygallen"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="px-8 py-3 bg-white/95 backdrop-blur-sm text-black rounded-full font-semibold hover:bg-yellow-300 hover:scale-105 transition-all shadow-xl"
@@ -81,7 +81,7 @@ export default function Home() {
                 <Image src="/logos/gmail.svg" alt="Gmail" width={24} height={24} className="brightness-0 invert" />
               </a>
               <a 
-                href="https://venmo.com/u/humorus" 
+                href="https://venmo.com/u/harrygallen" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="p-2.5 bg-white/20 backdrop-blur-sm rounded-full transform hover:scale-110 hover:bg-white/30 transition-all border border-white/20"
@@ -109,13 +109,13 @@ export default function Home() {
             <div>
               <h3 className="text-3xl font-bold mb-2">For All the Hogs</h3>
               <p className="text-lg mb-4 text-black/70 dark:text-white/70">
-                Get ready for our biggest show yet! Fresh sketches, terrible ideas, and at least one joke about prelims.
+                {"Get ready for our biggest show yet!"}
               </p>
               <div className="space-y-2 text-lg">
                 <p>📅 <strong>February 14, 2025</strong></p>
                 <p>📍 <strong>Rockefeller Hall</strong></p>
                 <p>🕐 <strong>7:00 PM & 9:00 PM</strong></p>
-                <p>💵 <strong>$5</strong> (Venmo: @humorus)</p>
+                <p>💵 <strong>$5</strong> (Venmo: @harrygallen)</p>
               </div>
             </div>
             
@@ -128,7 +128,7 @@ export default function Home() {
               </div>
               <div className="mt-4 flex gap-3">
                 <a 
-                  href="https://venmo.com/u/humorus" 
+                  href="https://venmo.com/u/harrygallen" 
                   target="_blank"
                   rel="noopener noreferrer"
                   className="px-6 py-2 bg-purple-500 text-white rounded-md font-semibold hover:bg-purple-600 transition-colors"
@@ -201,7 +201,7 @@ export default function Home() {
         </p>
         <div className="flex gap-4 justify-center">
           <a 
-            href="https://venmo.com/u/humorus"
+            href="https://venmo.com/u/harrygallen"
             target="_blank"
             rel="noopener noreferrer"
             className="px-8 py-3 bg-gradient-to-r from-purple-500 to-pink-500 text-white rounded-full font-semibold hover:scale-105 transition-transform shadow-lg"
