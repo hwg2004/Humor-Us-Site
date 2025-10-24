@@ -128,7 +128,7 @@ export default function RootLayout({
                 <h3 className="font-bold text-lg mb-3 text-[var(--color-accent)]">Connect</h3>
                 <div className="space-y-2">
                   <a 
-                    href="mailto:humoruscomedy@gmail.com" 
+                    href="https://www.instagram.com/humorussketchcomedy/"
                     className="flex items-center gap-2 text-sm text-black/70 dark:text-white/70 hover:text-[var(--color-accent)] transition-colors"
                   >
                      <Image 
@@ -138,10 +138,11 @@ export default function RootLayout({
                         height={20} 
                         className="hover:opacity-80 transition-opacity" 
                       />
-                    <span>humoruscomedy@gmail.com</span>
+                    <span>@humorussketchcomedy</span>
                   </a>
                   <a 
-                    href="https://www.instagram.com/humorussketchcomedy/" 
+                    
+                    href="mailto:humoruscomedy@gmail.com"  
                     target="_blank"
                     rel="noopener noreferrer"
                     className="flex items-center gap-2 text-sm text-black/70 dark:text-white/70 hover:text-[var(--color-accent)] transition-colors"
@@ -153,7 +154,7 @@ export default function RootLayout({
                       height={20} 
                       className="hover:opacity-80 transition-opacity" 
                     />
-                    <span>@humorussketchcomedy</span>
+                    <span>humoruscomedy@gmail.com</span>
                   </a>
                   <a 
                     href="https://venmo.com/u/harrygallen" 
