@@ -34,44 +34,6 @@
   }
 }
 
-/* Alternative Color Schemes - Uncomment one to use */
-
-/* Option 1: Sage & Coral (Very soft and modern) */
-/*
-:root {
-  --color-bg: #FAF9F6;
-  --color-text: #3A4A3C;
-  --color-accent: #7BA098;         
-  --color-accent-dark: #5C8077;    
-  --color-accent-light: #A3C4BC;   
-  --color-highlight: #F4A261;      
-}
-*/
-
-/* Option 2: Deep Blue & Amber (Professional but warm) */
-/*
-:root {
-  --color-bg: #F9FAFB;
-  --color-text: #2C3E50;
-  --color-accent: #4A69BD;         
-  --color-accent-dark: #3754A5;    
-  --color-accent-light: #718FC8;   
-  --color-highlight: #FFA502;      
-}
-*/
-
-/* Option 3: Dusty Rose & Sage (Very calming) */
-/*
-:root {
-  --color-bg: #FFFCF9;
-  --color-text: #3C3C3C;
-  --color-accent: #B08D8D;         
-  --color-accent-dark: #936B6B;    
-  --color-accent-light: #CDB5B5;   
-  --color-highlight: #9CAF88;      
-}
-*/
-
 body {
   background: var(--color-bg);
   color: var(--color-text);

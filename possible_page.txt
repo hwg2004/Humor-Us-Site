@@ -1,0 +1,182 @@
+"use client";
+import Link from "next/link";
+import { useState, useEffect } from "react";
+import Image from "next/image";
+import Gallery from "./components/Gallery";
+
+export default function Home() {
+  const [currentTagline, setCurrentTagline] = useState(0);
+  const taglines = [
+    "Cornell's Premier Sketch Comedy Group Since '06",
+    "Eighteen Years of Laughter",
+    "Where Comedy Meets Cornell",
+    "Original Sketches. Unforgettable Nights."
+  ];
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentTagline((prev) => (prev + 1) % taglines.length);
+    }, 3000);
+    return () => clearInterval(interval);
+  }, []);
+
+  return (
+    <div className="min-h-screen bg-white">
+      {/* Hero Section - Minimal & Clean */}
+      <section className="min-h-screen flex items-center justify-center px-6">
+        <div className="max-w-4xl mx-auto text-center">
+          {/* Elegant typography */}
+          <div className="mb-8">
+            <h1 className="text-[5rem] md:text-[8rem] font-thin tracking-tighter text-gray-900">
+              Humor<span className="font-black">Us</span>
+            </h1>
+            <div className="h-px bg-gray-900 w-32 mx-auto my-8"/>
+          </div>
+          
+          <p className="text-xl text-gray-600 mb-12 tracking-wide font-light min-h-[2rem] transition-opacity duration-500">
+            {taglines[currentTagline]}
+          </p>
+          
+          <div className="flex gap-6 justify-center">
+            <a
+              href="https://venmo.com/u/harrygallen"
+              className="px-8 py-3 border border-gray-900 text-gray-900 hover:bg-gray-900 hover:text-white transition-all duration-300"
+            >
+              Get Tickets
+            </a>
+            <Link
+              href="/join"
+              className="px-8 py-3 bg-gray-900 text-white hover:bg-gray-800 transition-all duration-300"
+            >
+              Join Us
+            </Link>
+          </div>
+          
+          {/* Minimal social links */}
+          <div className="flex gap-8 justify-center mt-16">
+            <a href="https://www.instagram.com/humorussketchcomedy/" className="text-gray-400 hover:text-gray-900 transition-colors">
+              Instagram
+            </a>
+            <a href="mailto:humorussketchcomedy@cornell.edu" className="text-gray-400 hover:text-gray-900 transition-colors">
+              Email
+            </a>
+            <a href="https://venmo.com/u/harrygallen" className="text-gray-400 hover:text-gray-900 transition-colors">
+              Venmo
+            </a>
+          </div>
+        </div>
+      </section>
+
+      {/* Next Show - Clean Card Design */}
+      <section className="py-20 px-6 bg-gray-50">
+        <div className="max-w-5xl mx-auto">
+          <div className="bg-white border border-gray-200">
+            <div className="p-12 md:p-16">
+              <div className="flex items-center gap-3 mb-8">
+                <div className="w-2 h-2 bg-red-500 rounded-full animate-pulse"/>
+                <p className="text-sm uppercase tracking-widest text-gray-500">Next Show</p>
+              </div>
+              
+              <h2 className="text-5xl md:text-7xl font-thin mb-8">
+                For All the <span className="font-black">Hogs</span>
+              </h2>
+              
+              <div className="grid md:grid-cols-2 gap-12">
+                <div className="space-y-6">
+                  <p className="text-xl text-gray-600 leading-relaxed">
+                    An evening of original sketch comedy that will leave you questioning our creative process.
+                  </p>
+                  
+                  <div className="space-y-3 text-gray-700">
+                    <p className="flex items-center gap-4">
+                      <span className="text-gray-400">Date</span>
+                      <span className="font-medium">February 14, 2025</span>
+                    </p>
+                    <p className="flex items-center gap-4">
+                      <span className="text-gray-400">Venue</span>
+                      <span className="font-medium">Rockefeller Hall</span>
+                    </p>
+                    <p className="flex items-center gap-4">
+                      <span className="text-gray-400">Time</span>
+                      <span className="font-medium">7:00 PM & 9:00 PM</span>
+                    </p>
+                    <p className="flex items-center gap-4">
+                      <span className="text-gray-400">Price</span>
+                      <span className="font-medium">$5</span>
+                    </p>
+                  </div>
+                  
+                  <a 
+                    href="https://venmo.com/u/harrygallen"
+                    className="inline-block px-8 py-3 bg-gray-900 text-white hover:bg-gray-800 transition-colors"
+                  >
+                    Purchase Tickets
+                  </a>
+                </div>
+                
+                <div className="flex items-center justify-center">
+                  <div className="text-center p-12 bg-gray-50">
+                    <p className="text-[6rem] mb-4">🐷</p>
+                    <p className="text-sm uppercase tracking-widest text-gray-500">Poster Coming Soon</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Gallery - Grid Layout */}
+      <section className="py-20 px-6">
+        <div className="max-w-6xl mx-auto">
+          <h2 className="text-4xl font-thin mb-12 text-center">
+            Recent <span className="font-black">Moments</span>
+          </h2>
+          <Gallery
+            ratio="3/2"
+            images={[
+              { src: "/images/gallery/DSC_0125.jpg", alt: "Group photo" },
+              { src: "/images/gallery/DSC_0131.jpg", alt: "Group photo, bunz out" },
+              { src: "/images/gallery/DSC_0138.jpg", alt: "The fellas" },
+              { src: "/images/gallery/Referee_Sketch.jpg", alt: "Referee Sketch" },
+              { src: "/images/gallery/DSC_0117.jpg", alt: "Fall 2024 Newbies" },
+              { src: "/images/gallery/Charli_XCX_Sketch.jpg", alt: "Charli XCX Sketch" },
+            ]}
+          />
+        </div>
+      </section>
+
+      {/* Testimonial - Centered Quote */}
+      <section className="py-20 px-6 bg-gray-50">
+        <div className="max-w-3xl mx-auto text-center">
+          <div className="text-6xl text-gray-300 mb-4">"</div>
+          <p className="text-2xl md:text-3xl font-light text-gray-700 mb-8 leading-relaxed">
+            HumorUs has been the highlight of my Cornell experience. Where else can you bomb on stage and still feel loved?
+          </p>
+          <p className="text-sm uppercase tracking-widest text-gray-500">Every Member Ever</p>
+        </div>
+      </section>
+
+      {/* CTA - Simple & Direct */}
+      <section className="py-32 px-6 text-center">
+        <h2 className="text-5xl md:text-6xl font-thin mb-8">
+          Ready to <span className="font-black">Laugh?</span>
+        </h2>
+        <div className="flex gap-6 justify-center">
+          <a 
+            href="https://venmo.com/u/harrygallen"
+            className="px-10 py-4 bg-gray-900 text-white hover:bg-gray-800 transition-colors"
+          >
+            Get Your Tickets
+          </a>
+          <Link
+            href="/about"
+            className="px-10 py-4 border border-gray-900 text-gray-900 hover:bg-gray-900 hover:text-white transition-all duration-300"
+          >
+            Learn More
+          </Link>
+        </div>
+      </section>
+    </div>
+  );
+}

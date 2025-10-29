@@ -10,7 +10,7 @@ export default function Home() {
     "Cornell's Premier Sketch Comedy Group Since '06"
   ];
 
-  useEffect(() => {
+ useEffect(() => {
     const interval = setInterval(() => {
       setCurrentTagline((prev) => (prev + 1) % taglines.length);
     }, 3000);
@@ -78,7 +78,7 @@ export default function Home() {
                 className="p-2.5 bg-white/20 backdrop-blur-sm rounded-full transform hover:scale-110 hover:bg-white/30 transition-all border border-white/20"
                 aria-label="Email"
               >
-                <Image src="/logos/gmail.svg" alt="Gmail" width={24} height={24} className="brightness-0 invert" />
+                <Image src="/logos/gmail.svg" alt="Gmail" width={24} height={24}/>
               </a>
               <a 
                 href="https://venmo.com/u/harrygallen" 
@@ -87,7 +87,7 @@ export default function Home() {
                 className="p-2.5 bg-white/20 backdrop-blur-sm rounded-full transform hover:scale-110 hover:bg-white/30 transition-all border border-white/20"
                 aria-label="Venmo"
               >
-                <Image src="/logos/venmo-icon.svg" alt="Venmo" width={24} height={24} className="brightness-0 invert" />
+                <Image src="/logos/venmo-icon.svg" alt="Venmo" width={24} height={24}/>
               </a>
             </div>
           </div>
