@@ -50,13 +50,13 @@ export default function Home() {
                 href="https://venmo.com/u/harrygallen"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="px-8 py-3 bg-white/95 backdrop-blur-sm text-black rounded-full font-semibold hover:bg-yellow-300 hover:scale-105 transition-all shadow-xl"
+                className="px-8 py-3 bg-purple-500 backdrop-blur-sm !text-white rounded-full font-semibold hover:bg-purple-600 hover:scale-105 transition-all shadow-xl"
               >
                 Get Tickets
               </a>
               <Link
                 href="/join"
-                className="px-8 py-3 bg-white/95 backdrop-blur-sm text-black rounded-full font-semibold hover:bg-yellow-300 hover:scale-105 transition-all shadow-xl"
+                className="px-8 py-3 bg-white/95 backdrop-blur-sm text-black rounded-full font-semibold hover:bg-purple-300 hover:scale-105 transition-all shadow-xl"
               >
                 Join Us!
               </Link>
@@ -93,60 +93,53 @@ export default function Home() {
           </div>
         </div>
       </section>
+      
+    <section className="relative">
+      <div className="rounded-2xl border-4 border-yellow-400 bg-gradient-to-br from-yellow-400/20 to-transparent p-6 md:p-10 shadow-xl hover:shadow-2xl transition-shadow">
+        {/* Header */}
+        <div className="flex items-center gap-3 mb-6">
+          <span className="relative flex h-3 w-3">
+            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-red-400 opacity-75"></span>
+            <span className="relative inline-flex rounded-full h-3 w-3 bg-red-500"></span>
+          </span>
+          <h2 className="text-2xl font-bold">NEXT SHOW</h2>
+        </div>
 
-      {/* Next Show Card - Featured */}
-      <section className="relative">
-        <div className="rounded-2xl border-4 border-yellow-400 bg-gradient-to-br from-yellow-400/20 to-transparent p-8 shadow-xl hover:shadow-2xl transition-shadow">
-          <div className="flex items-center gap-3 mb-4">
-            <span className="relative flex h-3 w-3">
-              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-red-400 opacity-75"></span>
-              <span className="relative inline-flex rounded-full h-3 w-3 bg-red-500"></span>
-            </span>
-            <h2 className="text-2xl font-bold">NEXT SHOW</h2>
-          </div>
-          
-          <div className="grid md:grid-cols-2 gap-6">
-            <div>
-              <h3 className="text-3xl font-bold mb-2">For All the Hogs</h3>
-              <p className="text-lg mb-4 text-black/70 dark:text-white/70">
-                {"Get ready for our biggest show yet!"}
-              </p>
-              <div className="space-y-2 text-lg">
-                <p>📅 <strong>February 14, 2025</strong></p>
-                <p>📍 <strong>Rockefeller Hall</strong></p>
-                <p>🕐 <strong>7:00 PM & 9:00 PM</strong></p>
-                <p>💵 <strong>$5</strong> (Venmo: @harrygallen)</p>
+        {/* Main Card (no yellow border) */}
+        <div className="bg-yellow-50 rounded-2xl shadow-md ring-1 ring-black/10 p-6 md:p-8">
+          <div className="grid md:grid-cols-2 items-center gap-8 md:gap-12">
+            {/* Text */}
+            <div className="space-y-3 text-gray-800 max-w-prose">
+              <h1 className="text-3xl font-bold">Side Effects May Include...</h1>
+              <p className="text-lg text-gray-600">Get ready for our biggest show yet!</p>
+              <div className="space-y-1 text-base">
+                <p>📅 <strong>November 14, 2025</strong></p>
+                <p>📍 Rockefeller Hall</p>
+                <p>🕖 7:00 PM & 9:00 PM</p>
+                <p>💵 $5 (Venmo: @harrygallen)</p>
               </div>
-            </div>
-            
-            <div className="flex flex-col justify-center items-center">
-              <div className="w-full h-48 bg-gradient-to-br from-purple-500 to-pink-500 rounded-lg flex items-center justify-center text-white shadow-lg">
-                <div className="text-center">
-                  <p className="text-6xl mb-2">🐷</p>
-                  <p className="font-bold">Show Poster Coming Soon!</p>
-                </div>
-              </div>
-              <div className="mt-4 flex gap-3">
-                <a 
-                  href="https://venmo.com/u/harrygallen" 
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="px-6 py-2 bg-purple-500 text-white rounded-md font-semibold hover:bg-purple-600 transition-colors"
-                >
+              <div className="pt-3 flex flex-wrap gap-3">
+                <a href="https://venmo.com/u/harrygallen" target="_blank" rel="noopener noreferrer"
+                  className="px-6 py-2 bg-purple-500 !text-white rounded-md font-semibold hover:bg-purple-600 transition-colors">
                   Buy Tickets Now
                 </a>
-                <Link 
-                  href="/shows" 
-                  className="px-6 py-2 border-2 border-purple-500 text-purple-500 rounded-md font-semibold hover:bg-purple-500 hover:text-white transition-colors"
-                >
+                <Link href="/shows"
+                  className="px-6 py-2 border-2 border-purple-500 text-purple-500 rounded-md font-semibold hover:bg-purple-500 hover:text-white transition-colors">
                   See Past Shows
                 </Link>
               </div>
             </div>
+
+            {/* Poster */}
+            <div className="mx-auto w-full max-w-sm md:max-w-md">
+              <div className="relative aspect-[4/5] rounded-xl overflow-hidden shadow-lg ring-1 ring-black/10">
+                <Image src="/images/shows/FA25Poster.jpg" alt="HumorUs cast group photo" fill className="object-cover" />
+              </div>
+            </div>
           </div>
         </div>
-      </section>
-
+      </div>
+    </section>
       {/*
       Quick Stats
       <section className="grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
