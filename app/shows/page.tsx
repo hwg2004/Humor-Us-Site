@@ -14,6 +14,15 @@ type Show = {
 // Add your past shows here - newest first
 const pastShows: Show[] = [
   {
+    slug: "2025-11-14-fall",
+    title: "Humor Us Presents: Side Effects May Include...",
+    date: "2025-11-14",
+    venue: "Rockefeller Auditorium",
+    poster: "/images/shows/FA25Poster.jpg",
+    favorite: true,
+    // videoUrl: "https://www.youtube.com/watch?v=nj6qqzFEGaU&list=PLQHtzx1MTEo8i8f1KlxGfXxpjZqnMsyeM&pp=0gcJCWUEOCosWNin"
+  },
+  {
     slug: "2025-04-18-spring",
     title: "Humor Us Presents: Nothing. Cuz of Woke",
     date: "2025-04-18",
@@ -37,7 +46,6 @@ const pastShows: Show[] = [
     date: "2024-05-04",
     venue: "Klarman Auditorium",
     poster: "/images/shows/SP24Poster.jpg",
-    favorite: true,
     videoUrl: "https://www.youtube.com/watch?v=grYWzfQGIGQ&list=PLQHtzx1MTEo_CSRvvXKIbXHZErhqrjZNk"
   },
   {
