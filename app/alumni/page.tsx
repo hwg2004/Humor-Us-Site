@@ -18,28 +18,28 @@ const featuredAlumni: Alumni[] = [
     year: "2025",
     currentRole: "NBC Page",
     company: "NBC",
-    bio: "After HumorUs!, Praise went on to write for several comedy shows and perform stand-up across NYC.",
-    headshot: "/images/alumni/jane.jpg",
-    linkedin: "https://linkedin.com/in/janedoe"
+    bio: "After HumorUs!, Praise went on to work for NBC as a page.",
+    headshot: "/images/people/praise_makinde.jpg",
+    linkedin: "https://www.linkedin.com/in/praise-makinde/"
   },
   {
     name: "Noah Diamond",
     year: "2025",
-    currentRole: "NBC Page",
-    company: "NBC",
-    bio: "John credits HumorUs! with teaching him how to pitch ideas and work collaboratively in comedy.",
-    headshot: "/images/alumni/john.jpg"
+    currentRole: "Statistics Auditor at the NBA",
+    company: "NBA",
+    bio: "Noah credits HumorUs! with teaching him how to pitch ideas and work collaboratively.",
+    headshot: "/images/people/noah_diamond.jpg",
+    linkedin: "https://www.linkedin.com/in/noah-diamond-14715822b/"
   },
 ];
 
 // List of all alumni by year
 const allAlumni = {
-  "2025": ["Praise Makinde", "Noah Diamond", "Melissa Chu", "Marc Scocca"],
-  "2024": ["Noah Leety", "Jessica Liu", "Ryan Patel"],
-  "2023": ["Amanda White", "Chris Brown", "Taylor Green"],
-  "2022": ["Alex Martinez", "Sam Wilson", "Jordan Lee"],
-  "2021": ["Morgan Davis", "Jamie Taylor", "Casey Anderson"],
-  // Add more years and names as needed
+  "2025": ["Melissa Chu", "Noah Diamond", "Praise Makinde", "Marc Scocca"],
+  "2024": ["Noah Leety", "Amelia Rajakumar", "Sowmya Venkatachalam"],
+  "2023": ["Alexander Izvolsky", "Amanda Glik", "Phoebe McKinley"],
+  "2022": ["Ishini Gammanpila", "Emily Augustyniak", "Liam Butler"],
+  "2021": ["Katherine Gray", "Darien Fiorino"],
 };
 
 export default function AlumniPage() {
