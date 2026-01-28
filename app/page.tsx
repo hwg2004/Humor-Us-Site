@@ -110,11 +110,11 @@ export default function Home() {
           <div className="grid md:grid-cols-2 items-center gap-8 md:gap-12">
             {/* Text */}
             <div className="space-y-3 text-gray-800 max-w-prose">
-              <h1 className="text-3xl font-bold">Side Effects May Include...</h1>
+              <h1 className="text-3xl font-bold">For All the Hogs</h1>
               <p className="text-lg text-gray-600">Get ready for our biggest show yet!</p>
               <div className="space-y-1 text-base">
-                <p>📅 <strong>November 14, 2025</strong></p>
-                <p>📍 Rockefeller Hall</p>
+                <p>📅 <strong>April 24, 2026</strong></p>
+                <p>📍 Klarman Auditiorium</p>
                 <p>🕖 7:00 PM & 9:00 PM</p>
                 <p>💵 $5 (Venmo: @harrygallen)</p>
               </div>
