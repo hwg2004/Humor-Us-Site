@@ -20,11 +20,10 @@ export function NavLinks() {
           key={link.href}
           href={link.href}
           className={`
-            px-3 py-2 rounded-full text-sm sm:text-base font-medium
-            transition-all duration-200 hover:scale-105
-            ${pathname === link.href 
-              ? 'bg-gradient-to-r from-[var(--color-accent)] to-[var(--color-accent-light)] text-white shadow-lg' 
-              : 'hover:bg-[var(--color-accent)]/10 hover:text-[var(--color-accent)]'
+            px-3 py-2 text-sm sm:text-base font-medium transition-colors duration-150
+            ${pathname === link.href
+              ? 'text-[var(--color-accent)] border-b-2 border-[var(--color-accent)]'
+              : 'hover:text-[var(--color-accent)] border-b-2 border-transparent'
             }
           `}
         >

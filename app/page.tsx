@@ -34,14 +34,14 @@ export default function Home() {
         {/* Dark scrim for text readability */}
         <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/50 to-black/60" />
 
-        {/* Centered content with backdrop container */}
+        {/* Centered content */}
         <div className="relative z-10 h-full flex items-center justify-center px-6">
-          <div className="bg-black/30 backdrop-blur-sm rounded-3xl p-8 md:p-12 max-w-2xl mx-auto text-center border border-white/10">
-            <h1 className="text-white text-5xl sm:text-6xl md:text-7xl font-extrabold tracking-tight drop-shadow-2xl">
+          <div className="bg-black/55 p-8 md:p-12 max-w-2xl mx-auto text-center border border-white/15">
+            <h1 className="text-white text-5xl sm:text-6xl md:text-7xl font-bold tracking-tight drop-shadow-2xl">
               HumorUs!
             </h1>
 
-            <p className="mt-4 text-lg sm:text-xl text-white font-medium transition-opacity duration-500 drop-shadow-lg">
+            <p className="mt-4 text-lg sm:text-xl text-white/90 font-medium drop-shadow-lg">
               {taglines[currentTagline]}
             </p>
 
@@ -50,13 +50,13 @@ export default function Home() {
                 href="https://venmo.com/u/harrygallen"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="px-8 py-3 bg-purple-500 backdrop-blur-sm !text-white rounded-full font-semibold hover:bg-purple-600 hover:scale-105 transition-all shadow-xl"
+                className="px-8 py-3 bg-[var(--color-accent)] !text-white rounded font-semibold hover:bg-[var(--color-accent-dark)] transition-colors shadow-lg border border-white/20"
               >
                 Get Tickets
               </a>
               <Link
                 href="/join"
-                className="px-8 py-3 bg-white/95 backdrop-blur-sm text-black rounded-full font-semibold hover:bg-purple-300 hover:scale-105 transition-all shadow-xl"
+                className="px-8 py-3 bg-white text-black rounded font-semibold hover:bg-[var(--color-surface-alt)] transition-colors shadow-lg"
               >
                 Join Us!
               </Link>
@@ -64,27 +64,27 @@ export default function Home() {
 
             {/* Socials */}
             <div className="mt-8 flex gap-4 justify-center">
-              <a 
-                href="https://www.instagram.com/humorussketchcomedy/" 
-                target="_blank" 
+              <a
+                href="https://www.instagram.com/humorussketchcomedy/"
+                target="_blank"
                 rel="noopener noreferrer"
-                className="p-2.5 bg-white/20 backdrop-blur-sm rounded-full transform hover:scale-110 hover:bg-white/30 transition-all border border-white/20"
+                className="p-2.5 bg-white/20 rounded border border-white/20 hover:bg-white/30 transition-colors"
                 aria-label="Instagram"
               >
                 <Image src="/logos/instagram.svg" alt="Instagram" width={24} height={24} className="brightness-0 invert" />
               </a>
-              <a 
+              <a
                 href="mailto:humorussketchcomedy@cornell.edu"
-                className="p-2.5 bg-white/20 backdrop-blur-sm rounded-full transform hover:scale-110 hover:bg-white/30 transition-all border border-white/20"
+                className="p-2.5 bg-white/20 rounded border border-white/20 hover:bg-white/30 transition-colors"
                 aria-label="Email"
               >
                 <Image src="/logos/gmail.svg" alt="Gmail" width={24} height={24}/>
               </a>
-              <a 
-                href="https://venmo.com/u/harrygallen" 
-                target="_blank" 
+              <a
+                href="https://venmo.com/u/harrygallen"
+                target="_blank"
                 rel="noopener noreferrer"
-                className="p-2.5 bg-white/20 backdrop-blur-sm rounded-full transform hover:scale-110 hover:bg-white/30 transition-all border border-white/20"
+                className="p-2.5 bg-white/20 rounded border border-white/20 hover:bg-white/30 transition-colors"
                 aria-label="Venmo"
               >
                 <Image src="/logos/venmo-icon.svg" alt="Venmo" width={24} height={24}/>
@@ -95,23 +95,23 @@ export default function Home() {
       </section>
       
     <section className="relative">
-      <div className="rounded-2xl border-4 border-yellow-400 bg-gradient-to-br from-yellow-400/20 to-transparent p-6 md:p-10 shadow-xl hover:shadow-2xl transition-shadow">
+      <div className="border-4 border-[var(--color-highlight)] bg-[var(--color-surface-alt)] p-6 md:p-10 shadow-md">
         {/* Header */}
         <div className="flex items-center gap-3 mb-6">
           <span className="relative flex h-3 w-3">
-            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-red-400 opacity-75"></span>
-            <span className="relative inline-flex rounded-full h-3 w-3 bg-red-500"></span>
+            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-red-500 opacity-75"></span>
+            <span className="relative inline-flex rounded-full h-3 w-3 bg-red-600"></span>
           </span>
-          <h2 className="text-2xl font-bold">NEXT SHOW</h2>
+          <h2 className="text-2xl font-bold tracking-wide uppercase">Next Show</h2>
         </div>
 
-        {/* Main Card (no yellow border) */}
-        <div className="bg-yellow-50 rounded-2xl shadow-md ring-1 ring-black/10 p-6 md:p-8">
+        {/* Main Card */}
+        <div className="bg-[var(--color-surface)] border border-[var(--color-border)] shadow-sm p-6 md:p-8">
           <div className="grid md:grid-cols-2 items-center gap-8 md:gap-12">
             {/* Text */}
-            <div className="space-y-3 text-gray-800 max-w-prose">
+            <div className="space-y-3 text-[var(--color-text)] max-w-prose">
               <h1 className="text-3xl font-bold">For All the Hogs</h1>
-              <p className="text-lg text-gray-600">Get ready for our biggest show yet!</p>
+              <p className="text-lg text-[var(--color-text-muted)]">Get ready for our biggest show yet!</p>
               <div className="space-y-1 text-base">
                 <p>📅 <strong>April 24, 2026</strong></p>
                 <p>📍 Klarman Auditiorium</p>
@@ -120,11 +120,11 @@ export default function Home() {
               </div>
               <div className="pt-3 flex flex-wrap gap-3">
                 <a href="https://venmo.com/u/harrygallen" target="_blank" rel="noopener noreferrer"
-                  className="px-6 py-2 bg-purple-500 !text-white rounded-md font-semibold hover:bg-purple-600 transition-colors">
+                  className="px-6 py-2 bg-[var(--color-accent)] !text-white rounded font-semibold hover:bg-[var(--color-accent-dark)] transition-colors">
                   Buy Tickets Now
                 </a>
                 <Link href="/shows"
-                  className="px-6 py-2 border-2 border-purple-500 text-purple-500 rounded-md font-semibold hover:bg-purple-500 hover:text-white transition-colors">
+                  className="px-6 py-2 border-2 border-[var(--color-accent)] text-[var(--color-accent)] rounded font-semibold hover:bg-[var(--color-accent)] hover:text-white transition-colors">
                   See Past Shows
                 </Link>
               </div>
@@ -132,7 +132,7 @@ export default function Home() {
 
             {/* Poster */}
             <div className="mx-auto w-full max-w-sm md:max-w-md">
-              <div className="relative aspect-[4/5] rounded-xl overflow-hidden shadow-lg ring-1 ring-black/10">
+              <div className="relative aspect-[4/5] overflow-hidden shadow-md border border-[var(--color-border)]">
                 <Image src="/images/shows/FA25Poster.jpg" alt="HumorUs cast group photo" fill className="object-cover" />
               </div>
             </div>
@@ -179,31 +179,31 @@ export default function Home() {
       </section>
     
       {/* Testimonial */}
-      <section className="rounded-2xl bg-gradient-to-r from-purple-500 to-pink-500 text-white p-8 text-center shadow-xl">
+      <section className="bg-[var(--color-accent)] text-white p-8 text-center shadow-md border border-[var(--color-accent-dark)]">
         <p className="text-2xl font-medium mb-4 italic">
-          HumorUs rules.
+          &ldquo;HumorUs rules.&rdquo;
         </p>
-        <p className="text-lg">- Every HumorUs Member Ever</p>
+        <p className="text-lg opacity-90">— Every HumorUs Member Ever</p>
       </section>
 
       {/* Call to Action */}
       <section className="text-center py-8">
         <h2 className="text-3xl font-bold mb-4">Ready to Laugh?</h2>
-        <p className="text-lg mb-6 text-black/70 dark:text-white/70">
+        <p className="text-lg mb-6 text-[var(--color-text-muted)]">
           {"Join us for a night of sketch comedy you won't forget!"}
         </p>
         <div className="flex gap-4 justify-center">
-          <a 
+          <a
             href="https://venmo.com/u/harrygallen"
             target="_blank"
             rel="noopener noreferrer"
-            className="px-8 py-3 bg-gradient-to-r from-purple-500 to-pink-500 text-white rounded-full font-semibold hover:scale-105 transition-transform shadow-lg"
+            className="px-8 py-3 bg-[var(--color-accent)] text-white rounded font-semibold hover:bg-[var(--color-accent-dark)] transition-colors shadow-md"
           >
             Get Your Tickets
           </a>
           <Link
             href="/about"
-            className="px-8 py-3 border-2 border-purple-500 text-purple-500 rounded-full font-semibold hover:bg-purple-500 hover:text-white transition-all"
+            className="px-8 py-3 border-2 border-[var(--color-accent)] text-[var(--color-accent)] rounded font-semibold hover:bg-[var(--color-accent)] hover:text-white transition-colors"
           >
             Learn More About Us
           </Link>

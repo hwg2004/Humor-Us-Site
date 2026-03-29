@@ -3,6 +3,13 @@ import Link from "next/link";
 import { NavLinks } from "./components/NavLinks";
 import "./globals.css";
 import Image from "next/image";
+import { Playfair_Display } from "next/font/google";
+
+const playfair = Playfair_Display({
+  subsets: ["latin"],
+  variable: "--font-display",
+  display: "swap",
+});
 
 export const metadata: Metadata = {
   metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || "https://humorussketchcomedy.com"),
@@ -50,16 +57,16 @@ export default function RootLayout({
   ];
 
   return (
-    <html lang="en">
+    <html lang="en" className={playfair.variable}>
       <body className="antialiased font-sans bg-[var(--color-bg)] text-[var(--color-text)] min-h-screen flex flex-col">
-        {/* Enhanced Header */}
-        <header className="border-b-2 border-[var(--color-accent-light)]/30 bg-[var(--color-bg)]/95 backdrop-blur-sm sticky top-0 z-50">
+        {/* Header */}
+        <header className="border-b-2 border-[var(--color-accent)]/25 bg-[var(--color-bg)] sticky top-0 z-50">
           <nav className="max-w-6xl mx-auto px-6 py-4">
             <div className="flex flex-wrap items-center justify-between gap-4">
-              {/* Logo/Home with animation */}
-              <Link 
-                href="/" 
-                className="group flex items-center gap-2 transition-transform hover:scale-105"
+              {/* Logo/Home */}
+              <Link
+                href="/"
+                className="group flex items-center gap-2"
               >
                <Image
                   src="/logos/HumorUs_Logo.svg"
@@ -76,11 +83,11 @@ export default function RootLayout({
               <NavLinks />
 
               {/* Quick Action Button */}
-              <a 
-                href="https://venmo.com/u/harrygallen" 
+              <a
+                href="https://venmo.com/u/harrygallen"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="hidden lg:flex items-center gap-2 px-4 py-2 bg-[var(--color-highlight)] text-black rounded-full font-semibold hover:shadow-lg hover:scale-105 transition-all"
+                className="hidden lg:flex items-center gap-2 px-4 py-2 bg-[var(--color-accent)] text-white rounded font-semibold hover:bg-[var(--color-accent-dark)] transition-colors border border-[var(--color-accent-dark)]"
               >
                 <span>Get Tickets</span>
               </a>
@@ -95,8 +102,8 @@ export default function RootLayout({
           </div>
         </main>
 
-        {/* Enhanced Footer */}
-        <footer className="border-t-2 border-[var(--color-accent-light)]/30 bg-gradient-to-b from-transparent to-[var(--color-accent)]/5 mt-16">
+        {/* Footer */}
+        <footer className="border-t-2 border-[var(--color-accent)]/25 bg-[var(--color-surface-alt)] mt-16">
           <div className="max-w-6xl mx-auto px-6 py-12">
             <div className="grid gap-8 md:grid-cols-3">
               {/* About Section */}

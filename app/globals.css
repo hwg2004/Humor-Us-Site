@@ -1,36 +1,33 @@
 @import "tailwindcss";
 
-/* Softer, more comfortable color scheme */
+/* Vintage comedy club / playbill color scheme */
 :root {
-  /* Light mode - warmer, softer tones */
-  --color-bg: #FAFAF8;              /* Warm off-white instead of stark white */
-  --color-text: #3A3A3F;            /* Softer dark gray instead of black */
-  --color-accent: #7C5CE6;          /* Softer purple (less saturated) */
-  --color-accent-dark: #5F45B8;     /* Deeper but not harsh */
-  --color-accent-light: #A599E9;    /* Gentle lavender */
-  --color-highlight: #FFD93D;       /* Warmer, less harsh yellow */
-  
-  /* Additional soft colors for variety */
-  --color-surface: #FFFFFF;
-  --color-surface-alt: #F7F6F3;
-  --color-border: rgba(124, 92, 230, 0.15);
-  --color-text-muted: #6B6B76;
+  --color-bg: #FDF8F0;              /* Warm parchment */
+  --color-text: #1C1008;            /* Near-black warm */
+  --color-accent: #B8192A;          /* Theater red */
+  --color-accent-dark: #8B0000;     /* Deep red */
+  --color-accent-light: #D4566A;    /* Lighter red */
+  --color-highlight: #C9921A;       /* Warm gold */
+
+  --color-surface: #FFFEF9;
+  --color-surface-alt: #F5EDD8;
+  --color-border: rgba(28, 16, 8, 0.18);
+  --color-text-muted: #5C4A35;
 }
 
-/* Dark mode - easier on the eyes */
 @media (prefers-color-scheme: dark) {
   :root {
-    --color-bg: #1A1A1F;            /* Soft dark instead of pure black */
-    --color-text: #E4E4E7;          /* Soft white instead of pure white */
-    --color-accent: #9B85E8;        /* Lighter purple for dark mode */
-    --color-accent-dark: #7C5CE6;   
-    --color-accent-light: #B8A9F3;
-    --color-highlight: #FFD93D;     /* Keep yellow consistent */
-    
-    --color-surface: #252529;
-    --color-surface-alt: #2A2A30;
-    --color-border: rgba(155, 133, 232, 0.15);
-    --color-text-muted: #A0A0A8;
+    --color-bg: #1A1208;
+    --color-text: #F0E8D8;
+    --color-accent: #D4566A;
+    --color-accent-dark: #B8192A;
+    --color-accent-light: #E88A96;
+    --color-highlight: #D4A843;
+
+    --color-surface: #251A0E;
+    --color-surface-alt: #2E2010;
+    --color-border: rgba(240, 232, 216, 0.15);
+    --color-text-muted: #9E8A70;
   }
 }
 
@@ -101,24 +98,27 @@ html {
   scroll-behavior: smooth;
 }
 
-/* Custom scrollbar styles - softer colors */
+/* Scrollbar */
 ::-webkit-scrollbar {
-  width: 12px;
+  width: 10px;
 }
 
 ::-webkit-scrollbar-track {
-  background: var(--color-bg);
+  background: var(--color-surface-alt);
 }
 
 ::-webkit-scrollbar-thumb {
   background: var(--color-accent-light);
-  border-radius: 6px;
-  opacity: 0.6;
+  border-radius: 2px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
   background: var(--color-accent);
-  opacity: 0.8;
+}
+
+/* Serif headings for classic theatrical feel */
+h1, h2, h3 {
+  font-family: var(--font-display, Georgia, 'Times New Roman', serif);
 }
 
 /* Focus styles for accessibility - softer */
@@ -134,8 +134,8 @@ html {
 }
 
 .hover-lift:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 10px 30px rgba(124, 92, 230, 0.15);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 24px rgba(184, 25, 42, 0.18);
 }
 
 /* Softer shadows throughout */
