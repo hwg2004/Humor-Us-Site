@@ -54,6 +54,7 @@ export default function RootLayout({
     { href: "/about", label: "About"},
     { href: "/alumni", label: "Alumni"},
     { href: "/join", label: "Join Us!"},
+    { href: "https://hr.cornell.edu/about/workplace-rights/equal-education-and-employment", label: "Equal Education and Employment", external: true },
   ];
 
   return (
