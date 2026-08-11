@@ -110,7 +110,7 @@ export default function RootLayout({
               <div>
                 <h3 className="font-bold text-lg mb-3 text-[var(--color-accent)]">HumorUs!</h3>
                 <p className="text-sm text-black/70 dark:text-white/70">
-                  {"Cornell's premier sketch comedy troupe. Making Cornell laugh since '06."}
+                  {"This organization is a registered student organization of Cornell University."}
                 </p>
               </div>
 
