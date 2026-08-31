@@ -1,214 +1,217 @@
-"use client";
 import Link from "next/link";
-import { useState, useEffect } from "react";
 import Image from "next/image";
 import Gallery from "./components/Gallery";
 
+const nextShow = {
+  title: "For All the Hogs",
+  deck: "Get ready for our biggest show yet!",
+  poster: "/images/shows/FA25Poster.jpg",
+  details: [
+    { label: "Date", value: "April 24, 2026" },
+    { label: "Venue", value: "Klarman Auditiorium" },
+    { label: "Times", value: "7:00 PM & 9:00 PM" },
+    { label: "Price", value: "$5 (Venmo: @harrygallen)", gold: true },
+  ],
+};
+
+const recentPhotos = [
+  { src: "/images/gallery/DSC_0125.jpg", alt: "Group photo" },
+  { src: "/images/gallery/DSC_0131.jpg", alt: "Group photo, bunz out" },
+  { src: "/images/gallery/DSC_0138.jpg", alt: "The fellas" },
+  { src: "/images/gallery/Referee_Sketch.jpg", alt: "Referee Sketch" },
+  { src: "/images/gallery/DSC_0117.jpg", alt: "Fall 2024 Newbies" },
+  { src: "/images/gallery/Charli_XCX_Sketch.jpg", alt: "Charli XCX Sketch" },
+];
+
+const socials = [
+  { href: "https://www.instagram.com/humorussketchcomedy/", icon: "/logos/instagram.svg", label: "Instagram", invert: true },
+  { href: "mailto:humorussketchcomedy@cornell.edu", icon: "/logos/gmail.svg", label: "Email", invert: false },
+  { href: "https://venmo.com/u/harrygallen", icon: "/logos/venmo-icon.svg", label: "Venmo", invert: false },
+];
+
 export default function Home() {
-  const [currentTagline, setCurrentTagline] = useState(0);
-  const taglines = [
-    "Cornell's Premier Sketch Comedy Group Since '06"
-  ];
-
- useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentTagline((prev) => (prev + 1) % taglines.length);
-    }, 3000);
-    return () => clearInterval(interval);
-  }, [taglines.length]);
-
   return (
-    <div className="space-y-12">
-      {/* Hero Section */}
-      <section className="relative h-[70vh] min-h-[480px] w-full">
-        {/* Background photo */}
-        <Image
-          src="/images/hero.jpg"
-          alt="HumorUs cast on stage kicking in sync"
-          fill
-          priority
-          sizes="100vw"
-          className="object-cover object-[50%_35%]"
-        />
+    <>
+      {/* ---------- Hero ---------- */}
+      <section className="relative border-b-4 border-[var(--color-ink)]">
+        <div className="relative h-[76vh] min-h-[540px] overflow-hidden">
+          <Image
+            src="/images/hero.jpg"
+            alt="HumorUs cast on stage kicking in sync"
+            fill
+            priority
+            sizes="100vw"
+            className="object-cover object-[50%_35%]"
+          />
+          <div className="absolute inset-0 bg-[var(--color-ink)]/[0.52]" />
 
-        {/* Dark scrim for text readability */}
-        <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/50 to-black/60" />
+          <div className="relative z-10 flex h-full items-center px-6 md:px-10">
+            <div className="mx-auto w-full max-w-[1200px]">
+              <div className="max-w-[760px]">
+                <div className="hu-label hu-frame mb-6 inline-block bg-[var(--color-marquee)] px-3.5 py-2 text-[var(--color-ink)]">
+                  Cornell&apos;s premier sketch comedy group since &apos;06
+                </div>
 
-        {/* Centered content */}
-        <div className="relative z-10 h-full flex items-center justify-center px-6">
-          <div className="bg-black/55 p-8 md:p-12 max-w-2xl mx-auto text-center border border-white/15">
-            <h1 className="text-white text-5xl sm:text-6xl md:text-7xl font-bold tracking-tight drop-shadow-2xl">
-              HumorUs!
-            </h1>
+                <h1 className="hu-h1 m-0 text-[clamp(64px,11vw,132px)] text-[var(--color-paper)]">
+                  Humor
+                  <br />
+                  Us!
+                </h1>
 
-            <p className="mt-4 text-lg sm:text-xl text-white/90 font-medium drop-shadow-lg">
-              {taglines[currentTagline]}
-            </p>
+                <div className="mt-9 flex flex-wrap gap-4">
+                  <a
+                    href="https://venmo.com/u/harrygallen"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="hu-btn hu-btn-primary !text-base"
+                    style={{ boxShadow: "5px 5px 0 var(--color-marquee)" }}
+                  >
+                    Get Tickets
+                  </a>
+                  <Link href="/join" className="hu-btn hu-btn-paper !text-base">
+                    Join Us!
+                  </Link>
+                </div>
 
-            <div className="mt-8 flex flex-wrap gap-4 justify-center">
-              <a
-                href="https://venmo.com/u/harrygallen"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="px-8 py-3 bg-[var(--color-accent)] !text-white rounded font-semibold hover:bg-[var(--color-accent-dark)] transition-colors shadow-lg border border-white/20"
-              >
-                Get Tickets
-              </a>
-              <Link
-                href="/join"
-                className="px-8 py-3 bg-white text-black rounded font-semibold hover:bg-[var(--color-surface-alt)] transition-colors shadow-lg"
-              >
-                Join Us!
-              </Link>
-            </div>
-
-            {/* Socials */}
-            <div className="mt-8 flex gap-4 justify-center">
-              <a
-                href="https://www.instagram.com/humorussketchcomedy/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="p-2.5 bg-white/20 rounded border border-white/20 hover:bg-white/30 transition-colors"
-                aria-label="Instagram"
-              >
-                <Image src="/logos/instagram.svg" alt="Instagram" width={24} height={24} className="brightness-0 invert" />
-              </a>
-              <a
-                href="mailto:humorussketchcomedy@cornell.edu"
-                className="p-2.5 bg-white/20 rounded border border-white/20 hover:bg-white/30 transition-colors"
-                aria-label="Email"
-              >
-                <Image src="/logos/gmail.svg" alt="Gmail" width={24} height={24}/>
-              </a>
-              <a
-                href="https://venmo.com/u/harrygallen"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="p-2.5 bg-white/20 rounded border border-white/20 hover:bg-white/30 transition-colors"
-                aria-label="Venmo"
-              >
-                <Image src="/logos/venmo-icon.svg" alt="Venmo" width={24} height={24}/>
-              </a>
+                <div className="mt-8 flex gap-2.5">
+                  {socials.map((s) => (
+                    <a
+                      key={s.label}
+                      href={s.href}
+                      target={s.href.startsWith("http") ? "_blank" : undefined}
+                      rel="noopener noreferrer"
+                      aria-label={s.label}
+                      className="flex h-[46px] w-[46px] items-center justify-center border-[3px] border-[var(--color-paper)] hover:bg-[var(--color-paper)]"
+                    >
+                      <Image
+                        src={s.icon}
+                        alt={s.label}
+                        width={22}
+                        height={22}
+                        className={s.invert ? "brightness-0 invert" : ""}
+                      />
+                    </a>
+                  ))}
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </section>
-      
-    <section className="relative">
-      <div className="border-4 border-[var(--color-highlight)] bg-[var(--color-surface-alt)] p-6 md:p-10 shadow-md">
-        {/* Header */}
-        <div className="flex items-center gap-3 mb-6">
-          <span className="relative flex h-3 w-3">
-            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-red-500 opacity-75"></span>
-            <span className="relative inline-flex rounded-full h-3 w-3 bg-red-600"></span>
-          </span>
-          <h2 className="text-2xl font-bold tracking-wide uppercase">Next Show</h2>
-        </div>
 
-        {/* Main Card */}
-        <div className="bg-[var(--color-surface)] border border-[var(--color-border)] shadow-sm p-6 md:p-8">
-          <div className="grid md:grid-cols-2 items-center gap-8 md:gap-12">
-            {/* Text */}
-            <div className="space-y-3 text-[var(--color-text)] max-w-prose">
-              <h1 className="text-3xl font-bold">For All the Hogs</h1>
-              <p className="text-lg text-[var(--color-text-muted)]">Get ready for our biggest show yet!</p>
-              <div className="space-y-1 text-base">
-                <p>📅 <strong>April 24, 2026</strong></p>
-                <p>📍 Klarman Auditiorium</p>
-                <p>🕖 7:00 PM & 9:00 PM</p>
-                <p>💵 $5 (Venmo: @harrygallen)</p>
-              </div>
-              <div className="pt-3 flex flex-wrap gap-3">
-                <a href="https://venmo.com/u/harrygallen" target="_blank" rel="noopener noreferrer"
-                  className="px-6 py-2 bg-[var(--color-accent)] !text-white rounded font-semibold hover:bg-[var(--color-accent-dark)] transition-colors">
+      {/* ---------- Next show ---------- */}
+      <section className="border-b-4 border-[var(--color-ink)] bg-[var(--color-ink)] px-6 py-16 md:px-10">
+        <div className="mx-auto max-w-[1200px]">
+          <div className="mb-7 flex items-center gap-3">
+            <span className="hu-blink inline-block h-3 w-3 rounded-full bg-[var(--color-curtain)]" />
+            <h2 className="hu-label m-0 font-bold !tracking-[0.28em] text-[var(--color-marquee)]">
+              Next Show
+            </h2>
+          </div>
+
+          <div className="grid items-center gap-12 md:grid-cols-[1.15fr_0.85fr]">
+            <div>
+              <h3 className="hu-h2 m-0 text-[clamp(44px,6vw,76px)] text-[var(--color-paper)]">
+                {nextShow.title}
+              </h3>
+              <p className="mt-5 max-w-[36ch] text-[21px] leading-relaxed text-[var(--color-paper)]/[0.78]">
+                {nextShow.deck}
+              </p>
+
+              <dl className="mt-8 border-t-2 border-[var(--color-paper)]/[0.28]">
+                {nextShow.details.map((d) => (
+                  <div
+                    key={d.label}
+                    className="grid grid-cols-[110px_1fr] gap-4 border-b border-[var(--color-paper)]/[0.18] py-3.5 font-[family-name:var(--font-label)] text-sm uppercase tracking-[0.08em] md:grid-cols-[130px_1fr]"
+                  >
+                    <dt className="text-[var(--color-ash)]">{d.label}</dt>
+                    <dd
+                      className={`m-0 ${d.gold ? "text-[var(--color-marquee)]" : "text-[var(--color-paper)]"}`}
+                    >
+                      {d.value}
+                    </dd>
+                  </div>
+                ))}
+              </dl>
+
+              <div className="mt-8 flex flex-wrap gap-4">
+                <a
+                  href="https://venmo.com/u/harrygallen"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hu-btn hu-btn-primary !border-[var(--color-paper)]"
+                  style={{ boxShadow: "5px 5px 0 var(--color-marquee)" }}
+                >
                   Buy Tickets Now
                 </a>
-                <Link href="/shows"
-                  className="px-6 py-2 border-2 border-[var(--color-accent)] text-[var(--color-accent)] rounded font-semibold hover:bg-[var(--color-accent)] hover:text-white transition-colors">
+                <Link href="/shows" className="hu-btn hu-btn-ghost-inv">
                   See Past Shows
                 </Link>
               </div>
             </div>
 
-            {/* Poster */}
-            <div className="mx-auto w-full max-w-sm md:max-w-md">
-              <div className="relative aspect-[4/5] overflow-hidden shadow-md border border-[var(--color-border)]">
-                <Image src="/images/shows/FA25Poster.jpg" alt="HumorUs cast group photo" fill className="object-cover" />
+            <div className="border-[3px] border-[var(--color-paper)] shadow-[10px_10px_0_var(--color-curtain)]">
+              <div className="relative aspect-[4/5] overflow-hidden">
+                <Image
+                  src={nextShow.poster}
+                  alt={`${nextShow.title} poster`}
+                  fill
+                  className="object-cover"
+                  sizes="(max-width: 768px) 100vw, 420px"
+                />
               </div>
             </div>
           </div>
         </div>
-      </div>
-    </section>
-      {/*
-      Quick Stats
-      <section className="grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
-        <div className="rounded-lg border-2 border-purple-300 p-4 hover:bg-purple-50 dark:hover:bg-purple-900/20 transition-colors">
-          <div className="text-3xl font-bold text-purple-600 dark:text-purple-400">35+</div>
-          <p className="text-sm text-black/70 dark:text-white/70">Shows Performed</p>
-        </div>
-        <div className="rounded-lg border-2 border-purple-300 p-4 hover:bg-purple-50 dark:hover:bg-purple-900/20 transition-colors">
-          <div className="text-3xl font-bold text-purple-600 dark:text-purple-400">1000+</div>
-          <p className="text-sm text-black/70 dark:text-white/70">Sketches Written</p>
-        </div>
-        <div className="rounded-lg border-2 border-purple-300 p-4 hover:bg-purple-50 dark:hover:bg-purple-900/20 transition-colors">
-          <div className="text-3xl font-bold text-purple-600 dark:text-purple-400">∞</div>
-          <p className="text-sm text-black/70 dark:text-white/70">Bad Puns Made</p>
-        </div>
-        <div className="rounded-lg border-2 border-purple-300 p-4 hover:bg-purple-50 dark:hover:bg-purple-900/20 transition-colors">
-          <div className="text-3xl font-bold text-purple-600 dark:text-purple-400">18</div>
-          <p className="text-sm text-black/70 dark:text-white/70">Years of Comedy</p>
-        </div>
-      </section>
-      */}
-
-      {/* Recent Photos / Gallery */}
-      <section className="space-y-4">
-        <h2 className="text-3xl font-bold text-center">Recent Photos</h2>
-        <Gallery
-          ratio="3/2"
-          images={[
-            { src: "/images/gallery/DSC_0125.jpg", alt: "Group photo" },
-            { src: "/images/gallery/DSC_0131.jpg", alt: "Group photo, bunz out" },
-            { src: "/images/gallery/DSC_0138.jpg", alt: "The fellas" },
-            { src: "/images/gallery/Referee_Sketch.jpg", alt: "Referee Sketch" },
-            { src: "/images/gallery/DSC_0117.jpg", alt: "Fall 2024 Newbies" },
-            { src: "/images/gallery/Charli_XCX_Sketch.jpg", alt: "Charli XCX Sketch" },
-          ]}
-        />
-      </section>
-    
-      {/* Testimonial */}
-      <section className="bg-[var(--color-accent)] text-white p-8 text-center shadow-md border border-[var(--color-accent-dark)]">
-        <p className="text-2xl font-medium mb-4 italic">
-          &ldquo;HumorUs rules.&rdquo;
-        </p>
-        <p className="text-lg opacity-90">— Every HumorUs Member Ever</p>
       </section>
 
-      {/* Call to Action */}
-      <section className="text-center py-8">
-        <h2 className="text-3xl font-bold mb-4">Ready to Laugh?</h2>
-        <p className="text-lg mb-6 text-[var(--color-text-muted)]">
-          {"Join us for a night of sketch comedy you won't forget!"}
-        </p>
-        <div className="flex gap-4 justify-center">
-          <a
-            href="https://venmo.com/u/harrygallen"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="px-8 py-3 bg-[var(--color-accent)] text-white rounded font-semibold hover:bg-[var(--color-accent-dark)] transition-colors shadow-md"
-          >
-            Get Your Tickets
-          </a>
-          <Link
-            href="/about"
-            className="px-8 py-3 border-2 border-[var(--color-accent)] text-[var(--color-accent)] rounded font-semibold hover:bg-[var(--color-accent)] hover:text-white transition-colors"
-          >
-            Learn More About Us
-          </Link>
+      {/* ---------- Recent photos ---------- */}
+      <section className="border-b-4 border-[var(--color-ink)] px-6 py-[72px] md:px-10">
+        <div className="mx-auto max-w-[1200px]">
+          <div className="mb-8 flex flex-wrap items-baseline justify-between gap-4">
+            <h2 className="hu-h2 m-0 text-[clamp(36px,5vw,54px)]">Recent Photos</h2>
+            <span className="hu-label text-[var(--color-ash)] !tracking-[0.2em]">
+              Fall 2024 – Spring 2026
+            </span>
+          </div>
+          <Gallery images={recentPhotos} ratio="3/2" columns={3} />
         </div>
       </section>
-    </div>
+
+      {/* ---------- Testimonial ---------- */}
+      <section className="border-b-4 border-[var(--color-ink)] bg-[var(--color-curtain)] px-6 py-20 text-center text-[var(--color-card)] md:px-10">
+        <div className="mx-auto max-w-[900px]">
+          <p className="hu-h2 m-0 text-[clamp(40px,7vw,68px)] italic">&ldquo;HumorUs rules.&rdquo;</p>
+          <p className="hu-label mt-6 !tracking-[0.24em] opacity-85">
+            — Every HumorUs Member Ever
+          </p>
+        </div>
+      </section>
+
+      {/* ---------- CTA ---------- */}
+      <section className="px-6 py-20 md:px-10">
+        <div className="mx-auto grid max-w-[1200px] items-center gap-12 md:grid-cols-[1fr_auto]">
+          <div>
+            <h2 className="hu-h2 m-0 text-[clamp(38px,5.5vw,60px)]">Ready to Laugh?</h2>
+            <p className="hu-body mt-4 max-w-[44ch] !text-xl">
+              Join us for a night of sketch comedy you won&apos;t forget!
+            </p>
+          </div>
+          <div className="flex flex-wrap gap-4">
+            <a
+              href="https://venmo.com/u/harrygallen"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hu-btn hu-btn-primary"
+            >
+              Get Your Tickets
+            </a>
+            <Link href="/about" className="hu-btn hu-btn-ghost">
+              Learn More About Us
+            </Link>
+          </div>
+        </div>
+      </section>
+    </>
   );
 }

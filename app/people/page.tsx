@@ -19,55 +19,55 @@ const people: Person[] = [
   { name: 'Conner "Big Dawg" Whalen', role: "Social Media Chair", year: "2028", major: "Information Science", hometown: "Nyack, NY", headshot: "/images/people/conner_headshot.jpg" },
   { name: "Jordan Vogel", role: "Social Media Chair", year: "2027", major: "Mechanical Engineering", hometown: "Franklin Square, NY", headshot: "/images/people/jordan_headshot.jpg" },
   { name: "Rene Cabrera", role: "Diversity, Equity, and Inclusion Chair", year: "2027", major: "Industrial and Labor Relations", hometown: "Topeka, KS", headshot: "/images/people/rene_headshot.jpg" },
-  { name: "Eli Feldman", role: "Alumni Relations Chair", year: "2026", major: "Applied Economics and Management", hometown: "Lower Merion, PA", headshot: "/images/people/eli_headshot.jpg" }
+  { name: "Eli Feldman", role: "Alumni Relations Chair", year: "2026", major: "Applied Economics and Management", hometown: "Lower Merion, PA", headshot: "/images/people/eli_headshot.jpg" },
 ];
 
 export default function PeoplePage() {
   return (
-    <section className="space-y-8">
-      <h1 className="text-4xl font-bold text-center bg-gradient-to-r from-[var(--color-accent)] to-[var(--color-accent-light)] bg-clip-text text-transparent">
-        Meet the Cast!
-      </h1>
+    <>
+      <section className="border-b-4 border-[var(--color-ink)] px-6 pt-16 pb-12 md:px-10">
+        <div className="mx-auto max-w-[1200px]">
+          <div className="hu-label mb-4 !tracking-[0.26em] text-[var(--color-curtain)]">
+            2026 Board · {people.length} members
+          </div>
+          <h1 className="hu-h1 m-0 text-[clamp(56px,10vw,100px)]">Meet the Cast!</h1>
+        </div>
+      </section>
 
-      <div className="grid gap-8 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
-        {people.map((p) => (
-          <article key={p.name} className="rounded-xl border border-[var(--color-accent-light)]/30 p-4 hover:shadow-lg hover:-translate-y-1 transition-all bg-white/50 dark:bg-black/20">
-            {p.headshot && (
-              <Image
-                src={p.headshot}
-                alt={`${p.name} headshot`}
-                width={400}
-                height={500}
-                className="w-full h-auto rounded-md object-cover"
-              />
-            )}
-            <div className="mt-3 space-y-1">
-              <h3 className="text-lg font-bold">{p.name}</h3>
-              
-              {p.role && (
-                <p className="text-sm text-black/80 dark:text-white/80">
-                  <span className="font-semibold">Role:</span> {p.role}
-                </p>
+      <section className="px-6 py-14 md:px-10">
+        <div className="mx-auto grid max-w-[1200px] gap-7 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+          {people.map((p) => (
+            <article key={p.name} className="hu-card hu-lift">
+              {p.headshot && (
+                <div className="relative aspect-[4/5] overflow-hidden border-b-[3px] border-[var(--color-ink)]">
+                  <Image
+                    src={p.headshot}
+                    alt={`${p.name} headshot`}
+                    fill
+                    className="object-cover"
+                    sizes="(max-width: 640px) 50vw, 280px"
+                  />
+                </div>
               )}
-              {p.year && (
-                <p className="text-sm text-black/80 dark:text-white/80">
-                  <span className="font-semibold">Year:</span> {p.year}
-                </p>
-              )}
-              {p.major && (
-                <p className="text-sm text-black/80 dark:text-white/80">
-                  <span className="font-semibold">Major:</span> {p.major}
-                </p>
-              )}
-              {p.hometown && (
-                <p className="text-sm text-black/80 dark:text-white/80">
-                  <span className="font-semibold">Hometown:</span> {p.hometown}
-                </p>
-              )}
-            </div>
-          </article>
-        ))}
-      </div>
-    </section>
+              <div className="p-4">
+                <h3 className="hu-h3 m-0 text-lg">{p.name}</h3>
+                {(p.role || p.year) && (
+                  <div className="hu-label mt-1.5 !text-[11px] !tracking-[0.14em] text-[var(--color-curtain)]">
+                    {p.role}
+                    {p.role && p.year ? " · " : ""}
+                    {p.year}
+                  </div>
+                )}
+                <div className="mt-2.5 text-sm leading-relaxed text-[var(--color-soot)]">
+                  {p.major}
+                  {p.major && p.hometown && <br />}
+                  {p.hometown}
+                </div>
+              </div>
+            </article>
+          ))}
+        </div>
+      </section>
+    </>
   );
 }

@@ -1,173 +1,246 @@
 @import "tailwindcss";
 
-/* Vintage comedy club / playbill color scheme */
+/* ============================================================
+   HumorUs! — Poster-first design system
+   Flat color, hard edges, no gradients, no rounded corners.
+   ============================================================ */
+
 :root {
-  --color-bg: #FDF8F0;              /* Warm parchment */
-  --color-text: #1C1008;            /* Near-black warm */
-  --color-accent: #B8192A;          /* Theater red */
-  --color-accent-dark: #8B0000;     /* Deep red */
-  --color-accent-light: #D4566A;    /* Lighter red */
-  --color-highlight: #C9921A;       /* Warm gold */
+  /* Core palette */
+  --color-ink: #16110C;
+  --color-curtain: #C81E2D;
+  --color-curtain-dark: #8E1220;
+  --color-marquee: #F5B62B;
+  --color-paper: #F6F0E2;
+  --color-card: #FFFDF5;
 
-  --color-surface: #FFFEF9;
-  --color-surface-alt: #F5EDD8;
-  --color-border: rgba(28, 16, 8, 0.18);
-  --color-text-muted: #5C4A35;
+  /* Text tones */
+  --color-soot: #3A2E20;   /* body copy */
+  --color-ash: #6B5B45;    /* meta text only */
+
+  /* Structure */
+  --rule: 3px;
+  --offset: 5px;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --color-bg: #1A1208;
-    --color-text: #F0E8D8;
-    --color-accent: #D4566A;
-    --color-accent-dark: #B8192A;
-    --color-accent-light: #E88A96;
-    --color-highlight: #D4A843;
-
-    --color-surface: #251A0E;
-    --color-surface-alt: #2E2010;
-    --color-border: rgba(240, 232, 216, 0.15);
-    --color-text-muted: #9E8A70;
-  }
-}
-
-body {
-  background: var(--color-bg);
-  color: var(--color-text);
-  transition: background-color 0.3s ease, color 0.3s ease;
-}
-
-a {
-  color: var(--color-accent);
-  text-decoration: none;
-  transition: color 0.2s ease;
-}
-
-a:hover {
-  color: var(--color-accent-dark);
-}
-
-/* Custom animations */
-@keyframes gradient {
-  0% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-  100% {
-    background-position: 0% 50%;
-  }
-}
-
-@keyframes fade-in {
-  from {
-    opacity: 0;
-    transform: translateY(10px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-.animate-gradient {
-  animation: gradient 6s ease infinite;
-}
-
-.animate-fade-in {
-  animation: fade-in 0.5s ease-out;
-}
-
-.bg-300 {
-  background-size: 300% 300%;
-}
-
-/* Softer pulse animation */
-@keyframes pulse {
-  0%, 100% {
-    opacity: 0.6;
-  }
-  50% {
-    opacity: 0.3;
-  }
-}
-
-/* Smooth scroll behavior */
 html {
   scroll-behavior: smooth;
 }
 
-/* Scrollbar */
-::-webkit-scrollbar {
-  width: 10px;
+body {
+  background: var(--color-paper);
+  color: var(--color-ink);
+  font-family: var(--font-text), system-ui, sans-serif;
 }
 
-::-webkit-scrollbar-track {
-  background: var(--color-surface-alt);
+a {
+  color: var(--color-curtain);
+  text-decoration: none;
+}
+a:hover {
+  color: var(--color-curtain-dark);
 }
 
-::-webkit-scrollbar-thumb {
-  background: var(--color-accent-light);
-  border-radius: 2px;
-}
-
-::-webkit-scrollbar-thumb:hover {
-  background: var(--color-accent);
-}
-
-/* Serif headings for classic theatrical feel */
-h1, h2, h3 {
-  font-family: var(--font-display, Georgia, 'Times New Roman', serif);
-}
-
-/* Focus styles for accessibility - softer */
 *:focus-visible {
-  outline: 2px solid var(--color-accent);
+  outline: 3px solid var(--color-curtain);
   outline-offset: 3px;
-  border-radius: 4px;
 }
 
-/* Utility classes */
-.hover-lift {
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+::selection {
+  background: var(--color-marquee);
+  color: var(--color-ink);
 }
 
-.hover-lift:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 8px 24px rgba(184, 25, 42, 0.18);
+/* ---------- Type ------------------------------------------ */
+
+.hu-display {
+  font-family: var(--font-display), sans-serif;
+  text-transform: uppercase;
+  letter-spacing: -0.035em;
+  line-height: 0.86;
 }
 
-/* Softer shadows throughout */
-.shadow-soft {
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+.hu-h1 { font-family: var(--font-display), sans-serif; text-transform: uppercase; letter-spacing: -0.04em; line-height: 0.84; }
+.hu-h2 { font-family: var(--font-display), sans-serif; text-transform: uppercase; letter-spacing: -0.03em; line-height: 0.95; }
+.hu-h3 { font-family: var(--font-display), sans-serif; text-transform: uppercase; letter-spacing: -0.02em; line-height: 1.08; }
+
+.hu-label {
+  font-family: var(--font-label), monospace;
+  text-transform: uppercase;
+  letter-spacing: 0.22em;
+  font-size: 12px;
 }
 
-.shadow-soft-lg {
-  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+.hu-meta {
+  font-family: var(--font-label), monospace;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  font-size: 12px;
+  color: var(--color-ash);
 }
 
-/* Backdrop blur support */
-.backdrop-blur-soft {
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
+.hu-body {
+  font-size: 19px;
+  line-height: 1.6;
+  color: var(--color-soot);
 }
 
-/* Loading animation */
-@keyframes spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+/* ---------- Structure ------------------------------------- */
+
+.hu-frame {
+  border: var(--rule) solid var(--color-ink);
 }
 
-.animate-spin-slow {
-  animation: spin 3s linear infinite;
+.hu-card {
+  background: var(--color-card);
+  border: var(--rule) solid var(--color-ink);
 }
 
-/* Smooth transitions for theme changes */
-* {
-  transition: background-color 0.2s ease, border-color 0.2s ease;
+.hu-shadow-ink   { box-shadow: 8px 8px 0 var(--color-ink); }
+.hu-shadow-red   { box-shadow: 8px 8px 0 var(--color-curtain); }
+.hu-shadow-gold  { box-shadow: 8px 8px 0 var(--color-marquee); }
+
+/* Lift card: shadow collapses as the card moves into it */
+.hu-lift {
+  box-shadow: 7px 7px 0 var(--color-ink);
+  transition: transform 0.12s ease, box-shadow 0.12s ease;
 }
+.hu-lift:hover {
+  transform: translate(5px, 5px);
+  box-shadow: 2px 2px 0 var(--color-curtain);
+}
+
+/* ---------- Buttons -------------------------------------- */
+
+.hu-btn {
+  font-family: var(--font-display), sans-serif;
+  text-transform: uppercase;
+  font-size: 15px;
+  letter-spacing: 0.02em;
+  padding: 17px 30px;
+  border: var(--rule) solid var(--color-ink);
+  display: inline-block;
+  transition: transform 0.12s ease, box-shadow 0.12s ease, background-color 0.12s ease, color 0.12s ease;
+}
+
+.hu-btn-primary {
+  background: var(--color-curtain);
+  color: var(--color-card);
+  box-shadow: var(--offset) var(--offset) 0 var(--color-ink);
+}
+.hu-btn-primary:hover {
+  background: var(--color-curtain-dark);
+  color: var(--color-card);
+  transform: translate(4px, 4px);
+  box-shadow: 1px 1px 0 var(--color-ink);
+}
+
+.hu-btn-gold {
+  background: var(--color-marquee);
+  color: var(--color-ink);
+  box-shadow: var(--offset) var(--offset) 0 var(--color-ink);
+}
+.hu-btn-gold:hover {
+  color: var(--color-ink);
+  transform: translate(4px, 4px);
+  box-shadow: 1px 1px 0 var(--color-ink);
+}
+
+.hu-btn-paper {
+  background: var(--color-paper);
+  color: var(--color-ink);
+  box-shadow: var(--offset) var(--offset) 0 var(--color-ink);
+}
+.hu-btn-paper:hover {
+  color: var(--color-ink);
+  transform: translate(4px, 4px);
+  box-shadow: 1px 1px 0 var(--color-ink);
+}
+
+.hu-btn-ghost {
+  color: var(--color-ink);
+  background: transparent;
+}
+.hu-btn-ghost:hover {
+  background: var(--color-ink);
+  color: var(--color-paper);
+}
+
+/* Ghost on ink backgrounds */
+.hu-btn-ghost-inv {
+  color: var(--color-paper);
+  border-color: var(--color-paper);
+  background: transparent;
+}
+.hu-btn-ghost-inv:hover {
+  background: var(--color-paper);
+  color: var(--color-ink);
+}
+
+/* ---------- Tags ----------------------------------------- */
+
+.hu-tag {
+  font-family: var(--font-label), monospace;
+  font-size: 11px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  padding: 5px 10px;
+  border: 2px solid var(--color-ink);
+  display: inline-block;
+  white-space: nowrap;
+}
+.hu-tag-gold { background: var(--color-marquee); color: var(--color-ink); }
+.hu-tag-ink  { background: var(--color-ink); color: var(--color-paper); }
+.hu-tag-red  { background: var(--color-curtain); color: var(--color-card); }
+
+/* ---------- Nav ------------------------------------------ */
+
+.hu-nav-link {
+  font-family: var(--font-display), sans-serif;
+  text-transform: uppercase;
+  font-size: 13px;
+  letter-spacing: 0.02em;
+  color: var(--color-ink);
+  padding: 11px 13px;
+  border: var(--rule) solid transparent;
+}
+.hu-nav-link:hover {
+  color: var(--color-ink);
+  border-color: var(--color-ink);
+}
+.hu-nav-link[data-active="true"] {
+  background: var(--color-ink);
+  color: var(--color-paper);
+  border-color: var(--color-ink);
+}
+
+/* ---------- Motion --------------------------------------- */
+
+@keyframes hu-marquee {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+.hu-marquee-track {
+  display: inline-flex;
+  white-space: nowrap;
+  animation: hu-marquee 34s linear infinite;
+}
+
+@keyframes hu-blink {
+  0%, 100% { opacity: 1; }
+  50%      { opacity: 0.25; }
+}
+.hu-blink { animation: hu-blink 1.6s ease-in-out infinite; }
+
+@media (prefers-reduced-motion: reduce) {
+  .hu-marquee-track { animation: none; }
+  .hu-blink { animation: none; }
+  .hu-lift:hover { transform: none; }
+}
+
+/* ---------- Scrollbar ------------------------------------ */
+
+::-webkit-scrollbar { width: 12px; }
+::-webkit-scrollbar-track { background: var(--color-paper); border-left: 2px solid var(--color-ink); }
+::-webkit-scrollbar-thumb { background: var(--color-ink); }
+::-webkit-scrollbar-thumb:hover { background: var(--color-curtain); }

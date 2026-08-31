@@ -2,11 +2,11 @@ import Image from "next/image";
 import Link from "next/link";
 
 type Show = {
-  slug: string; 
-  title: string; 
-  date: string; 
-  venue: string; 
-  poster?: string; 
+  slug: string;
+  title: string;
+  date: string;
+  venue: string;
+  poster?: string;
   favorite?: boolean;
   videoUrl?: string;
 };
@@ -20,7 +20,6 @@ const pastShows: Show[] = [
     venue: "Rockefeller Auditorium",
     poster: "/images/shows/FA25Poster.jpg",
     favorite: true,
-    // videoUrl: "https://www.youtube.com/watch?v=nj6qqzFEGaU&list=PLQHtzx1MTEo8i8f1KlxGfXxpjZqnMsyeM&pp=0gcJCWUEOCosWNin"
   },
   {
     slug: "2025-04-18-spring",
@@ -29,24 +28,24 @@ const pastShows: Show[] = [
     venue: "Klarman Auditorium",
     poster: "/images/shows/SP25Poster.jpg",
     favorite: true,
-    videoUrl: "https://www.youtube.com/watch?v=nj6qqzFEGaU&list=PLQHtzx1MTEo8i8f1KlxGfXxpjZqnMsyeM&pp=0gcJCWUEOCosWNin"
+    videoUrl: "https://www.youtube.com/watch?v=nj6qqzFEGaU&list=PLQHtzx1MTEo8i8f1KlxGfXxpjZqnMsyeM",
   },
   {
     slug: "2024-11-14-fall",
     title: "Humor Us Presents: The Erectoral College",
-    date:  "2024-11-14",
+    date: "2024-11-14",
     venue: "Rockefeller Hall",
     poster: "/images/shows/FA24Poster.jpg",
     favorite: true,
-    videoUrl: "https://www.youtube.com/watch?v=yDMNgAkArE0&list=PLQHtzx1MTEo9GZp_LI4w1HN4WbTux3lPm"
-  }, 
+    videoUrl: "https://www.youtube.com/watch?v=yDMNgAkArE0&list=PLQHtzx1MTEo9GZp_LI4w1HN4WbTux3lPm",
+  },
   {
     slug: "2024-05-04-spring",
     title: "Humor Us Presents: Fully Clothed and Afraid",
     date: "2024-05-04",
     venue: "Klarman Auditorium",
     poster: "/images/shows/SP24Poster.jpg",
-    videoUrl: "https://www.youtube.com/watch?v=grYWzfQGIGQ&list=PLQHtzx1MTEo_CSRvvXKIbXHZErhqrjZNk"
+    videoUrl: "https://www.youtube.com/watch?v=grYWzfQGIGQ&list=PLQHtzx1MTEo_CSRvvXKIbXHZErhqrjZNk",
   },
   {
     slug: "2023-11-14-fall",
@@ -55,31 +54,27 @@ const pastShows: Show[] = [
     venue: "Klarman Auditorium",
     poster: "/images/shows/FA23Poster.jpg",
   },
-  
   {
-    slug: "2023-4-21-spring",
-    title: "Humor Us Presents: A Reason to Pregame'",
-    date: "2023-4-21",
+    slug: "2023-04-21-spring",
+    title: "Humor Us Presents: A Reason to Pregame",
+    date: "2023-04-21",
     venue: "Klarman Auditorium",
     poster: "/images/shows/SP23Poster.jpg",
   },
-  
   {
-    slug: "2022-11-5-fall",
+    slug: "2022-11-05-fall",
     title: "Humor Us Presents: We Started a Podcast",
-    date: "2022-11-5",
+    date: "2022-11-05",
     venue: "Klarman Auditorium",
     poster: "/images/shows/FA22Poster.jpg",
   },
-  
   {
-    slug: "2022-4-22-spring",
+    slug: "2022-04-22-spring",
     title: "Humor Us Presents: Jeffin' on my Bezos",
-    date: "2022-4-22",
+    date: "2022-04-22",
     venue: "Klarman Auditorium",
     poster: "/images/shows/SP22Poster.jpg",
   },
-  
   {
     slug: "2021-11-19-fall",
     title: "Humor Us Presents: HumorUs The Musical: The Musical: The Series",
@@ -87,17 +82,19 @@ const pastShows: Show[] = [
     venue: "Klarman Auditorium",
     poster: "/images/shows/FA21Poster.jpg",
   },
-  
   {
-    slug: "2021-5-7-spring",
-    title: "Humor Us Presents: We've Got Ant Bodies'",
-    date: "2021-5-7",
+    slug: "2021-05-07-spring",
+    title: "Humor Us Presents: We've Got Ant Bodies",
+    date: "2021-05-07",
     venue: "Klarman Auditorium",
-    poster: "/images/shows/FA23Poster.jpg",
-  }
-
-  // Add more shows as needed
+  },
 ];
+
+const fullDate = (d: string) =>
+  new Date(d).toLocaleDateString("en-US", { month: "long", day: "numeric", year: "numeric" });
+
+const shortDate = (d: string) =>
+  new Date(d).toLocaleDateString("en-US", { month: "short", day: "numeric" });
 
 export default function PastShowsPage() {
   const showsByYear = pastShows.reduce((acc, show) => {
@@ -107,150 +104,124 @@ export default function PastShowsPage() {
     return acc;
   }, {} as Record<number, Show[]>);
 
-  const favoriteShows = pastShows.filter(show => show.favorite);
+  const favoriteShows = pastShows.filter((s) => s.favorite);
 
   return (
-    <section className="space-y-10">
-      <div>
-        <h1 className="text-4xl font-bold bg-gradient-to-r from-[var(--color-accent)] to-[var(--color-highlight)] bg-clip-text text-transparent">
-          Past Shows Archive
-        </h1>
-        <p className="text-lg mt-4 text-black/70 dark:text-white/70">
-          Relive the laughs! See below for a list of our past shows, complete with posters, dates, venues, and links to videos where available.
-        </p>
-      </div>
-
-      {/* Featured/Favorite Shows */}
-      {favoriteShows.length > 0 && (
-        <div className="space-y-4">
-          <h2 className="text-2xl font-bold flex items-center gap-2">
-            Recent Shows
-          </h2>
-          <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-            {favoriteShows.map(show => (
-              <Link 
-                key={show.slug}
-                href={`/shows/${show.slug}`}
-                className="group rounded-xl border-2 border-[var(--color-accent-light)] overflow-hidden hover:border-[var(--color-accent)] hover:shadow-xl transition-all"
-              >
-                {show.poster ? (
-                  <div className="aspect-[3/4] relative bg-gradient-to-br from-[var(--color-accent)] to-[var(--color-accent-light)]">
-                    <Image 
-                      src={show.poster} 
-                      alt={`${show.title} poster`} 
-                      fill
-                      className="object-cover"
-                    />
-                  </div>
-                ) : (
-                  <div className="aspect-[3/4] bg-gradient-to-br from-[var(--color-accent)] to-[var(--color-accent-light)] flex items-center justify-center">
-                    <div className="text-center text-white p-4">
-                      <p className="mt-2 font-bold">Poster Coming Soon</p>
-                    </div>
-                  </div>
-                )}
-                <div className="p-4">
-                  <h3 className="font-bold text-lg group-hover:text-[var(--color-accent)] transition-colors">
-                    {show.title}
-                  </h3>
-                  <p className="text-sm text-black/60 dark:text-white/60">
-                    {new Date(show.date).toLocaleDateString('en-US', { 
-                      month: 'long', 
-                      day: 'numeric', 
-                      year: 'numeric' 
-                    })}
-                  </p>
-                  <p className="text-sm text-[var(--color-accent)]">{show.venue}</p>
-                  {show.videoUrl && (
-                    <p className="text-sm mt-2 text-[var(--color-highlight)]">📹 Video available!</p>
-                  )}
-                </div>
-              </Link>
-            ))}
+    <>
+      {/* ---------- Masthead ---------- */}
+      <section className="border-b-4 border-[var(--color-ink)] bg-[var(--color-ink)] px-6 py-16 text-[var(--color-paper)] md:px-10">
+        <div className="mx-auto max-w-[1200px]">
+          <div className="hu-label mb-5 !tracking-[0.26em] text-[var(--color-marquee)]">
+            {pastShows.length} shows · 2021–2025
           </div>
+          <h1 className="hu-h1 m-0 text-[clamp(52px,9vw,92px)]">Past Shows Archive</h1>
+          <p className="mt-6 max-w-[64ch] text-xl leading-relaxed text-[var(--color-paper)]/[0.78]">
+            Relive the laughs! See below for a list of our past shows, complete with posters, dates,
+            venues, and links to videos where available.
+          </p>
         </div>
+      </section>
+
+      {/* ---------- Recent shows ---------- */}
+      {favoriteShows.length > 0 && (
+        <section className="border-b-2 border-[var(--color-ink)]/20 px-6 py-16 md:px-10">
+          <div className="mx-auto max-w-[1200px]">
+            <h2 className="hu-h2 mb-7 text-[clamp(30px,4vw,38px)]">Recent Shows</h2>
+            <div className="grid gap-7 md:grid-cols-2 lg:grid-cols-3">
+              {favoriteShows.map((show) => (
+                <Link
+                  key={show.slug}
+                  href={`/shows/${show.slug}`}
+                  className="hu-card hu-lift block !text-[var(--color-ink)]"
+                >
+                  <div className="relative aspect-[3/4] overflow-hidden border-b-[3px] border-[var(--color-ink)]">
+                    {show.poster ? (
+                      <Image
+                        src={show.poster}
+                        alt={`${show.title} poster`}
+                        fill
+                        className="object-cover"
+                        sizes="(max-width: 768px) 100vw, 360px"
+                      />
+                    ) : (
+                      <div className="hu-label flex h-full items-center justify-center bg-[var(--color-curtain)] text-center text-[var(--color-card)]">
+                        Poster Coming Soon
+                      </div>
+                    )}
+                  </div>
+                  <div className="p-5">
+                    <div className="hu-label !tracking-[0.18em] !text-[11px] text-[var(--color-ash)]">
+                      {fullDate(show.date)}
+                    </div>
+                    <h3 className="hu-h3 my-2.5 text-[21px]">{show.title}</h3>
+                    <div className="hu-label !text-[12px] !tracking-[0.12em] text-[var(--color-curtain)]">
+                      {show.venue}
+                    </div>
+                    {show.videoUrl && (
+                      <span className="hu-tag hu-tag-gold mt-3.5">Video available</span>
+                    )}
+                  </div>
+                </Link>
+              ))}
+            </div>
+          </div>
+        </section>
       )}
 
-      {/* All Shows by Year */}
-      <div className="space-y-8">
-        <h2 className="text-2xl font-bold">Complete Archive</h2>
-        {Object.entries(showsByYear)
-          .sort(([a], [b]) => Number(b) - Number(a))
-          .map(([year, shows]) => (
-            <div key={year} className="space-y-4">
-              <h3 className="text-xl font-bold text-[var(--color-accent)] border-b-2 border-[var(--color-accent-light)] pb-2">
-                {year}
-              </h3>
-              <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
-                {shows.map(show => (
-                  <Link
-                    key={show.slug}
-                    href={`/shows/${show.slug}`}
-                    className="group rounded-lg border p-4 hover:border-[var(--color-accent)] hover:bg-[var(--color-accent)]/5 transition-all"
-                  >
-                    <div className="flex items-start gap-3">
-                      <div className="text-3xl group-hover:scale-110 transition-transform">🎬</div>
-                      <div className="flex-1">
-                        <h4 className="font-semibold group-hover:text-[var(--color-accent)] transition-colors">
-                          {show.title}
-                        </h4>
-                        <p className="text-sm text-black/60 dark:text-white/60">
-                          {new Date(show.date).toLocaleDateString('en-US', { 
-                            month: 'short', 
-                            day: 'numeric' 
-                          })} • {show.venue}
-                        </p>
-                        {show.videoUrl && (
-                          <span className="inline-block mt-1 text-xs bg-[var(--color-highlight)]/20 text-[var(--color-highlight)] px-2 py-0.5 rounded-full">
-                            Video
-                          </span>
-                        )}
-                      </div>
-                    </div>
-                  </Link>
-                ))}
-              </div>
-            </div>
-          ))}
-      </div>
+      {/* ---------- Complete archive ---------- */}
+      <section className="px-6 py-16 md:px-10">
+        <div className="mx-auto max-w-[1200px]">
+          <h2 className="hu-h2 mb-8 text-[clamp(30px,4vw,38px)]">Complete Archive</h2>
 
-      {/* Fun Stats
-      <div className="rounded-xl bg-gradient-to-r from-[var(--color-accent)] to-[var(--color-accent-light)] text-white p-8">
-        <h3 className="text-2xl font-bold mb-6 text-center">By The Numbers</h3>
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
-          <div>
-            <div className="text-3xl font-bold">{pastShows.length}</div>
-            <div className="text-sm opacity-90">Total Shows</div>
-          </div>
-          <div>
-            <div className="text-3xl font-bold">
-              {Object.keys(showsByYear).length}
+          {Object.entries(showsByYear)
+            .sort(([a], [b]) => Number(b) - Number(a))
+            .map(([year, shows], i, arr) => (
+              <div
+                key={year}
+                className={`grid gap-8 py-6 md:grid-cols-[120px_1fr] ${
+                  i === 0 ? "border-t-[3px] border-[var(--color-ink)]" : "border-t-2 border-[var(--color-ink)]/20"
+                } ${i === arr.length - 1 ? "border-b-[3px] border-b-[var(--color-ink)]" : ""}`}
+              >
+                <div className="font-[family-name:var(--font-display)] text-[44px] leading-[0.9] text-[var(--color-curtain)]">
+                  {year}
+                </div>
+                <div className="grid gap-3.5">
+                  {shows.map((show) => (
+                    <Link
+                      key={show.slug}
+                      href={`/shows/${show.slug}`}
+                      className="hu-card flex items-center justify-between gap-5 px-5 py-4 !text-[var(--color-ink)] transition-colors hover:bg-[var(--color-marquee)]"
+                    >
+                      <div>
+                        <div className="hu-h3 text-[17px]">{show.title}</div>
+                        <div className="hu-meta mt-1.5 !tracking-[0.1em]">
+                          {shortDate(show.date)} · {show.venue}
+                        </div>
+                      </div>
+                      {show.videoUrl && <span className="hu-tag">Video</span>}
+                    </Link>
+                  ))}
+                </div>
+              </div>
+            ))}
+
+          {/* ---------- CTA ---------- */}
+          <div className="hu-frame hu-shadow-ink mt-14 flex flex-wrap items-center justify-between gap-7 bg-[var(--color-marquee)] p-11">
+            <div>
+              <div className="hu-label text-[var(--color-curtain-dark)]">
+                Want to be part of our next show?
+              </div>
+              <div className="hu-h2 mt-3 text-[clamp(32px,4.5vw,44px)]">Join HumorUs!</div>
             </div>
-            <div className="text-sm opacity-90">Years of Comedy</div>
-          </div>
-          <div>
-            <div className="text-3xl font-bold">500+</div>
-            <div className="text-sm opacity-90">Original Sketches</div>
-          </div>
-          <div>
-            <div className="text-3xl font-bold">∞</div>
-            <div className="text-sm opacity-90">Laughs Generated</div>
+            <Link
+              href="/join"
+              className="hu-btn bg-[var(--color-ink)] text-[var(--color-paper)] hover:!bg-[var(--color-curtain)] hover:!text-[var(--color-card)]"
+            >
+              Audition Info
+            </Link>
           </div>
         </div>
-      </div> */}
-
-      {/* Call to Action */}
-      <div className="text-center py-8 space-y-4">
-        <p className="text-lg text-black/70 dark:text-white/70">
-          Want to be part of our next show?
-        </p>
-        <Link 
-          href="/join" 
-          className="inline-block px-8 py-3 bg-[var(--color-highlight)] text-black rounded-full font-semibold hover:shadow-lg hover:scale-105 transition-all"
-        >
-          Join HumorUs! 🎭
-        </Link>
-      </div>
-    </section>
+      </section>
+    </>
   );
 }

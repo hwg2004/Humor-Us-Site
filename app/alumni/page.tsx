@@ -11,7 +11,6 @@ type Alumni = {
   linkedin?: string;
 };
 
-// Add real alumni here - this is sample data
 const featuredAlumni: Alumni[] = [
   {
     name: "Praise Makinde",
@@ -20,7 +19,7 @@ const featuredAlumni: Alumni[] = [
     company: "NBC",
     bio: "After HumorUs!, Praise went on to work for NBC as a page.",
     headshot: "/images/people/praise_makinde.jpg",
-    linkedin: "https://www.linkedin.com/in/praise-makinde/"
+    linkedin: "https://www.linkedin.com/in/praise-makinde/",
   },
   {
     name: "Noah Diamond",
@@ -29,12 +28,11 @@ const featuredAlumni: Alumni[] = [
     company: "NBA",
     bio: "Noah credits HumorUs! with teaching him how to pitch ideas and work collaboratively.",
     headshot: "/images/people/noah_diamond.jpg",
-    linkedin: "https://www.linkedin.com/in/noah-diamond-14715822b/"
+    linkedin: "https://www.linkedin.com/in/noah-diamond-14715822b/",
   },
 ];
 
-// List of all alumni by year
-const allAlumni = {
+const allAlumni: Record<string, string[]> = {
   "2025": ["Melissa Chu", "Noah Diamond", "Praise Makinde", "Marc Scocca"],
   "2024": ["Noah Leety", "Amelia Rajakumar", "Sowmya Venkatachalam"],
   "2023": ["Alexander Izvolsky", "Amanda Glik", "Phoebe McKinley"],
@@ -43,141 +41,130 @@ const allAlumni = {
 };
 
 export default function AlumniPage() {
-  return (
-    <section className="space-y-8">
-      <div>
-        <h1 className="text-4xl font-bold bg-gradient-to-r from-[var(--color-accent)] to-[var(--color-accent-light)] bg-clip-text text-transparent">
-          HumorUs! Alumni
-        </h1>
-        <p className="text-lg mt-4 text-black/70 dark:text-white/70">
-          {"Our alumni have gone on to amazing things - from writers' rooms to boardrooms, they're making the world laugh one joke at a time."}
-        </p>
-      </div>
+  const years = Object.entries(allAlumni).sort((a, b) => b[0].localeCompare(a[0]));
 
-      {/* Featured Alumni Section */}
-      <div className="space-y-6">
-        <h2 className="text-2xl font-bold">Featured Alumni</h2>
-        <div className="grid gap-6 md:grid-cols-2">
-          {featuredAlumni.map((alum) => (
-            <article key={alum.name} className="rounded-lg border-2 border-[var(--color-accent-light)] overflow-hidden hover:shadow-lg transition-shadow">
-              <div className="p-6">
-                <div className="flex gap-4">
+  return (
+    <>
+      <section className="px-6 pt-16 md:px-10">
+        <div className="mx-auto max-w-[1100px]">
+          <h1 className="hu-h1 m-0 text-[clamp(56px,10vw,100px)]">HumorUs! Alumni</h1>
+          <p className="hu-body mt-7 max-w-[68ch] !text-xl">
+            Our alumni have gone on to amazing things - from writers&apos; rooms to boardrooms,
+            they&apos;re making the world laugh one joke at a time.
+          </p>
+        </div>
+      </section>
+
+      {/* ---------- Featured ---------- */}
+      <section className="px-6 py-13 md:px-10">
+        <div className="mx-auto max-w-[1100px]">
+          <h2 className="hu-h2 mb-6 text-[clamp(32px,4.5vw,42px)]">Featured Alumni</h2>
+          <div className="grid gap-7 md:grid-cols-2">
+            {featuredAlumni.map((alum) => (
+              <article key={alum.name} className="hu-card hu-shadow-ink p-7">
+                <div className="flex items-start gap-5">
                   {alum.headshot && (
-                    <Image
-                      src={alum.headshot}
-                      alt={`${alum.name} headshot`}
-                      width={100}
-                      height={100}
-                      className="rounded-full object-cover w-24 h-24"
-                    />
+                    <div className="hu-frame relative h-[104px] w-[104px] shrink-0 overflow-hidden">
+                      <Image
+                        src={alum.headshot}
+                        alt={`${alum.name} headshot`}
+                        fill
+                        className="object-cover"
+                        sizes="104px"
+                      />
+                    </div>
                   )}
-                  <div className="flex-1">
-                    <h3 className="font-bold text-xl">{alum.name}</h3>
-                    <p className="text-[var(--color-accent)] font-medium">Class of {alum.year}</p>
+                  <div>
+                    <h3 className="hu-h3 m-0 text-2xl">{alum.name}</h3>
+                    <div className="hu-label mt-2 !text-[12px] !tracking-[0.16em] text-[var(--color-curtain)]">
+                      Class of {alum.year}
+                    </div>
                     {alum.currentRole && (
-                      <p className="text-sm mt-1">
-                        {alum.currentRole} {alum.company && `at ${alum.company}`}
-                      </p>
+                      <div className="mt-2 text-base text-[var(--color-soot)]">
+                        {alum.currentRole}
+                        {alum.company && alum.currentRole.includes(alum.company)
+                          ? ""
+                          : alum.company && ` at ${alum.company}`}
+                      </div>
                     )}
                   </div>
                 </div>
+
                 {alum.bio && (
-                  <p className="mt-4 text-black/70 dark:text-white/70">{alum.bio}</p>
+                  <p className="mt-5 text-[17px] leading-relaxed text-[var(--color-soot)]">
+                    {alum.bio}
+                  </p>
                 )}
+
                 {alum.linkedin && (
-                  <a 
-                    href={alum.linkedin} 
-                    target="_blank" 
+                  <a
+                    href={alum.linkedin}
+                    target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-block mt-3 text-[var(--color-accent)] hover:text-[var(--color-highlight)] transition-colors"
+                    className="mt-[18px] inline-block border-b-[3px] border-[var(--color-curtain)] pb-[3px] font-[family-name:var(--font-label)] text-[13px] uppercase tracking-[0.14em] !text-[var(--color-ink)] hover:!text-[var(--color-curtain)]"
                   >
                     Connect on LinkedIn →
                   </a>
                 )}
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ---------- All alumni ---------- */}
+      <section className="px-6 pb-14 md:px-10">
+        <div className="mx-auto max-w-[1100px]">
+          <h2 className="hu-h2 mb-6 text-[clamp(32px,4.5vw,42px)]">All Alumni by Year</h2>
+          <div className="border-t-[3px] border-[var(--color-ink)]">
+            {years.map(([year, names], i) => (
+              <div
+                key={year}
+                className={`grid gap-7 py-[22px] md:grid-cols-[180px_1fr] ${
+                  i === years.length - 1
+                    ? "border-b-[3px] border-[var(--color-ink)]"
+                    : "border-b border-[var(--color-ink)]/20"
+                }`}
+              >
+                <span className="hu-h3 text-[22px] text-[var(--color-curtain)]">
+                  Class of {year}
+                </span>
+                <span className="text-lg leading-relaxed text-[var(--color-soot)]">
+                  {names.join(" · ")}
+                </span>
               </div>
-            </article>
-          ))}
+            ))}
+          </div>
         </div>
-      </div>
+      </section>
 
-      {/* Where Are They Now Section 
-      <div className="rounded-lg bg-[var(--color-accent-light)]/10 border-2 border-[var(--color-accent-light)] p-6">
-        <h2 className="text-2xl font-bold mb-4">Where Are They Now?</h2>
-        <p className="mb-4">Our alumni have landed in some pretty amazing places:</p>
-        <div className="grid gap-3 sm:grid-cols-2 md:grid-cols-3">
-          <div className="text-center p-3">
-            <div className="text-3xl mb-2">📺</div>
-            <p className="font-medium">TV Writing</p>
-            <p className="text-sm text-black/60 dark:text-white/60">SNL, Late Night, Comedy Central</p>
+      {/* ---------- Stay connected ---------- */}
+      <section className="px-6 pb-[72px] md:px-10">
+        <div className="mx-auto max-w-[1100px] border-[3px] border-[var(--color-ink)] bg-[var(--color-ink)] p-13 text-center shadow-[10px_10px_0_var(--color-marquee)]">
+          <h2 className="hu-h2 m-0 text-[clamp(36px,5.5vw,52px)] text-[var(--color-paper)]">
+            Stay Connected!
+          </h2>
+          <p className="mx-auto mt-5 mb-8 max-w-[56ch] text-[19px] leading-relaxed text-[var(--color-paper)]/80">
+            Once HumorUs!, always HumorUs! We love hearing from our alumni and keeping you updated on
+            shows.
+          </p>
+          <div className="flex flex-wrap justify-center gap-4">
+            <a
+              href="mailto:humoruscomedy@gmail.com?subject=Alumni Update"
+              className="hu-btn hu-btn-primary !border-[var(--color-paper)]"
+              style={{ boxShadow: "5px 5px 0 var(--color-marquee)" }}
+            >
+              Update Your Info
+            </a>
+            <Link href="/shows" className="hu-btn hu-btn-ghost-inv">
+              See Current Shows
+            </Link>
           </div>
-          <div className="text-center p-3">
-            <div className="text-3xl mb-2">🎭</div>
-            <p className="font-medium">Stand-Up Comedy</p>
-            <p className="text-sm text-black/60 dark:text-white/60">NYC, LA, Chicago scenes</p>
-          </div>
-          <div className="text-center p-3">
-            <div className="text-3xl mb-2">🎬</div>
-            <p className="font-medium">Film & Digital</p>
-            <p className="text-sm text-black/60 dark:text-white/60">YouTube, TikTok, Film Production</p>
-          </div>
-          <div className="text-center p-3">
-            <div className="text-3xl mb-2">💼</div>
-            <p className="font-medium">Marketing & Advertising</p>
-            <p className="text-sm text-black/60 dark:text-white/60">Creative Directors, Copywriters</p>
-          </div>
-          <div className="text-center p-3">
-            <div className="text-3xl mb-2">🚀</div>
-            <p className="font-medium">Tech & Startups</p>
-            <p className="text-sm text-black/60 dark:text-white/60">Product Managers, Engineers</p>
-          </div>
-          <div className="text-center p-3">
-            <div className="text-3xl mb-2">📚</div>
-            <p className="font-medium">Academia & Law</p>
-            <p className="text-sm text-black/60 dark:text-white/60">Professors, Lawyers, Researchers</p>
-          </div>
+          <p className="hu-label mt-7 !tracking-[0.16em] text-[var(--color-ash)]">
+            Alumni get special discounts on show tickets! Email us for the code.
+          </p>
         </div>
-      </div>
-      */}
-
-      {/* Complete Alumni List */}
-      <div className="space-y-4">
-        <h2 className="text-2xl font-bold">All Alumni by Year</h2>
-        <div className="rounded-lg border p-6">
-          {Object.entries(allAlumni).sort((a, b) => b[0].localeCompare(a[0])).map(([year, names]) => (
-            <div key={year} className="mb-4 pb-4 border-b last:border-b-0">
-              <h3 className="font-bold text-lg text-[var(--color-accent)] mb-2">Class of {year}</h3>
-              <p className="text-black/70 dark:text-white/70">
-                {names.join(" • ")}
-              </p>
-            </div>
-          ))}
-        </div>
-      </div>
-
-      {/* Stay Connected Section */}
-      <div className="rounded-lg bg-[var(--color-highlight)]/20 border-2 border-[var(--color-highlight)] p-6 text-center">
-        <h2 className="text-2xl font-bold mb-3">Stay Connected!</h2>
-        <p className="mb-4">
-          Once HumorUs!, always HumorUs! We love hearing from our alumni and keeping you updated on shows.
-        </p>
-        <div className="flex flex-wrap gap-4 justify-center">
-          <a 
-            href="mailto:humoruscomedy@gmail.com?subject=Alumni Update" 
-            className="rounded-md bg-[var(--color-accent)] text-white px-6 py-2 hover:bg-[var(--color-accent-dark)] transition-colors"
-          >
-            Update Your Info
-          </a>
-          <Link 
-            href="/shows" 
-            className="rounded-md border-2 border-[var(--color-accent)] px-6 py-2 hover:bg-[var(--color-accent)]/10 transition-colors"
-          >
-            See Current Shows
-          </Link>
-        </div>
-        <p className="text-sm mt-4 text-black/60 dark:text-white/60">
-          Alumni get special discounts on show tickets! Email us for the code.
-        </p>
-      </div>
-    </section>
+      </section>
+    </>
   );
 }
