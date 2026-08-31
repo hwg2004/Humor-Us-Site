@@ -22,7 +22,7 @@ const steps = [
     n: "03",
     title: "Performing",
     body: "Each semester, Humor Us! holds one big show that is the culmination of all of the hard work the members have put into writing and rehearsing. Typically, the Fall show is in early November, and the Spring show is in the middle of April.",
-    image: "/images/general/DSC_0449.jpg",
+    image: "/images/general/HumorUsSp26-0193.jpg",
     alt: "Performing on stage",
     shadow: "hu-shadow-ink",
   },

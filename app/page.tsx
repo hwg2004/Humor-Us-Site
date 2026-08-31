@@ -15,12 +15,12 @@ const nextShow = {
 };
 
 const recentPhotos = [
-  { src: "/images/gallery/DSC_0125.jpg", alt: "Group photo" },
-  { src: "/images/gallery/DSC_0131.jpg", alt: "Group photo, bunz out" },
-  { src: "/images/gallery/DSC_0138.jpg", alt: "The fellas" },
-  { src: "/images/gallery/Referee_Sketch.jpg", alt: "Referee Sketch" },
-  { src: "/images/gallery/DSC_0117.jpg", alt: "Fall 2024 Newbies" },
-  { src: "/images/gallery/Charli_XCX_Sketch.jpg", alt: "Charli XCX Sketch" },
+  { src: "/images/gallery/HumorUsSp26-0273.jpg", alt: "HumorUs Spring 2026 show" },
+  { src: "/images/gallery/HumorUsSp26-0376.jpg", alt: "HumorUs Spring 2026 show" },
+  { src: "/images/gallery/HumorUsSp26-0498.jpg", alt: "HumorUs Spring 2026 show" },
+  { src: "/images/gallery/HumorUsSp26-0643.jpg", alt: "HumorUs Spring 2026 show" },
+  { src: "/images/gallery/HumorUsSp26-0774.jpg", alt: "HumorUs Spring 2026 show" },
+  { src: "/images/gallery/HumorUsSp26-0917.jpg", alt: "HumorUs Spring 2026 show" },
 ];
 
 const socials = [
