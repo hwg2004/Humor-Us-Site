@@ -10,16 +10,16 @@ type Person = {
 };
 
 const people: Person[] = [
-  { name: "Izzy Falchuk", role: "President", year: "2026", major: "Performing and Media Arts", hometown: "Los Angeles, CA", headshot: "/images/people/izzy_headshot.jpg" },
-  { name: "Amanda Roth", role: "Vice President", year: "2027", major: "Human Development", hometown: "Great Neck, NY", headshot: "/images/people/amanda_headshot.jpg" },
+  { name: "Amanda Roth", role: "President", year: "2027", major: "Human Development", hometown: "Great Neck, NY", headshot: "/images/people/amanda_headshot.jpg" },
+  { name: "Jordan Vogel", role: "Vice President", year: "2027", major: "Mechanical Engineering", hometown: "Franklin Square, NY", headshot: "/images/people/jordan_headshot.jpg" },
   { name: "Harry Gallen", role: "Treasurer", year: "2027", major: "Computer Science", hometown: "New York, NY", headshot: "/images/people/harry_headshot.jpg" },
-  { name: "Jared Miller", role: "Secretary", year: "2028", major: "Communications", hometown: "Brooklyn, NY", headshot: "/images/people/jared_headshot.jpg" },
-  { name: "Raquel Sweet", role: "Social Chair", year: "2027", major: "Mechanical Engineering", hometown: "San Francisco, CA", headshot: "/images/people/raquel_headshot.jpg" },
-  { name: "James Mars", role: "Social Chair", year: "2026", major: "Economics and Sociology", hometown: "Ignacio, CO", headshot: "/images/people/james_headshot.jpg" },
+  { name: "Jackie Diaz", role: "Secretary and Diversity, Equity, and Inclusion Chair", year: "2029", major: "Performing and Media Arts", hometown: "Topeka, KS", headshot: "/images/people/jackie_headshot.jpg" },
+  { name: "Jared Miller", role: "Social Media Chair", year: "2028", major: "Communications", hometown: "Brooklyn, NY", headshot: "/images/people/jared_headshot.jpg" },
   { name: 'Conner "Big Dawg" Whalen', role: "Social Media Chair", year: "2028", major: "Information Science", hometown: "Nyack, NY", headshot: "/images/people/conner_headshot.jpg" },
-  { name: "Jordan Vogel", role: "Social Media Chair", year: "2027", major: "Mechanical Engineering", hometown: "Franklin Square, NY", headshot: "/images/people/jordan_headshot.jpg" },
-  { name: "Rene Cabrera", role: "Diversity, Equity, and Inclusion Chair", year: "2027", major: "Industrial and Labor Relations", hometown: "Topeka, KS", headshot: "/images/people/rene_headshot.jpg" },
-  { name: "Eli Feldman", role: "Alumni Relations Chair", year: "2026", major: "Applied Economics and Management", hometown: "Lower Merion, PA", headshot: "/images/people/eli_headshot.jpg" },
+  { name: "Raquel Sweet", role: "Social Chair", year: "2027", major: "Mechanical Engineering", hometown: "San Francisco, CA", headshot: "/images/people/raquel_headshot.jpg" },
+  { name: "Vivien Webster", role: "Security", year: "2029", major: "Linguistics and History", hometown: "Nome, AK", headshot: "/images/people/vivien_headshot.jpg" },
+  { name: "Kaitlyn Bell", role: "Social Chair", year: "2028", major: "Industrial and Labor Relations", hometown: "New Hyde Park, NY", headshot: "/images/people/kaitlyn_headshot.jpg" },
+  { name: "Zach Stutland", role: "Social Media Chair", year: "2026", major: "Applied Economics and Management", hometown: "Chicago, IL", headshot: "/images/people/zach_headshot.jpg" },
 ];
 
 export default function PeoplePage() {
