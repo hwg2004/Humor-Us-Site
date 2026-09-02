@@ -15,9 +15,9 @@ const featuredAlumni: Alumni[] = [
   {
     name: "Emily Augustyniak",
     year: "2022",
-    currentRole: "Content Creator",
+    currentRole: "Comedian",
     company: "Palette Media",
-    bio: "After HumorUs!, Emily became a content creator. She's represented by Palette Media.",
+    bio: "After HumorUs!, Emily became a content creator. She's represented by Palette Media. This picture is of her when she graduated, because she had to leave HumorUs.",
     headshot: "/images/people/em_augusta_headshot.jpg",
     linkedin: "https://www.linkedin.com/in/emily--augustyniak/",
   },
