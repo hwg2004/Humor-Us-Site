@@ -2,15 +2,17 @@ import Link from "next/link";
 import Image from "next/image";
 import Gallery from "./components/Gallery";
 
-const nextShow = {
-  title: "For All the Hogs",
-  deck: "Get ready for our biggest show yet!",
-  poster: "/images/shows/FA25Poster.jpg",
+const auditions = {
+  label: "Now Casting",
+  title: "Auditions Are Open!",
+  deck: "Want to join Cornell's premier sketch comedy group? No experience needed — come audition this September!",
+  formUrl:
+    "https://docs.google.com/forms/d/e/1FAIpQLScYapA0lETw0BO8-ZuKRAKdle_F8aHmh9Zjll_kfZeoG_uWQQ/viewform",
+  photo: "/images/gallery/HumorUsSp26-0917.jpg",
   details: [
-    { label: "Date", value: "April 24, 2026" },
-    { label: "Venue", value: "Klarman Auditiorium" },
-    { label: "Times", value: "7:00 PM & 9:00 PM" },
-    { label: "Price", value: "$5 (Venmo: @harrygallen)", gold: true },
+    { label: "Auditions", value: "Sept 9 & 10 · 4:30–6:30 PM" },
+    { label: "Location", value: "Uris Hall G01" },
+    { label: "Experience", value: "None needed!", gold: true },
   ],
 };
 
@@ -24,9 +26,10 @@ const recentPhotos = [
 ];
 
 const socials = [
-  { href: "https://www.instagram.com/humorussketchcomedy/", icon: "/logos/instagram.svg", label: "Instagram", invert: true },
-  { href: "mailto:humorussketchcomedy@cornell.edu", icon: "/logos/gmail.svg", label: "Email", invert: false },
-  { href: "https://venmo.com/u/harrygallen", icon: "/logos/venmo-icon.svg", label: "Venmo", invert: false },
+  { href: "https://www.instagram.com/humorussketchcomedy/", icon: "/logos/instagram.svg", label: "Instagram", invert: true, w: 22, h: 22 },
+  { href: "https://www.youtube.com/@HumorUsComedy", icon: "/logos/youtube.svg", label: "YouTube", invert: false, w: 26, h: 18 },
+  { href: "mailto:humorussketchcomedy@cornell.edu", icon: "/logos/gmail.svg", label: "Email", invert: false, w: 22, h: 22 },
+  { href: "https://venmo.com/u/harrygallen", icon: "/logos/venmo-icon.svg", label: "Venmo", invert: false, w: 22, h: 22 },
 ];
 
 export default function Home() {
@@ -60,13 +63,13 @@ export default function Home() {
 
                 <div className="mt-9 flex flex-wrap gap-4">
                   <a
-                    href="https://venmo.com/u/harrygallen"
+                    href={auditions.formUrl}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="hu-btn hu-btn-primary !text-base"
                     style={{ boxShadow: "5px 5px 0 var(--color-marquee)" }}
                   >
-                    Get Tickets
+                    Audition Now
                   </a>
                   <Link href="/join" className="hu-btn hu-btn-paper !text-base">
                     Join Us!
@@ -86,8 +89,8 @@ export default function Home() {
                       <Image
                         src={s.icon}
                         alt={s.label}
-                        width={22}
-                        height={22}
+                        width={s.w}
+                        height={s.h}
                         className={s.invert ? "brightness-0 invert" : ""}
                       />
                     </a>
@@ -99,27 +102,27 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ---------- Next show ---------- */}
+      {/* ---------- Auditions ---------- */}
       <section className="border-b-4 border-[var(--color-ink)] bg-[var(--color-ink)] px-6 py-16 md:px-10">
         <div className="mx-auto max-w-[1200px]">
           <div className="mb-7 flex items-center gap-3">
             <span className="hu-blink inline-block h-3 w-3 rounded-full bg-[var(--color-curtain)]" />
             <h2 className="hu-label m-0 font-bold !tracking-[0.28em] text-[var(--color-marquee)]">
-              Next Show
+              {auditions.label}
             </h2>
           </div>
 
           <div className="grid items-center gap-12 md:grid-cols-[1.15fr_0.85fr]">
             <div>
               <h3 className="hu-h2 m-0 text-[clamp(44px,6vw,76px)] text-[var(--color-paper)]">
-                {nextShow.title}
+                {auditions.title}
               </h3>
               <p className="mt-5 max-w-[36ch] text-[21px] leading-relaxed text-[var(--color-paper)]/[0.78]">
-                {nextShow.deck}
+                {auditions.deck}
               </p>
 
               <dl className="mt-8 border-t-2 border-[var(--color-paper)]/[0.28]">
-                {nextShow.details.map((d) => (
+                {auditions.details.map((d) => (
                   <div
                     key={d.label}
                     className="grid grid-cols-[110px_1fr] gap-4 border-b border-[var(--color-paper)]/[0.18] py-3.5 font-[family-name:var(--font-label)] text-sm uppercase tracking-[0.08em] md:grid-cols-[130px_1fr]"
@@ -136,16 +139,16 @@ export default function Home() {
 
               <div className="mt-8 flex flex-wrap gap-4">
                 <a
-                  href="https://venmo.com/u/harrygallen"
+                  href={auditions.formUrl}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="hu-btn hu-btn-primary !border-[var(--color-paper)]"
                   style={{ boxShadow: "5px 5px 0 var(--color-marquee)" }}
                 >
-                  Buy Tickets Now
+                  Sign Up to Audition
                 </a>
-                <Link href="/shows" className="hu-btn hu-btn-ghost-inv">
-                  See Past Shows
+                <Link href="/join" className="hu-btn hu-btn-ghost-inv">
+                  Audition Info
                 </Link>
               </div>
             </div>
@@ -153,8 +156,8 @@ export default function Home() {
             <div className="border-[3px] border-[var(--color-paper)] shadow-[10px_10px_0_var(--color-curtain)]">
               <div className="relative aspect-[4/5] overflow-hidden">
                 <Image
-                  src={nextShow.poster}
-                  alt={`${nextShow.title} poster`}
+                  src={auditions.photo}
+                  alt="HumorUs cast performing on stage"
                   fill
                   className="object-cover"
                   sizes="(max-width: 768px) 100vw, 420px"
@@ -199,12 +202,12 @@ export default function Home() {
           </div>
           <div className="flex flex-wrap gap-4">
             <a
-              href="https://venmo.com/u/harrygallen"
+              href={auditions.formUrl}
               target="_blank"
               rel="noopener noreferrer"
               className="hu-btn hu-btn-primary"
             >
-              Get Your Tickets
+              Audition Now
             </a>
             <Link href="/about" className="hu-btn hu-btn-ghost">
               Learn More About Us

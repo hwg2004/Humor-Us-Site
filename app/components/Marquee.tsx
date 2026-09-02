@@ -1,11 +1,11 @@
 /**
  * Ink strip above the nav. Carries exactly two messages:
- * one selling (gold) and one recruiting (paper). Duplicated
+ * one headline (gold) and one with the details (paper). Duplicated
  * once so the -50% translate loops seamlessly.
  */
 const messages = [
-  { text: "Next show — For All the Hogs · April 24, 2026 · Klarman Auditorium · $5", gold: true },
-  { text: "Auditions September 17 & 18 · 4:30–6:30 · Uris Hall G01", gold: false },
+  { text: "Now casting — auditions are open! Sign up today", gold: true },
+  { text: "Auditions September 9 & 10 · 4:30–6:30 · Uris Hall G01", gold: false },
 ];
 
 export function Marquee() {

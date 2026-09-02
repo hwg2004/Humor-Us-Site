@@ -2,16 +2,16 @@
 import { useState } from "react";
 
 const importantDates = [
-  { label: "Club Fest", value: "September 13 (Second week of classes)" },
-  { label: "O-Week Show", value: "September 13" },
-  { label: "Auditions", value: "September 17, 18" },
-  { label: "Callbacks", value: "September 20" },
+  { label: "Club Fest", value: "Saturday, September 5 · 12:00–1:30 PM — come find our table!" },
+  { label: "O-Week Show", value: "September 5 & 6" },
+  { label: "Auditions", value: "September 9 & 10 · 4:30–6:30 PM" },
+  { label: "Callbacks", value: "September 12" },
 ];
 
 const faqs = [
   {
     q: "When are auditions?",
-    a: "Auditions will be Wednesday, September 17 and Thursday, September 18 from 4:30-6:30. We offer 2 different sessions (of which you only have to attend one), that way you are sure to find one that fits your schedule.",
+    a: "Auditions will be Wednesday, September 9 and Thursday, September 10 from 4:30-6:30. We offer 2 different sessions (of which you only have to attend one), that way you are sure to find one that fits your schedule.",
   },
   {
     q: "Do I need experience in theatre/drama/comedy to audition?",
@@ -43,7 +43,7 @@ export default function JoinPage() {
           <h1 className="hu-h1 m-0 text-[clamp(56px,10vw,104px)]">Join HumorUs!</h1>
           <p className="hu-body mt-8 max-w-[70ch] !text-[21px] !leading-[1.55]">
             Auditions to join Humor Us are held in early September. Join us on Wednesday, September
-            17 OR Thursday, September 18 from 4:30 - 6:30pm in Uris Hall G01! Anyone can audition
+            9 OR Thursday, September 10 from 4:30 - 6:30pm in Uris Hall G01! Anyone can audition
             even if you have no experience - neither did we! Auditions are a super fun way to get to
             know the current members and see if Humor Us is right for you!
           </p>

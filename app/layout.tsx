@@ -96,12 +96,12 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             <NavLinks />
 
             <a
-              href="https://venmo.com/u/harrygallen"
+              href="https://docs.google.com/forms/d/e/1FAIpQLScYapA0lETw0BO8-ZuKRAKdle_F8aHmh9Zjll_kfZeoG_uWQQ/viewform"
               target="_blank"
               rel="noopener noreferrer"
               className="hu-btn hu-btn-primary !px-6 !py-3 !text-sm"
             >
-              Get Tickets
+              Audition Now
             </a>
           </nav>
         </header>
@@ -156,6 +156,15 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                       className="brightness-0 invert"
                     />
                     <span>@humorussketchcomedy</span>
+                  </a>
+                  <a
+                    href="https://www.youtube.com/@HumorUsComedy"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-3 text-[15px] text-[var(--color-paper)]/[0.78] hover:text-[var(--color-marquee)]"
+                  >
+                    <Image src="/logos/youtube.svg" alt="YouTube" width={22} height={16} />
+                    <span>@HumorUsComedy</span>
                   </a>
                   <a
                     href="mailto:humoruscomedy@gmail.com"

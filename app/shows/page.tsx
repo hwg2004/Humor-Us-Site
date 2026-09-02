@@ -14,12 +14,21 @@ type Show = {
 // Add your past shows here - newest first
 const pastShows: Show[] = [
   {
+    slug: "2026-04-24-spring",
+    title: "Humor Us Presents: Probably Our Hardest Beat Yet",
+    date: "2026-04-24",
+    venue: "Rockefeller Auditorium",
+    poster: "/images/shows/SP26Poster.jpg",
+    favorite: true,
+  },
+  {
     slug: "2025-11-14-fall",
     title: "Humor Us Presents: Side Effects May Include...",
     date: "2025-11-14",
     venue: "Rockefeller Auditorium",
     poster: "/images/shows/FA25Poster.jpg",
     favorite: true,
+    videoUrl: "https://www.youtube.com/playlist?list=PLQHtzx1MTEo_YwNL-TKyTe6zCV4Y5zRZ8",
   },
   {
     slug: "2025-04-18-spring",
@@ -36,7 +45,6 @@ const pastShows: Show[] = [
     date: "2024-11-14",
     venue: "Rockefeller Hall",
     poster: "/images/shows/FA24Poster.jpg",
-    favorite: true,
     videoUrl: "https://www.youtube.com/watch?v=yDMNgAkArE0&list=PLQHtzx1MTEo9GZp_LI4w1HN4WbTux3lPm",
   },
   {

@@ -13,26 +13,27 @@ type Alumni = {
 
 const featuredAlumni: Alumni[] = [
   {
-    name: "Praise Makinde",
-    year: "2025",
-    currentRole: "NBC Page",
-    company: "NBC",
-    bio: "After HumorUs!, Praise went on to work for NBC as a page.",
-    headshot: "/images/people/praise_makinde.jpg",
-    linkedin: "https://www.linkedin.com/in/praise-makinde/",
+    name: "Emily Augustyniak",
+    year: "2022",
+    currentRole: "Content Creator",
+    company: "Palette Media",
+    bio: "After HumorUs!, Emily went on to work for NBC as a page.",
+    headshot: "/public/images/people/em_augusta.jpg",
+    linkedin: "https://www.linkedin.com/in/emily--augustyniak/",
   },
   {
-    name: "Noah Diamond",
-    year: "2025",
-    currentRole: "Statistics Auditor at the NBA",
-    company: "NBA",
+    name: "Noah Leety",
+    year: "2024",
+    currentRole: "Senior Coordinator of Sports Marketing",
+    company: "CBS",
     bio: "Noah credits HumorUs! with teaching him how to pitch ideas and work collaboratively.",
-    headshot: "/images/people/noah_diamond.jpg",
-    linkedin: "https://www.linkedin.com/in/noah-diamond-14715822b/",
+    headshot: "/public/images/people/noah_leety.jpg",
+    linkedin: "https://www.linkedin.com/in/noah-leety-580819236/",
   },
 ];
 
 const allAlumni: Record<string, string[]> = {
+  "2026": ["Izzy Falchuk", "Eli Feldman"],
   "2025": ["Melissa Chu", "Noah Diamond", "Praise Makinde", "Marc Scocca"],
   "2024": ["Noah Leety", "Amelia Rajakumar", "Sowmya Venkatachalam"],
   "2023": ["Alexander Izvolsky", "Amanda Glik", "Phoebe McKinley"],
