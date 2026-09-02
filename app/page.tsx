@@ -10,7 +10,7 @@ const auditions = {
     "https://docs.google.com/forms/d/e/1FAIpQLScYapA0lETw0BO8-ZuKRAKdle_F8aHmh9Zjll_kfZeoG_uWQQ/viewform",
   photo: "/images/gallery/HumorUsSp26-0917.jpg",
   details: [
-    { label: "Auditions", value: "Sept 9 & 10 · 4:30–6:30 PM" },
+    { label: "Auditions", value: "Sept 16 & 17 · 4:30–6:30 PM" },
     { label: "Location", value: "Uris Hall G01" },
     { label: "Experience", value: "None needed!", gold: true },
   ],

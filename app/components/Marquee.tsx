@@ -5,7 +5,7 @@
  */
 const messages = [
   { text: "Now casting — auditions are open! Sign up today", gold: true },
-  { text: "Auditions September 9 & 10 · 4:30–6:30 · Uris Hall G01", gold: false },
+  { text: "Auditions September 16 & 17 · 4:30–6:30 · Uris Hall G01", gold: false },
 ];
 
 export function Marquee() {
