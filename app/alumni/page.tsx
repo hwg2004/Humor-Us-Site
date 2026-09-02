@@ -17,7 +17,7 @@ const featuredAlumni: Alumni[] = [
     year: "2022",
     currentRole: "Comedian",
     company: "Palette Media",
-    bio: "After HumorUs!, Emily became a content creator. She's represented by Palette Media. This picture is of her when she graduated, because she had to leave HumorUs.",
+    bio: "After HumorUs!, Emily became a content creator. She's represented by Palette Media. This picture is of her when she graduated, because she was sad  she had to leave HumorUs.",
     headshot: "/images/people/em_augusta_headshot.jpg",
     linkedin: "https://www.linkedin.com/in/emily--augustyniak/",
   },
@@ -33,7 +33,7 @@ const featuredAlumni: Alumni[] = [
 ];
 
 const allAlumni: Record<string, string[]> = {
-  "2026": ["Izzy Falchuk", "Eli Feldman"],
+  "2026": ["Izzy Falchuk", "Eli Feldman", "James Mars"],
   "2025": ["Melissa Chu", "Noah Diamond", "Praise Makinde", "Marc Scocca"],
   "2024": ["Noah Leety", "Amelia Rajakumar", "Sowmya Venkatachalam"],
   "2023": ["Alexander Izvolsky", "Amanda Glik", "Phoebe McKinley"],
