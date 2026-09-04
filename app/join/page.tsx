@@ -3,7 +3,7 @@ import { useState } from "react";
 
 const importantDates = [
   { label: "Club Fest", value: "Saturday, September 5 · 12:00–1:30 PM — come find our table!" },
-  { label: "O-Week Show", value: "September 5 & 6" },
+  { label: "O-Week Show", value: "September 5 · Goldwin Smith G22" },
   { label: "Auditions", value: "September 16 & 17 · 4:30–6:30 PM" },
   { label: "Callbacks", value: "September 19" },
 ];

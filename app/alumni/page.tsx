@@ -26,7 +26,7 @@ const featuredAlumni: Alumni[] = [
     year: "2024",
     currentRole: "Senior Coordinator of Sports Marketing",
     company: "Paramount+",
-    bio: "Noah credits HumorUs! with teaching him how to pitch ideas and work collaboratively. He's also gay.",
+    bio: "Noah credits HumorUs! with teaching him how to pitch ideas and work collaboratively.",
     headshot: "/images/people/noah_leety_headshot.jpg",
     linkedin: "https://www.linkedin.com/in/noah-leety-580819236/",
   },
