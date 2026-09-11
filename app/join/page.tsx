@@ -4,7 +4,7 @@ import { useState } from "react";
 const importantDates = [
   { label: "Club Fest", value: "Saturday, September 5 · 12:00–1:30 PM — come find our table!" },
   { label: "O-Week Show", value: "September 5 · Goldwin Smith G22" },
-  { label: "Auditions", value: "September 16 & 17 · 4:30–6:30 PM" },
+  { label: "Auditions", value: "September 16 & 17 · 4:30-6:30 PM · Rockefeller Hall Auditorium 203" },
   { label: "Callbacks", value: "September 19" },
 ];
 
@@ -43,7 +43,7 @@ export default function JoinPage() {
           <h1 className="hu-h1 m-0 text-[clamp(56px,10vw,104px)]">Join HumorUs!</h1>
           <p className="hu-body mt-8 max-w-[70ch] !text-[21px] !leading-[1.55]">
             Auditions to join Humor Us are held in early September. Join us on Wednesday, September
-            16 OR Thursday, September 17 from 4:30 - 6:30pm in Uris Hall G01! Anyone can audition
+            16 OR Thursday, September 17 from 4:30 - 6:30pm in Rockefeller Hall Auditorium 203! Anyone can audition
             even if you have no experience - neither did we! Auditions are a super fun way to get to
             know the current members and see if Humor Us is right for you!
           </p>

@@ -11,7 +11,7 @@ const auditions = {
   photo: "/images/gallery/HumorUsSp26-0917.jpg",
   details: [
     { label: "Auditions", value: "Sept 16 & 17 · 4:30-6:30 PM" },
-    { label: "Location", value: "Uris Hall G01" },
+    { label: "Location", value: "Rockefeller Hall Auditorium 203" },
     { label: "Experience", value: "None needed!", gold: true },
   ],
 };
