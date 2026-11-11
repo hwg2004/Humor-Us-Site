@@ -6,7 +6,7 @@ const nextShow = {
   label: "Next Show",
   title: "I'm Supposed to Be Attracted to This?",
   deck: "Our Fall 2026 show — a brand-new night of sketch comedy from the whole cast!",
-  ticketUrl: "https://venmo.com/u/harrygallen",
+  ticketUrl: "https://docs.google.com/forms/d/e/1FAIpQLScd9ybI-nZ3G8NJkhyT9CR6--GL5L4j9e2LkYLoGv3l9J__8Q/viewform",
   poster: "/images/shows/FA26Poster.jpg",
   details: [
     { label: "Date", value: "Thursday, November 13, 2026" },
