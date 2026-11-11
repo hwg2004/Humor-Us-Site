@@ -2,17 +2,17 @@ import Link from "next/link";
 import Image from "next/image";
 import Gallery from "./components/Gallery";
 
-const auditions = {
-  label: "Now Casting",
-  title: "Auditions Are Open!",
-  deck: "Want to join Cornell's premier sketch comedy group? No experience needed — come audition this September!",
-  formUrl:
-    "https://docs.google.com/forms/d/e/1FAIpQLScYapA0lETw0BO8-ZuKRAKdle_F8aHmh9Zjll_kfZeoG_uWQQ/viewform",
-  photo: "/images/gallery/HumorUsSp26-0917.jpg",
+const nextShow = {
+  label: "Next Show",
+  title: "I'm Supposed to Be Attracted to This?",
+  deck: "Our Fall 2026 show — a brand-new night of sketch comedy from the whole cast!",
+  ticketUrl: "https://venmo.com/u/harrygallen",
+  poster: "/images/shows/FA26Poster.jpg",
   details: [
-    { label: "Auditions", value: "Sept 16 & 17 · 4:30-6:30 PM" },
-    { label: "Location", value: "Rockefeller Hall Auditorium 203" },
-    { label: "Experience", value: "None needed!", gold: true },
+    { label: "Date", value: "Thursday, November 13, 2026" },
+    { label: "Times", value: "7:00 PM & 9:00 PM" },
+    { label: "Venue", value: "Klarman Hall Auditorium (KG70)" },
+    { label: "Price", value: "$5 (Venmo: @harrygallen)", gold: true },
   ],
 };
 
@@ -63,13 +63,13 @@ export default function Home() {
 
                 <div className="mt-9 flex flex-wrap gap-4">
                   <a
-                    href={auditions.formUrl}
+                    href={nextShow.ticketUrl}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="hu-btn hu-btn-primary !text-base"
                     style={{ boxShadow: "5px 5px 0 var(--color-marquee)" }}
                   >
-                    Audition Now
+                    Get Tickets
                   </a>
                   <Link href="/join" className="hu-btn hu-btn-paper !text-base">
                     Join Us!
@@ -102,27 +102,27 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ---------- Auditions ---------- */}
+      {/* ---------- Next show ---------- */}
       <section className="border-b-4 border-[var(--color-ink)] bg-[var(--color-ink)] px-6 py-16 md:px-10">
         <div className="mx-auto max-w-[1200px]">
           <div className="mb-7 flex items-center gap-3">
             <span className="hu-blink inline-block h-3 w-3 rounded-full bg-[var(--color-curtain)]" />
             <h2 className="hu-label m-0 font-bold !tracking-[0.28em] text-[var(--color-marquee)]">
-              {auditions.label}
+              {nextShow.label}
             </h2>
           </div>
 
           <div className="grid items-center gap-12 md:grid-cols-[1.15fr_0.85fr]">
             <div>
               <h3 className="hu-h2 m-0 text-[clamp(44px,6vw,76px)] text-[var(--color-paper)]">
-                {auditions.title}
+                {nextShow.title}
               </h3>
               <p className="mt-5 max-w-[36ch] text-[21px] leading-relaxed text-[var(--color-paper)]/[0.78]">
-                {auditions.deck}
+                {nextShow.deck}
               </p>
 
               <dl className="mt-8 border-t-2 border-[var(--color-paper)]/[0.28]">
-                {auditions.details.map((d) => (
+                {nextShow.details.map((d) => (
                   <div
                     key={d.label}
                     className="grid grid-cols-[110px_1fr] gap-4 border-b border-[var(--color-paper)]/[0.18] py-3.5 font-[family-name:var(--font-label)] text-sm uppercase tracking-[0.08em] md:grid-cols-[130px_1fr]"
@@ -139,25 +139,25 @@ export default function Home() {
 
               <div className="mt-8 flex flex-wrap gap-4">
                 <a
-                  href={auditions.formUrl}
+                  href={nextShow.ticketUrl}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="hu-btn hu-btn-primary !border-[var(--color-paper)]"
                   style={{ boxShadow: "5px 5px 0 var(--color-marquee)" }}
                 >
-                  Sign Up to Audition
+                  Buy Tickets Now
                 </a>
-                <Link href="/join" className="hu-btn hu-btn-ghost-inv">
-                  Audition Info
+                <Link href="/shows" className="hu-btn hu-btn-ghost-inv">
+                  See Past Shows
                 </Link>
               </div>
             </div>
 
             <div className="border-[3px] border-[var(--color-paper)] shadow-[10px_10px_0_var(--color-curtain)]">
-              <div className="relative aspect-[4/5] overflow-hidden">
+              <div className="relative aspect-[1158/1334] overflow-hidden">
                 <Image
-                  src={auditions.photo}
-                  alt="HumorUs cast performing on stage"
+                  src={nextShow.poster}
+                  alt={`${nextShow.title} poster`}
                   fill
                   className="object-cover"
                   sizes="(max-width: 768px) 100vw, 420px"
@@ -202,12 +202,12 @@ export default function Home() {
           </div>
           <div className="flex flex-wrap gap-4">
             <a
-              href={auditions.formUrl}
+              href={nextShow.ticketUrl}
               target="_blank"
               rel="noopener noreferrer"
               className="hu-btn hu-btn-primary"
             >
-              Audition Now
+              Get Your Tickets
             </a>
             <Link href="/about" className="hu-btn hu-btn-ghost">
               Learn More About Us

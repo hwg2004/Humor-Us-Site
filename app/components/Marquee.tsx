@@ -4,8 +4,8 @@
  * once so the -50% translate loops seamlessly.
  */
 const messages = [
-  { text: "Now casting — auditions are open! Sign up today", gold: true },
-  { text: "Auditions September 16 & 17 · 4:30-6:30 · Rockefeller Hall Auditorium 203", gold: false },
+  { text: "Next show — I'm Supposed to Be Attracted to This? · $5 on Venmo", gold: true },
+  { text: "Thursday, November 13 · 7 PM & 9 PM · Klarman Hall Auditorium KG70", gold: false },
 ];
 
 export function Marquee() {

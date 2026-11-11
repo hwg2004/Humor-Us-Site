@@ -96,12 +96,12 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             <NavLinks />
 
             <a
-              href="https://docs.google.com/forms/d/e/1FAIpQLScYapA0lETw0BO8-ZuKRAKdle_F8aHmh9Zjll_kfZeoG_uWQQ/viewform"
+              href="https://venmo.com/u/harrygallen"
               target="_blank"
               rel="noopener noreferrer"
               className="hu-btn hu-btn-primary !px-6 !py-3 !text-sm"
             >
-              Audition Now
+              Get Tickets
             </a>
           </nav>
         </header>
